@@ -1,4 +1,5 @@
 
+from tkinter import NE
 import spotipy
 import pandas as pd
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -38,13 +39,24 @@ for album in album_ids:
     album_precision = album["release_date_precision"]
     album_restrictions = "restrictions" in album.keys() #se podria añadir el tipo de restriccion
     album_number_songs = album["total_tracks"]
+
+    # Tracks (nº of tracks + length total length + avg length +  nº of explicit (igual mejor meter porcentaje de explicit?))
+    # [artists + duration + explicit  + ext artists ]
+
     
     tracks = []
     for track in album["tracks"]["items"]:
-        print(track)
-        print("\n ***********************+ \n")
-    
-    
+        tracks.append([track["name"], track["duration_ms"], track["explicit"]])
+        print(tracks)
+
+    album_total_length = 0
+    nExplicit = 0
+    for i in range(0,len(tracks)):
+        album_total_length += tracks[i][1]
+        if tracks[i][2]: nExplicit+=1
+
+    album_prct_explicit = nExplicit / len(tracks)
+    album_avg_length = album_total_length // len(tracks) #Le he quitado decimales porque ya esta en milisegundos como para ponernos a pillar 6 decimales
 
     break
 
