@@ -77,7 +77,7 @@ for album in album_ids:
         #print (song ["artists"])
         #print ("********************")
         #print (album_artist_ids) 
-        #print ("++++++++++++++++++++")
+        #sprint ("++++++++++++++++++++")
         song_duration = song["duration_ms"]
         album_total_duration += song_duration
         album_avg_duration += song_duration // album_number_songs
@@ -94,7 +94,7 @@ for album in album_ids:
         external = False
         external_number = 0
         external_artists = []
-        external_monthly_listeners = 0
+        external_monthly_followers = 0
         most_popular_id = album_artist_ids[0]
 
         if len(song_artists) != album_artist_number:
@@ -106,7 +106,7 @@ for album in album_ids:
                     external = True
                     external_number += 1
                     external_artists.append(artist["id"])
-                    external_monthly_listeners += sp.artist(artist["id"])["followers"]["total"]
+                    external_monthly_followers += sp.artist(artist["id"])["followers"]["total"]
 
 
         
