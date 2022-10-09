@@ -33,9 +33,17 @@ album_ids = list(dict.fromkeys(album_ids))
 for album in album_ids:
     album = sp.album(album_ids[0])
     
-    for arytist in album["artists"] :
-        artist_id = album["artists"][0]["id"] \
-    
+    album_artist_number = len(album["artists"])
+    album_artist_followers_total = 0 
+    album_artist_followers_avg = 0 
+    album_artist_popularity = 0
+     
+    for artist_partial in album["artists"] :
+        artist_id = artist_partial["id"] 
+        artist = sp.artist(artist_id)
+        album_artist_followers_total += artist["followers"]["total"]
+        album_artist_followers_avg += artist["followers"]["total"]/ album_artist_number
+        album_artists_popularity += artist["popularity"]/ album_artist_number
     
     
     album_type = album["album_type"]
