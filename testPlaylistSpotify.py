@@ -28,10 +28,16 @@ first_dataframe = pd.DataFrame ( )
 album_ids = list(dict.fromkeys(album_ids))
 
 
+# TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
+
 for album in album_ids:
     album = sp.album(album_ids[0])
     
-    artist_id = album["artists"][0]["id"] #puede haber + d 1 artista ¿ 
+    for arytist in album["artists"] :
+        artist_id = album["artists"][0]["id"] \
+    
+    
+    
     album_type = album["album_type"]
     album_pop = album["popularity"]
     album_market = album["available_markets"]
@@ -40,23 +46,53 @@ for album in album_ids:
     album_restrictions = "restrictions" in album.keys() #se podria añadir el tipo de restriccion
     album_number_songs = album["total_tracks"]
 
-    # Tracks (nº of tracks + length total length + avg length +  nº of explicit (igual mejor meter porcentaje de explicit?))
+    # Tracks (nº of tracks + length total length + avg length +   + avg popularity + min/max popularity  nº of explicit (igual mejor meter porcentaje de explicit?))
     # [artists + duration + explicit  + ext artists ]
 
     
-    tracks = []
+
+    album_length_ms = 0
+    album_number_explicit = 0   # buscar en funcion de que el album es explicit o no --------
+    album_avg_popularity = 0
+    album_max_popularity = 0
+    album_total_duration = 0
+    album_avg_duration = 0
+
+
     for track in album["tracks"]["items"]:
-        tracks.append([track["name"], track["duration_ms"], track["explicit"]])
-        print(tracks)
+        song = sp.track(track["id"])
+        
+        song_duration = song["duration_ms"]
+        album_total_duration += song_duration
+        album_avg_duration += song_duration // album_number_songs
+        
+        song_popularity = song["popularity"]
+        album_avg_popularity += (song_popularity/album_number_songs)
+        if song_popularity > album_max_popularity: album_max_popularity = song_popularity
+        
+        
+        
+        
+    
 
-    album_total_length = 0
-    nExplicit = 0
-    for i in range(0,len(tracks)):
-        album_total_length += tracks[i][1]
-        if tracks[i][2]: nExplicit+=1
+      
+    album_in_NA = False
+    album_in_CA = False
+    album_in_BR = False
+    album_in_CN = False
+    album_in_DE = False
+    album_in_ES = False
+    album_in_SA = False
+    album_in_UK = False
+    album_in_RU = False
+    album_in_MX = False
+        
+        
+        
 
-    album_prct_explicit = nExplicit / len(tracks)
-    album_avg_length = album_total_length // len(tracks) #Le he quitado decimales porque ya esta en milisegundos como para ponernos a pillar 6 decimales
+
+
+
 
     break
 
