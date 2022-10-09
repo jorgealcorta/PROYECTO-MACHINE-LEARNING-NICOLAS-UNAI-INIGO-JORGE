@@ -7,6 +7,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 #Authentication - without user
 
 initial_columns = ["artist_id", "album_type", "popularity", "number_markets", "release_date", "release_precision", "restrictions_bool", "total_tracks" ,"tracks_ids"]
+columns = ["number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision","restrictions","total_tracks","total_length","avg_popularity", "max_popularity"]
 
 cid = "a81a443313b743118c9d25e93533a5c2"
 secret = "3b77b9e8c7bb4b64a1cf47bbecd87451"
@@ -24,7 +25,7 @@ for track in sp.playlist_tracks(playlist_URI)["items"]:
     album = track["track"]["album"]["id"]
     album_ids.append(album)
     
-first_dataframe = pd.DataFrame ( )
+first_dataframe = pd.DataFrame ( columns= columns)
 album_ids = list(dict.fromkeys(album_ids))
 
 
@@ -51,7 +52,6 @@ for album in album_ids:
     
     
     album_type = album["album_type"]
-    album_pop = album["popularity"]
     album_market = album["available_markets"]
     album_release = album["release_date"]
     album_precision = album["release_date_precision"]
@@ -62,8 +62,6 @@ for album in album_ids:
     # [artists + duration + explicit  + ext artists ]
 
     
-
-    album_length_ms = 0
     album_number_explicit = 0   # buscar en funcion de que el album es explicit o no --------
     album_avg_popularity = 0
     album_max_popularity = 0
@@ -108,8 +106,11 @@ for album in album_ids:
                     external_artists.append(artist["id"])
                     external_monthly_followers += sp.artist(artist["id"])["followers"]["total"]
 
-
-        
+    row = [album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity]
+    
+    #["number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date"
+    # ,"release_precision","restrictions---------","total_tracks","total_length","avg_popularity", "max_popularity","markets_number"
+    first_dataframe = first_dataframe.append(row)
         
         
         
@@ -136,6 +137,9 @@ for album in album_ids:
 
 
     break
+
+
+print(first_dataframe)
 
 
 
