@@ -31,19 +31,23 @@ album_ids = list(dict.fromkeys(album_ids))
 # TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
 
 for album in album_ids:
-    album = sp.album(album_ids[0])
-    
+    #album = sp.album(album_ids[0])
+    album = sp.album("0ofRuEkUDbOtzmxqeZs8Pw")
     album_artist_number = len(album["artists"])
     album_artist_followers_total = 0 
     album_artist_followers_avg = 0 
     album_artist_popularity = 0
+    #lista con los ids de los artistas
+    album_artist_ids = []
+
      
     for artist_partial in album["artists"] :
         artist_id = artist_partial["id"] 
         artist = sp.artist(artist_id)
         album_artist_followers_total += artist["followers"]["total"]
         album_artist_followers_avg += artist["followers"]["total"]/ album_artist_number
-        album_artists_popularity += artist["popularity"]/ album_artist_number
+        album_artist_popularity += artist["popularity"]/ album_artist_number
+        album_artist_ids.append(artist_id)
     
     
     album_type = album["album_type"]
@@ -69,7 +73,11 @@ for album in album_ids:
 
     for track in album["tracks"]["items"]:
         song = sp.track(track["id"])
-        
+
+        #print (song ["artists"])
+        #print ("********************")
+        #print (album_artist_ids) 
+        #print ("++++++++++++++++++++")
         song_duration = song["duration_ms"]
         album_total_duration += song_duration
         album_avg_duration += song_duration // album_number_songs
@@ -77,6 +85,31 @@ for album in album_ids:
         song_popularity = song["popularity"]
         album_avg_popularity += (song_popularity/album_number_songs)
         if song_popularity > album_max_popularity: album_max_popularity = song_popularity
+
+
+
+        song_artists = song ["artists"]
+        
+    
+        external = False
+        external_number = 0
+        external_artists = []
+        external_monthly_listeners = 0
+        most_popular_id = album_artist_ids[0]
+
+        if len(song_artists) != album_artist_number:
+            
+            for artist in song_artists:
+                if artist["popularity"] > sp.artist(most_popular_id)["popularity"]: most_popular_id = artist["id"]
+
+                if artist["id"] not in album_artist_ids:
+                    external = True
+                    external_number += 1
+                    external_artists.append(artist["id"])
+                    external_monthly_listeners += sp.artist(artist["id"])["followers"]["total"]
+
+
+        
         
         
         
