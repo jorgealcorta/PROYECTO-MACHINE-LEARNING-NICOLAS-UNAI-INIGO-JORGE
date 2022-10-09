@@ -85,26 +85,36 @@ for album in album_ids:
         if song_popularity > album_max_popularity: album_max_popularity = song_popularity
 
 
+        #id song artisis
+        external_artists_id = []
+        for artist in song["artists"]:
+            external_artists_id.append(artist["id"])
+        
+        #borrar los artistas de la cancion que aparecen en el album
+        for artist in album_artist_ids:
+            if artist in external_artists_id:
+                external_artists_id.remove(artist)
 
-        song_artists = song ["artists"]
+        
+        #extraer todo los datos de los artistas de la cancion
+        external_artists = []
+        for artist in song["artists"]:
+            external_artists.append(sp.artist(artist["id"]))
+
         
     
-        external = False
-        external_number = 0
-        external_artists = []
+        
+        external_number = len(external_artists_id)
+        external = (external_number != 0)
         external_monthly_followers = 0
-        most_popular_id = album_artist_ids[0]
+        most_popular_artist = album_artist_ids[0]
 
-        if len(song_artists) != album_artist_number:
-            
-            for artist in song_artists:
-                if artist["popularity"] > sp.artist(most_popular_id)["popularity"]: most_popular_id = artist["id"]
+        if external:
+            for artist in external_artists:
 
-                if artist["id"] not in album_artist_ids:
-                    external = True
-                    external_number += 1
-                    external_artists.append(artist["id"])
-                    external_monthly_followers += sp.artist(artist["id"])["followers"]["total"]
+                if artist["popularity"] > sp.artist(most_popular_artist)["popularity"]: most_popular_artist = artist["id"]
+                
+                external_monthly_followers += artist["followers"]["total"]
 
     row = [album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity]
     
