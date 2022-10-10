@@ -130,7 +130,8 @@ for album in album_ids:
 
     #["number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date"
     # ,"release_precision","restrictions---------","total_tracks","total_length","avg_popularity", "max_popularity","markets_number"
-    first_dataframe = first_dataframe.append(row)
+    first_dataframe.loc[len(first_dataframe.index)] = row
+
 
 
 
@@ -156,7 +157,7 @@ for album in album_ids:
 
 
 
-    break
+    #break
 
 
 print(first_dataframe)
