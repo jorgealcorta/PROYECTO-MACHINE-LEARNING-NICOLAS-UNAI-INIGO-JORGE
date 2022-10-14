@@ -149,37 +149,28 @@ for album in album_ids:
 
                 external_monthly_followers += artist["followers"]["total"]
 
-    row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity]
-
-    #["number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date"
-    # ,"release_precision","restrictions---------","total_tracks","total_length","avg_popularity", "max_popularity","markets_number"
-    first_dataframe.loc[len(first_dataframe.index)] = row
-
-
-
-
-
-
-
-
-    album_in_NA = False
-    album_in_CA = False
-    album_in_BR = False
-    album_in_CN = False
-    album_in_DE = False
-    album_in_ES = False
-    album_in_SA = False
-    album_in_UK = False
-    album_in_RU = False
-    album_in_MX = False
+    markets = album["available_markets"]
+    album_number_markets = len(markets)
+    
+    album_in_NA = 'NA' in markets
+    album_in_CA = 'CA' in markets
+    album_in_BR = 'BR' in markets
+    album_in_CN = 'CN' in markets
+    album_in_DE = 'DE' in markets
+    album_in_ES = 'ES' in markets
+    album_in_SA = 'SA' in markets
+    album_in_UK = 'UK' in markets
+    album_in_RU = 'RU' in markets
+    album_in_MX = 'MX' in markets
 
 
+    
 
 
     counter += 1
-    print("album scraped: " + str(counter) + " of " + str(len(album_ids)))
-
-
+    
+    row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
+    first_dataframe.loc[len(first_dataframe.index)] = row
 
     break
 
