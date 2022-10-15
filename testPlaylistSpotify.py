@@ -7,11 +7,16 @@ from spotipy.oauth2 import SpotifyClientCredentials
 #Authentication - without user
 
 #initial_columns = ["artist_id", "album_type", "popularity", "number_markets", "release_date", "release_precision", "restrictions_bool", "total_tracks" ,"tracks_ids"]
-columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
-"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity"]
+
+# nombre de las columnas del dataframe: album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX
+columns = ["album_name", "album_artist_number", "album_artist_followers_total", "album_artist_followers_avg", "album_artist_popularity", "album_type", "album_release", "album_precision", "album_restrictions", "album_number_songs", "album_total_duration", "album_avg_popularity", "album_max_popularity", "album_number_markets", "album_in_NA", "album_in_CA", "album_in_BR", "album_in_CN", "album_in_DE", "album_in_ES", "album_in_SA", "album_in_UK", "album_in_RU", "album_in_MX"] 
+#columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
+#"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity"]
 
 cid = "a81a443313b743118c9d25e93533a5c2"
 secret = "3b77b9e8c7bb4b64a1cf47bbecd87451"
+
+
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
@@ -63,6 +68,8 @@ album_ids = list(dict.fromkeys(get_albums_from_playlists(playlists_URI)))     #d
 # TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
 
 counter = 0
+
+print("Total albums to scrape: ", len(album_ids))
 
 for album in album_ids:
     #album = sp.album(album_ids[0])
@@ -149,8 +156,11 @@ for album in album_ids:
 
                 external_monthly_followers += artist["followers"]["total"]
 
+   
+
     markets = album["available_markets"]
     album_number_markets = len(markets)
+    print("number of markets: ", album_number_markets)
     
     album_in_NA = 'NA' in markets
     album_in_CA = 'CA' in markets
@@ -163,16 +173,24 @@ for album in album_ids:
     album_in_RU = 'RU' in markets
     album_in_MX = 'MX' in markets
 
-
     
-
+    
 
     counter += 1
     
     row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
+    
+    
     first_dataframe.loc[len(first_dataframe.index)] = row
 
-    break
+    print("Album: ", album_name, " done")
+
+    if counter == 100: break
 
 
 print(first_dataframe)
+
+
+#Export to csv
+first_dataframe.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
+
