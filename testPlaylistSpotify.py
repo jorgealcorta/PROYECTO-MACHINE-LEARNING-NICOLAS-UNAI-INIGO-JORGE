@@ -149,7 +149,7 @@ for album in album_ids:
     markets = album["available_markets"]
     album_number_markets = len(markets)
     
-    album_in_NA = 'NA' in markets
+    album_in_NA = 'US' in markets
     album_in_CA = 'CA' in markets
     album_in_BR = 'BR' in markets
     album_in_CN = 'CN' in markets
