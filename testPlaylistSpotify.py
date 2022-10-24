@@ -5,19 +5,12 @@ import pandas as pd
 import numpy as np
 from spotipy.oauth2 import SpotifyClientCredentials
 
+#maximum number of albums to scrap
+max = 10
 
-<<<<<<< Updated upstream
-#initial_columns = ["artist_id", "album_type", "popularity", "number_markets", "release_date", "release_precision", "restrictions_bool", "total_tracks" ,"tracks_ids"]
-
-# nombre de las columnas del dataframe: album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX
-columns = ["album_name", "album_artist_number", "album_artist_followers_total", "album_artist_followers_avg", "album_artist_popularity", "album_type", "album_release", "album_precision", "album_restrictions", "album_number_songs", "album_total_duration", "album_avg_popularity", "album_max_popularity", "album_number_markets", "album_in_NA", "album_in_CA", "album_in_BR", "album_in_CN", "album_in_DE", "album_in_ES", "album_in_SA", "album_in_UK", "album_in_RU", "album_in_MX"] 
-#columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
-#"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity"]
-=======
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", "NA_market", "CA_market", "BR_market", "CN_market",
 "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
->>>>>>> Stashed changes
 
 #Authentication - user 
 cid = "a81a443313b743118c9d25e93533a5c2"
@@ -147,15 +140,9 @@ for album in album_ids:
 
         if artist["popularity"] > album_colab_max_pop : album_colab_max_pop = artist["popularity"]
         
-        
-        
-
-
-   
 
     markets = album["available_markets"]
     album_number_markets = len(markets)
-    print("number of markets: ", album_number_markets)
     
     album_in_NA = 'NA' in markets
     album_in_CA = 'CA' in markets
@@ -166,43 +153,24 @@ for album in album_ids:
     album_in_SA = 'SA' in markets
     album_in_UK = 'UK' in markets
     album_in_RU = 'RU' in markets
-<<<<<<< Updated upstream
     album_in_MX = 'MX' in markets
 
-    
-    
-
-    counter += 1
-    
-    row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
-    
-    
-    first_dataframe.loc[len(first_dataframe.index)] = row
-
-    print("Album: ", album_name, " done")
-
-    if counter == 100: break
-
-
-print(first_dataframe)
-
-
-#Export to csv
-first_dataframe.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
-
-=======
-    album_in_MX = 'MX' in markets 
-
-
-    counter += 1
+   
     
     row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, 
     album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_colab_number, album_colab_max_pop, album_colab_avg_pop, 
     album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
+     
+    
+    if len(first_dataframe.index)>=max: break
     
     first_dataframe.loc[len(first_dataframe.index)] = row
     
-    break
+    if not len(first_dataframe.index)%10: print(f"Scraped {len(first_dataframe.index)} albums.")
+
+
 
 print(np.shape(first_dataframe))
->>>>>>> Stashed changes
+
+#first_dataframe.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
+
