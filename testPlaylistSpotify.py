@@ -10,7 +10,7 @@ from dataCollection import *
 
 
 #maximum number of albums to scrap
-max = 10
+max = 3000
 
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
@@ -47,9 +47,10 @@ rap_dumpster = "https://open.spotify.com/playlist/6c1c8Hxdh6y80pckANQGan?si=cc23
 
 
 
-playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop, best_rap_music_ever, hip_hop_mano_emoji, best_hip_hop_of_all_time]
+# playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop, best_rap_music_ever, hip_hop_mano_emoji, best_hip_hop_of_all_time]
 # playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists]
 
+playlists = [rap_caviar]
 
 dataset = generate_dataset(authentication, playlists, columns, max)
 #print(shape(dataset))
