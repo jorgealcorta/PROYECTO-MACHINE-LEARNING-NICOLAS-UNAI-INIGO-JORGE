@@ -9,8 +9,13 @@ from spotipy.oauth2 import SpotifyClientCredentials
 max = 10
 
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
-"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", "NA_market", "CA_market", "BR_market", "CN_market",
-"DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
+"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
+"NA_market", "CA_market", "BR_market", "CN_market", "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
+
+columns_to_follow = ["avg_popularity", "max_popularity"]
+columns_variables = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
+"restrictions","total_tracks","total_length_min","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
+"NA_market", "CA_market", "BR_market", "CN_market", "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
 
 #Authentication - user 
 cid = "a81a443313b743118c9d25e93533a5c2"
@@ -156,7 +161,6 @@ for album in album_ids:
     album_in_MX = 'MX' in markets
 
    
-    
     row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, 
     album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_colab_number, album_colab_max_pop, album_colab_avg_pop, 
     album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
