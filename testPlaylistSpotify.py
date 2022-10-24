@@ -2,17 +2,24 @@
 from tkinter import NE
 import spotipy
 import pandas as pd
+import numpy as np
 from spotipy.oauth2 import SpotifyClientCredentials
 
-#Authentication - without user
 
+<<<<<<< Updated upstream
 #initial_columns = ["artist_id", "album_type", "popularity", "number_markets", "release_date", "release_precision", "restrictions_bool", "total_tracks" ,"tracks_ids"]
 
 # nombre de las columnas del dataframe: album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX
 columns = ["album_name", "album_artist_number", "album_artist_followers_total", "album_artist_followers_avg", "album_artist_popularity", "album_type", "album_release", "album_precision", "album_restrictions", "album_number_songs", "album_total_duration", "album_avg_popularity", "album_max_popularity", "album_number_markets", "album_in_NA", "album_in_CA", "album_in_BR", "album_in_CN", "album_in_DE", "album_in_ES", "album_in_SA", "album_in_UK", "album_in_RU", "album_in_MX"] 
 #columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 #"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity"]
+=======
+columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
+"restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", "NA_market", "CA_market", "BR_market", "CN_market",
+"DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
+>>>>>>> Stashed changes
 
+#Authentication - user 
 cid = "a81a443313b743118c9d25e93533a5c2"
 secret = "3b77b9e8c7bb4b64a1cf47bbecd87451"
 
@@ -20,8 +27,8 @@ secret = "3b77b9e8c7bb4b64a1cf47bbecd87451"
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-#albums to scrape data from:
-
+#playlist to scrape data from:
+test_playlist = "https://open.spotify.com/playlist/03VUXoB1kyUKVS2DSlHdtk?si=45574b8f384b4b6d"
 rap_caviar = "https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd"
 a_team = "https://open.spotify.com/playlist/0v4l2wuBE1OvKQxAJrHjlP"
 training_montage = "https://open.spotify.com/playlist/7lXPmVSLwJ3LsUUM4fSkSq"
@@ -30,7 +37,7 @@ rap_and_things = "https://open.spotify.com/playlist/6XDVMtbaCVYVMIumo35QAR"
 mumble_rap = "https://open.spotify.com/playlist/7lA28B6lUp5NRNe6exWKda"
 hiphop = "https://open.spotify.com/playlist/219Diy2i20SU3c8LFEYjkN?si=9UESq3drRSejRlebTXZL5A&utm_source=whatsapp&nd=1"
 
-playlists = [rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop]
+playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop]
 playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists]
 
 
@@ -108,14 +115,13 @@ for album in album_ids:
     album_max_popularity = 0
     album_total_duration = 0
     album_avg_duration = 0
+    
+    external_artist_id = []
 
     for track in album["tracks"]["items"]:
         song = sp.track(track["id"])
 
-        #print (song ["artists"])
-        #print ("********************")
-        #print (album_artist_ids)
-        #sprint ("++++++++++++++++++++")
+
         song_duration = song["duration_ms"]
         album_total_duration += song_duration // (1000 * 60)    #minutes
         album_avg_duration += song_duration // album_number_songs
@@ -125,36 +131,25 @@ for album in album_ids:
         if song_popularity > album_max_popularity: album_max_popularity = song_popularity
 
 
-        #id song artisis
-        external_artists_id = []
+        #add external artisst of the song 
         for artist in song["artists"]:
-            external_artists_id.append(artist["id"])
-
-        #borrar los artistas de la cancion que aparecen en el album
-        for artist in album_artist_ids:
-            if artist in external_artists_id:
-                external_artists_id.remove(artist)
+            if(artist["id"] not in album_artist_ids):  external_artist_id.append(artist["id"])
 
 
-        #extraer todo los datos de los artistas de la cancion
-        external_artists = []
-        for artist in song["artists"]:
-            external_artists.append(sp.artist(artist["id"]))
+    album_colab_max_pop = 0
+    album_colab_avg_pop = 0
+    album_colab_number = len(external_artist_id)
+    
+    for artist_id in external_artist_id:
+        
+        artist = sp.artist(artist_id)
+        album_colab_avg_pop = artist["popularity"] / len(external_artist_id)
 
+        if artist["popularity"] > album_colab_max_pop : album_colab_max_pop = artist["popularity"]
+        
+        
+        
 
-
-
-        external_number = len(external_artists_id)
-        external = (external_number != 0)
-        external_monthly_followers = 0
-        most_popular_artist = album_artist_ids[0]
-
-        if external:
-            for artist in external_artists:
-
-                if artist["popularity"] > sp.artist(most_popular_artist)["popularity"]: most_popular_artist = artist["id"]
-
-                external_monthly_followers += artist["followers"]["total"]
 
    
 
@@ -171,6 +166,7 @@ for album in album_ids:
     album_in_SA = 'SA' in markets
     album_in_UK = 'UK' in markets
     album_in_RU = 'RU' in markets
+<<<<<<< Updated upstream
     album_in_MX = 'MX' in markets
 
     
@@ -194,3 +190,19 @@ print(first_dataframe)
 #Export to csv
 first_dataframe.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
 
+=======
+    album_in_MX = 'MX' in markets 
+
+
+    counter += 1
+    
+    row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, 
+    album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_colab_number, album_colab_max_pop, album_colab_avg_pop, 
+    album_number_markets, album_in_NA, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
+    
+    first_dataframe.loc[len(first_dataframe.index)] = row
+    
+    break
+
+print(np.shape(first_dataframe))
+>>>>>>> Stashed changes
