@@ -1,6 +1,6 @@
-album_name,number_of_artists,artist_followers_total,artist_followers_average,artist_popularity,type,release_date,release_precision,restrictions,total_tracks,total_length_min,avg_popularity,max_popularity,number_of_collabs,Max_popularity_collab,Avg_popularity_collab,number_of_markets,NA_market,CA_market,BR_market,CN_market,DE_market,ES_market,SA_market,UK_market,RU_market,MX_markets
+album_name,number_of_artists,artist_followers_total,artist_followers_average,artist_popularity,type,release_date,release_precision,restrictions,total_tracks,total_length_min,avg_popularity,max_popularity,number_of_collabs,Max_popularity_collab,Avg_popularity_collab,number_of_markets,US_market,CA_market,BR_market,CN_market,DE_market,ES_market,SA_market,UK_market,RU_market,MX_markets
 BBO,2,28305,14152.5,61.0,album,2022-09-15,day,False,11,22,59.63636363636364,64,5,69,10.2,183,True,True,True,False,True,True,True,False,False,True
-Man On The Moon: The End Of Day,1,6086306,6086306.0,83.0,album,2009-09-15,day,False,15,51,50.26666666666667,74,7,92,6.714285714285714,3,False,True,False,False,False,False,False,False,False,True
+Man On The Moon: The End Of Day,1,6086306,6086306.0,83.0,album,2009-09-15,day,False,15,51,50.26666666666667,74,7,92,6.714285714285714,3,True,True,False,False,False,False,False,False,False,True
 The Hour Of Reprisal,1,102246,102246.0,51.0,album,2008-09-16,day,False,18,51,0.0,0,14,70,5.0,0,False,False,False,False,False,False,False,False,False,False
 The People's Champ,1,124542,124542.0,48.0,single,2013-02-20,day,False,1,3,10.0,10,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
 The Hits Collection Volume One (Deluxe),1,7684555,7684555.0,84.0,compilation,2010-11-22,day,False,19,62,36.26315789473684,54,7,92,11.0,166,True,True,True,False,True,True,False,False,False,True
@@ -9,4 +9,3 @@ Goblin,1,9736800,9736800.0,85.0,album,2011-05-09,day,False,18,74,0.0,0,10,84,4.8
 CupaTea,1,3020,3020.0,25.0,album,2010-11-11,day,False,21,67,12.095238095238095,39,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
 Ill Mind of Hopsin 5 - Single,1,2352091,2352091.0,63.0,single,2012-07-17,day,False,1,4,59.0,59,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
 Ill Mind of Hopsin 4,1,2352091,2352091.0,63.0,single,2011-07-18,day,False,1,4,45.0,45,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
-Notes From The Underground,1,2169990,2169990.0,70.0,album,2012-01-01,day,False,11,33,49.54545454545455,64,0,0,0.0,180,True,True,True,False,True,True,True,False,False,True
