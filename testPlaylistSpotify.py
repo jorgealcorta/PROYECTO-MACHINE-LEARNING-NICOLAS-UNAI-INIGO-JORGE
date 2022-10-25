@@ -10,8 +10,7 @@ from dataCollection import *
 
 
 #maximum number of albums to scrap
-max = 25
-
+max = 400
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
 "US_market", "CA_market", "BR_market", "CN_market", "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
@@ -23,7 +22,7 @@ columns_variables = ["album_name", "number_of_artists", "artist_followers_total"
 columns_date = []
 columns_categorical = ["type", ]
 
-authentication = {"cid": "a81a443313b743118c9d25e93533a5c2", "secret": "3b77b9e8c7bb4b64a1cf47bbecd87451"}
+authentication = {"cid": "b589320bba584c588e4bd1cae505b4fb", "secret": "8c0f3d1b77fa4404b49c06df29d1c64f"}
 
 
 
@@ -47,11 +46,14 @@ rap_dumpster = "https://open.spotify.com/playlist/6c1c8Hxdh6y80pckANQGan?si=cc23
 
 
 
-playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop, best_rap_music_ever, hip_hop_mano_emoji, best_hip_hop_of_all_time]
+# playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists]
+
+#playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop, best_rap_music_ever, hip_hop_mano_emoji, best_hip_hop_of_all_time]
+playlists = [rap_and_things]
 
 dataset = generate_dataset(authentication, playlists, columns, max)
 
 print(np.shape(dataset))
 
-# dataset.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
+dataset.to_csv('rap_and_things_dataframe.csv', index=False, encoding='utf-8')
 
