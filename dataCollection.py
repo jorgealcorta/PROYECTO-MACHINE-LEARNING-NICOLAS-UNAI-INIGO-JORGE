@@ -35,7 +35,7 @@ def get_albums_from_playlists(playlist_uris, sp):
 
 
 
-def generate_dataset(authentication, playlists, columns, max):
+def generate_dataset(sp,authentication, playlists, columns, max):
     
     
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
@@ -51,11 +51,15 @@ def generate_dataset(authentication, playlists, columns, max):
 
     counter = 0
 
-    print("Total albums to scrape: ", len(album_ids))
+    
+    number_of_albums = len(album_ids)
+    print("Total albums to scrape: ", number_of_albums)
 
     for album in album_ids:
         #album = sp.album(album_ids[0])
+        print("test 0")
         album = sp.album(album)
+        print("test 0.25")
         album_name = album["name"]
         album_artist_number = len(album["artists"])
         album_artist_followers_total = 0
@@ -64,6 +68,7 @@ def generate_dataset(authentication, playlists, columns, max):
         #lista con los ids de los artistas
         album_artist_ids = []
 
+        print("test 0.5")
 
         for artist_partial in album["artists"] :
             artist_id = artist_partial["id"]
@@ -73,6 +78,7 @@ def generate_dataset(authentication, playlists, columns, max):
             album_artist_popularity += artist["popularity"]/ album_artist_number
             album_artist_ids.append(artist_id)
 
+        print("test 1")
 
         album_type = album["album_type"]
         album_market = album["available_markets"]
@@ -84,7 +90,7 @@ def generate_dataset(authentication, playlists, columns, max):
         # Tracks (nº of tracks + length total length + avg length +   + avg popularity + min/max popularity  nº of explicit (igual mejor meter porcentaje de explicit?))
         # [artists + duration + explicit  + ext artists ]
 
-
+        print("test 2")
         album_number_explicit = 0   # buscar en funcion de que el album es explicit o no --------
         album_avg_popularity = 0
         album_max_popularity = 0
@@ -110,7 +116,7 @@ def generate_dataset(authentication, playlists, columns, max):
             for artist in song["artists"]:
                 if(artist["id"] not in album_artist_ids):  external_artist_id.append(artist["id"])
 
-
+        print("test 3")
         album_colab_max_pop = 0
         album_colab_avg_pop = 0
         album_colab_number = len(external_artist_id)
@@ -122,7 +128,7 @@ def generate_dataset(authentication, playlists, columns, max):
 
             if artist["popularity"] > album_colab_max_pop : album_colab_max_pop = artist["popularity"]
             
-
+        print("test 4")
         markets = album["available_markets"]
         album_number_markets = len(markets)
         
@@ -137,16 +143,21 @@ def generate_dataset(authentication, playlists, columns, max):
         album_in_RU = 'RU' in markets
         album_in_MX = 'MX' in markets
 
-    
+        print("test 5")
         row = [album_name, album_artist_number, album_artist_followers_total, album_artist_followers_avg, album_artist_popularity, album_type, album_release, album_precision, album_restrictions, 
         album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_colab_number, album_colab_max_pop, album_colab_avg_pop, 
         album_number_markets, album_in_US, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
+
         
         
-        if len(dataframe.index)>=max: break
+        print("albums scraped: ", counter, " / ", print("Total albums to scrape: ", len(album_ids)))
+
+        if counter >= max: break
         
-        dataframe.loc[len(dataframe.index)] = row
+        dataframe.loc[counter] = row
         
-        if not len(dataframe.index)%10: print(f"Scraped {len(dataframe.index)} albums.")
+        if not counter%10: print(f"Scraped {counter} albums.")
+        
+        counter += 1
 
     return dataframe
