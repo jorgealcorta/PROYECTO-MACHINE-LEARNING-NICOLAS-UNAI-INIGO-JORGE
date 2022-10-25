@@ -10,7 +10,7 @@ from dataCollection import *
 
 
 #maximum number of albums to scrap
-max = 10
+max = 25
 
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
@@ -53,5 +53,5 @@ dataset = generate_dataset(authentication, playlists, columns, max)
 
 print(np.shape(dataset))
 
-dataset.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
+# dataset.to_csv('first_dataframe.csv', index=False, encoding='utf-8')
 
