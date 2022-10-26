@@ -22,7 +22,17 @@ columns_variables = ["album_name", "number_of_artists", "artist_followers_total"
 columns_date = []
 columns_categorical = ["type", ]
 
-authentication = {"cid": "b589320bba584c588e4bd1cae505b4fb", "secret": "8c0f3d1b77fa4404b49c06df29d1c64f"}
+#spotify credentials from file
+credentials = pd.read_csv("credentials.csv")
+
+
+client_id = credentials["client_id"][0]
+client_secret = credentials["client_secret"][0]
+
+authentication = {"cid":client_id, "secret":client_secret}
+
+
+#authentication = {"cid": "b589320bba584c588e4bd1cae505b4fb", "secret": "8c0f3d1b77fa4404b49c06df29d1c64f"}
 
 
 
