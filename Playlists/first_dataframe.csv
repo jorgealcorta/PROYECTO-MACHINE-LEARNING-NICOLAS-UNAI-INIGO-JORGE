@@ -1,0 +1,2 @@
+album_name,number_of_artists,artist_followers_total,artist_followers_average,artist_popularity,type,release_date,release_precision,restrictions,total_tracks,total_length_min,avg_popularity,max_popularity,number_of_collabs,Max_popularity_collab,Avg_popularity_collab,number_of_markets,US_market,CA_market,BR_market,CN_market,DE_market,ES_market,SA_market,UK_market,RU_market,MX_markets
+BBO,2,28374,14187.0,60.5,album,2022-09-15,day,False,11,22,59.54545454545455,64,5,68,10.2,183,True,True,True,False,True,True,True,False,False,True
