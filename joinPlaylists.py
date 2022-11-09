@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-path = "/Users/unaiigartua/git/PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/Playlists/"
+path = "Playlists/"
 
 files = os.listdir(path)
 
@@ -14,5 +14,5 @@ df = pd.concat(dataframes)
 
 df = df.drop_duplicates()
 
-df.to_csv("/Users/unaiigartua/git/PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/AllPlaylists.csv", index=False)
+df.to_csv("Playlists/AllPlaylists.csv", index=False)
 

@@ -59,11 +59,11 @@ rap_dumpster = "https://open.spotify.com/playlist/6c1c8Hxdh6y80pckANQGan?si=cc23
 # playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists]
 
 #playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop, best_rap_music_ever, hip_hop_mano_emoji, best_hip_hop_of_all_time]
-playlists = [rap_and_things]
+playlists = [lyrical_rap]
 
 dataset = generate_dataset(authentication, playlists, columns, max)
 
 print(np.shape(dataset))
 
-dataset.to_csv('rap_and_things.csv', index=False, encoding='utf-8')
+dataset.to_csv('Playlists/lyrical_rap.csv', index=False, encoding='utf-8')
 
