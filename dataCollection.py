@@ -50,7 +50,7 @@ def generate_dataset(authentication, playlists, columns, max):
 
     # TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
 
-    counter = 0
+    counter = 1
 
     
     number_of_albums = len(album_ids)
@@ -149,7 +149,6 @@ def generate_dataset(authentication, playlists, columns, max):
         
         dataframe.loc[counter] = row
         
-        if not counter%5: time.sleep(35)
         
         counter += 1
         

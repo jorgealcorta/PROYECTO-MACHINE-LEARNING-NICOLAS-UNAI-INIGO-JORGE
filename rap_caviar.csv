@@ -1,0 +1,45 @@
+album_name,number_of_artists,artist_followers_total,artist_followers_average,artist_popularity,type,release_date,release_precision,restrictions,total_tracks,total_length_min,avg_popularity,max_popularity,number_of_collabs,Max_popularity_collab,Avg_popularity_collab,number_of_markets,US_market,CA_market,BR_market,CN_market,DE_market,ES_market,SA_market,UK_market,RU_market,MX_markets
+Her Loss,2,80381912,40190956.0,93.0,album,2022-11-04,day,False,16,51,83.375,88,1,87,87.0,182,True,True,True,False,True,True,True,False,False,True
+Just Wanna Rock,1,13967565,13967565.0,84.0,single,2022-10-17,day,False,1,2,85.0,85,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Aston Martin Truck,1,8533606,8533606.0,79.0,single,2022-10-21,day,False,1,3,76.0,76,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+No More Leaks,1,1823659,1823659.0,80.0,single,2022-10-14,day,False,4,7,70.5,76,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+It's Only Me,1,12002720,12002720.0,89.0,album,2022-10-14,day,False,23,53,73.04347826086955,81,8,87,8.75,182,True,True,True,False,True,True,True,False,False,True
+Only Built For Infinity Links,2,7359731,3679865.5,77.5,album,2022-10-07,day,False,18,50,65.16666666666667,78,7,83,10.857142857142858,182,True,True,True,False,True,True,True,False,False,True
+Ballin,1,6840488,6840488.0,80.0,single,2022-11-03,day,False,1,2,67.0,67,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+In My Head,1,26276273,26276273.0,88.0,single,2022-10-28,day,False,1,3,83.0,83,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Stop Breathing,1,8533606,8533606.0,79.0,single,2022-09-30,day,False,1,1,78.0,78,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Kutthroat Bill: Vol. 1,1,8637010,8637010.0,81.0,album,2022-10-28,day,False,19,42,59.21052631578947,72,4,47,11.75,182,True,True,True,False,True,True,True,False,False,True
+Ain’t Safe (feat. Don Toliver),2,10401351,5200675.5,79.0,single,2022-10-28,day,False,1,2,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Who is Nardo Wick?? (Deluxe),1,473782,473782.0,73.0,album,2022-10-14,day,False,31,68,39.774193548387096,73,12,90,5.166666666666667,183,True,True,True,False,True,True,True,False,False,True
+Blackout,1,473601,473601.0,67.0,album,2022-10-28,day,False,10,19,50.699999999999996,64,1,32,32.0,183,True,True,True,False,True,True,True,False,False,True
+Back End,1,59973,59973.0,58.0,single,2022-10-07,day,False,1,2,65.0,65,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+The Melodic Blue (Deluxe),1,1147039,1147039.0,79.0,album,2022-10-28,day,False,26,66,57.84615384615383,72,8,87,10.5,183,True,True,True,False,True,True,True,False,False,True
+BET,1,4579258,4579258.0,75.0,single,2022-10-14,day,False,1,2,71.0,71,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Bag Talk,1,8547634,8547634.0,82.0,single,2022-10-28,day,False,1,2,73.0,73,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Take Shots (feat. Tory Lanez),1,6840488,6840488.0,80.0,single,2022-10-21,day,False,1,4,72.0,72,1,80,80.0,182,True,True,True,False,True,True,True,False,False,True
+My Friends (feat. Lil Durk),3,10116541,3372180.333333333,77.66666666666667,single,2022-10-05,day,False,1,2,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+I Never Felt Nun,1,310979,310979.0,71.0,album,2022-09-16,day,False,21,45,51.952380952380956,75,5,87,14.0,182,True,True,True,False,True,True,True,False,False,True
+Blow,1,3247084,3247084.0,76.0,single,2022-09-22,day,False,1,3,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+I’m So Awesome,1,8637010,8637010.0,81.0,single,2022-09-30,day,False,3,7,59.0,70,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+It's Not Me It's You (Deluxe),1,836793,836793.0,66.0,album,2022-10-07,day,False,16,32,40.4375,69,8,83,7.625,183,True,True,True,False,True,True,True,False,False,True
+Nothing Changed,2,7359731,3679865.5,77.5,single,2022-09-30,day,False,1,3,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Ice Spice,1,5270461,5270461.0,76.0,single,2022-11-04,day,False,1,3,64.0,64,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Tomorrow 2 (with Cardi B),2,20689969,10344984.5,73.5,single,2022-09-23,day,False,1,3,81.0,81,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+777,1,904255,904255.0,71.0,album,2022-03-25,day,False,13,25,46.92307692307691,69,6,90,13.5,183,True,True,True,False,True,True,True,False,False,True
+Poland,1,8447140,8447140.0,77.0,single,2022-10-11,day,False,1,1,86.0,86,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Walk/Spin,1,8637010,8637010.0,81.0,single,2022-09-16,day,False,2,4,69.5,76,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+2 Mins of Pain (feat. Alborosie),1,1133157,1133157.0,76.0,single,2022-09-07,day,False,1,2,73.0,73,1,60,60.0,183,True,True,True,False,True,True,True,False,False,True
+Ghetto Superstar (feat. G Herbo & Doe Boy),2,8725623,4362811.5,69.5,single,2022-09-08,day,False,1,4,72.0,72,1,72,72.0,182,True,True,True,False,True,True,True,False,False,True
+Gucci Flow,2,4580500,2290250.0,67.0,single,2022-10-14,day,False,1,2,67.0,67,0,0,0.0,168,True,True,True,False,True,True,True,False,False,True
+CODE (feat. Moneybagg Yo),2,5736212,2868106.0,76.5,single,2022-08-26,day,False,1,3,73.0,73,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Too Much (feat. Moneybagg Yo),2,4317826,2158913.0,72.5,single,2022-09-02,day,False,1,3,68.0,68,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Survivor’s Remorse: A Side,1,1648465,1648465.0,72.0,album,2022-10-07,day,False,12,28,51.833333333333336,68,7,87,11.857142857142858,182,True,True,True,False,True,True,True,False,False,True
+B.R.O. (Better Ride Out) [feat. Roddy Ricch],2,15374094,7687047.0,79.5,single,2022-10-07,day,False,1,2,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Bye Bye,2,60759923,30379961.5,85.0,single,2022-10-14,day,False,1,1,84.0,84,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Can't Stop Won't Stop (feat. Kodak Black),1,84200,84200.0,56.0,single,2022-07-22,day,False,1,2,71.0,71,1,81,81.0,183,True,True,True,False,True,True,True,False,False,True
+No Pressure (Pt. 2),1,110416,110416.0,57.0,album,2022-09-23,day,False,10,20,40.4,61,7,71,7.857142857142857,182,True,True,True,False,True,True,True,False,False,True
+Look Ma I Did It,2,4523175,2261587.5,62.5,single,2022-09-02,day,False,1,3,67.0,67,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Queen Radio: Volume 1,1,26458928,26458928.0,85.0,album,2022-08-26,day,False,28,92,32.285714285714285,81,15,96,4.133333333333334,182,True,True,True,False,True,True,True,False,False,True
+Beat the Odds,1,5800183,5800183.0,79.0,single,2022-08-26,day,False,1,2,79.0,79,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+90 Proof (with J. Cole),2,18959399,9479699.5,77.5,single,2022-09-30,day,False,1,3,73.0,73,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+BILLIE EILISH.,1,185427,185427.0,70.0,single,2022-05-19,day,False,1,1,88.0,88,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
