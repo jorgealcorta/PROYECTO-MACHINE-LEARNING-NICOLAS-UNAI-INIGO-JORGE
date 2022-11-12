@@ -3,60 +3,113 @@ from tkinter import NE
 import spotipy
 import pandas as pd
 import numpy as np
+import time
 from spotipy.oauth2 import SpotifyClientCredentials
 
+#attempt to override the retry_after method:
 
+from urllib3.util.retry import Retry
+orig_parse_retry_after = Retry.parse_retry_after
+Retry.parse_retry_after = lambda self, retry_after: min(10, orig_parse_retry_after(self, retry_after))
 
-def get_albums_from_playlist(playlist_uri, sp):
+class Albums:
+
+    name = ""
     album_ids = []
-    offset = 0
+    tracks = []
+    playlist_uri = ""
 
-    #do while in python:
+    def __init__(self):
+        self.name = "'Albums' <class>"
 
-    while True:
-        for track in sp.playlist_tracks(playlist_uri, fields=None, limit=100, offset=offset, market=None)["items"]:
+    def __str__(self):
+        return f'Containing {len(self.album_ids)} album ids && {len(self.tracks)} tracks.'
 
-            album = track["track"]["album"]["id"]
-            album_ids.append(album)
+    def get_albums_from_playlist(self, playlist_uri, sp):
+        offset = 0
+        scraped_counter = 0
+        #do while in python:
 
-        offset+=100
+        while True:
+            tracks = sp.playlist_tracks(playlist_uri, fields=None, limit=100, offset=offset, market=None)["items"]
+            for track in tracks:
 
-        if (len(album_ids) % 100 != 0): break
+                album = track["track"]["album"]["id"]
+                if track not in self.tracks: self.tracks.append(track)
+                if album not in self.album_ids: self.album_ids.append(album)
+                scraped_counter+=1
 
-    return album_ids
+            offset+=100
 
-def get_albums_from_playlists(playlist_uris, sp):
-    album_ids = []
+            if (scraped_counter % 100 or len(tracks) == 0): break
 
-    for uri in playlist_uris:
-        album_ids.extend(get_albums_from_playlist(uri, sp))
+        return self.album_ids
 
-    return album_ids
+    def get_albums_from_playlists(self, playlist_uris, sp):
+
+        for uri in playlist_uris: self.get_albums_from_playlist(uri, sp)
+
+        return self.album_ids
+
+    def get_album_ids(self):
+        return self.album_ids
+
+    def to_csv(self, playlists_URI, sp):
+
+        #rellena la variable tracks y hace return de los ids
+
+        self.get_albums_from_playlists(playlists_URI, sp)
+
+        tracks = pd.DataFrame(self.tracks)
+        albums = pd.DataFrame(self.album_ids)
+        tracks.to_csv('album_tracks1.csv', header=None)
+        albums.to_csv('album_ids1.csv', header=None)
 
 
-
-def generate_dataset(authentication, playlists, columns, max):
-    
-    
-    client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
-    sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
-        
-    playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists]
+def generate_dataset(sp, columns, max):
     
     dataframe = pd.DataFrame (columns= columns)
-    album_ids = list(dict.fromkeys(get_albums_from_playlists(playlists_URI, sp)))
 
+    #TODO IDEA (ignorar apuntes de la guayaba):
+    #   hacer un método que coja todas las ID de los álbumes ya scrapeados de los csv de 500.csv, 1000.csv, etc.
+    #
+    #   que mire en primer lugar cuáles de esos están disponibles.
+    #
+    #   después que coja todos los ids los meta en una lista y los quite de la lista album_ids de esta
+    #   función para que no haga trabajo de más.
+    #
+    #   cuidado que no sobreescriba csv que contienen canciones anteriores con canciones nuevas.
+    
+
+    album_ids = pd.read_csv('album_ids1.csv', header=None)[1]
+    tracks = pd.read_csv('album_tracks1.csv', header=None)[5]
 
     # TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
 
-    counter = 0
+    albums_scraped = 0
+    songs_scraped = 0
+    last_songs_scraped = 0
+    last = time.time()
+    interval = 5   #interval in seconds
 
-    
     number_of_albums = len(album_ids)
     print("Total albums to scrape: ", number_of_albums)
 
     for album in album_ids:
         #album = sp.album(album_ids[0])
+        #if songs_scraped - last_songs_scraped > 200:
+            #print("waiting on main thread...")
+            #time.sleep(65)
+            #print(f"retaking the task. Songs scraped: {songs_scraped}, Albums scraped: {albums_scraped}")
+            #last_songs_scraped = songs_scraped
+
+        now = time.time()
+        if now - last > interval:
+            print("waiting to trick the max requests time window...")
+            time.sleep(3)
+            last = now
+
+        #hace falta scrapear los albumes y que necesitamos todos los ids de sus canciones, es algo que no nos da sp.playlist_tracks()
         album = sp.album(album)
         album_name = album["name"]
         album_artist_number = len(album["artists"])
@@ -94,8 +147,13 @@ def generate_dataset(authentication, playlists, columns, max):
         external_artist_id = []
 
         for track in album["tracks"]["items"]:
-            song = sp.track(track["id"])
-
+            #we may already have that song.
+            for t in tracks:
+                if eval(t)["id"] == track["id"]:
+                    song = eval(t)
+                    break
+            else:
+                song = sp.track(track["id"])
 
             song_duration = song["duration_ms"]
             album_total_duration += song_duration // (1000 * 60)    #minutes
@@ -139,13 +197,20 @@ def generate_dataset(authentication, playlists, columns, max):
         album_number_songs, album_total_duration, album_avg_popularity, album_max_popularity, album_colab_number, album_colab_max_pop, album_colab_avg_pop, 
         album_number_markets, album_in_US, album_in_CA, album_in_BR, album_in_CN, album_in_DE, album_in_ES, album_in_SA, album_in_UK, album_in_RU, album_in_MX]
 
+        dataframe.loc[albums_scraped] = row
 
-        if counter >= max: break
-        
-        dataframe.loc[counter] = row
-        
-        if not counter%10: print(f"Scraped {counter} / {len(album_ids)} albums.")
-        
-        counter += 1
+        albums_scraped += 1
+        songs_scraped += album["total_tracks"]
+
+        if not albums_scraped%10: print(f"Scraped {albums_scraped} / {len(album_ids)} albums.")
+
+        if albums_scraped == 2500: dataframe.to_csv('2500_dataset.csv', index=False, encoding='utf-8')
+        if albums_scraped == 2000: dataframe.to_csv('2000_dataset.csv', index=False, encoding='utf-8')
+        if albums_scraped == 1500: dataframe.to_csv('1500_dataset.csv', index=False, encoding='utf-8')
+        if albums_scraped == 1000: dataframe.to_csv('1000_dataset.csv', index=False, encoding='utf-8')
+        if albums_scraped == 750: dataframe.to_csv('750_dataset.csv', index=False, encoding='utf-8')
+        if albums_scraped == 500: dataframe.to_csv('500_dataset.csv', index=False, encoding='utf-8')
+
+        if albums_scraped >= max: break
 
     return dataframe

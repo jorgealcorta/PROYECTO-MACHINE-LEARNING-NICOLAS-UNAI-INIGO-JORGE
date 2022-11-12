@@ -10,7 +10,7 @@ from dataCollection import *
 
 
 #maximum number of albums to scrap
-max = 30
+MAX = 2971
 
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
@@ -45,13 +45,23 @@ hip_hop_mano_emoji = "https://open.spotify.com/playlist/1jvQJhPyI0p1x09iDxmJbA?s
 best_hip_hop_of_all_time = "https://open.spotify.com/playlist/1PIy8ktH4S4BwZx9JAB5zN?si=aa347ad000094aca"
 rap_dumpster = "https://open.spotify.com/playlist/6c1c8Hxdh6y80pckANQGan?si=cc23a614d87f4553"
 
-
-
 playlists = [test_playlist, rap_and_things, rap_caviar, training_montage, a_team, lyrical_rap, mumble_rap, hiphop, best_rap_music_ever, hip_hop_mano_emoji, best_hip_hop_of_all_time]
+playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists]
 
-dataset = generate_dataset(  authentication, playlists, columns, max)
+client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
+sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-print(np.shape(dataset))
+def getAlbumsAndTracks():
+    albums = Albums()
+    albums.to_csv(playlists_URI, sp)
 
-dataset.to_csv('finalDataset.csv', index=False, encoding='utf-8')
+def create_dataset():
+    #getAlbumsAndTracks(playlists_URI, sp)
 
+    dataset = generate_dataset(sp, columns, MAX)
+
+    print(np.shape(dataset))
+    dataset.to_csv('finalDataset.csv', index=False, encoding='utf-8')
+
+#getAlbumsAndTracks()
+create_dataset()
