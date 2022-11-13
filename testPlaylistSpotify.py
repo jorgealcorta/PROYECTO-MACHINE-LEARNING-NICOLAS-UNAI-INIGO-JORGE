@@ -51,17 +51,29 @@ playlists_URI = [playlist.split("/")[-1].split("?")[0] for playlist in playlists
 client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
 sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
 
-def getAlbumsAndTracks():
+def getAlbumsAndTracks(playlists):
     albums = Albums()
-    albums.to_csv(playlists_URI, sp)
+    albums.to_csv(playlists, sp)
 
-def create_dataset():
-    #getAlbumsAndTracks(playlists_URI, sp)
+def create_dataset(playlists):
+    #getAlbumsAndTracks(playlists, sp)
 
     dataset = generate_dataset(sp, columns, MAX)
 
     print(np.shape(dataset))
     dataset.to_csv('finalDataset.csv', index=False, encoding='utf-8')
 
-#getAlbumsAndTracks()
-create_dataset()
+#Ejecutar con precaución.
+
+#Consigue los álbumes a scrapear desde las playlist especificadas
+getAlbumsAndTracks(playlists_URI)
+
+#Scrapea de spotify. cada 5 segundos de programa dedica 2 a ejecutar requests y 3 a esperar para engañar a 
+# la ventana de escucha de spotify y que no detecte límite de tarifa.
+create_dataset(playlists_URI)
+
+#!!!!!Cuidado
+#Puede borrar datos necesarios si no ponemos los parámetros adecuados.
+remove_ids(tracks = pd.read_csv('album_tracks1.csv', header=None)[5], 
+           last_scraped = pd.read_csv('second_scrape_400.csv'), 
+           new_dataset_name = 'new_id_dataset2.csv')
