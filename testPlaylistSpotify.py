@@ -6,11 +6,10 @@ import numpy as np
 from spotipy.oauth2 import SpotifyClientCredentials
 
 from dataCollection import *
-
-
+#from joinPlaylists import *
 
 #maximum number of albums to scrap
-MAX = 2971
+MAX = 2008
 
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
@@ -66,7 +65,7 @@ def create_dataset(playlists):
 #Ejecutar con precaución.
 
 #Consigue los álbumes a scrapear desde las playlist especificadas
-getAlbumsAndTracks(playlists_URI)
+#getAlbumsAndTracks(playlists_URI)
 
 #Scrapea de spotify. cada 5 segundos de programa dedica 2 a ejecutar requests y 3 a esperar para engañar a 
 # la ventana de escucha de spotify y que no detecte límite de tarifa.
@@ -74,6 +73,13 @@ create_dataset(playlists_URI)
 
 #!!!!!Cuidado
 #Puede borrar datos necesarios si no ponemos los parámetros adecuados.
-remove_ids(tracks = pd.read_csv('album_tracks1.csv', header=None)[5], 
-           last_scraped = pd.read_csv('second_scrape_400.csv'), 
-           new_dataset_name = 'new_id_dataset2.csv')
+#scraped = pd.concat([
+        #pd.read_csv('first_scrape_500.csv'),
+        #pd.read_csv('second_scrape_400.csv'),
+        #pd.read_csv('third_scrape_400.csv')], 
+        #ignore_index=True)
+
+#remove_ids(tracks = pd.read_csv('album_tracks1.csv', header=None)[5], 
+           #last_scraped = scraped, 
+           #new_dataset_name = 'new_id_dataset3.csv')
+    

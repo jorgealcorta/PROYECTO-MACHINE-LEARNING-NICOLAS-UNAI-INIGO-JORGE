@@ -84,7 +84,7 @@ def remove_ids(tracks, last_scraped, new_dataset_name):   #removes already scrap
     names = last_scraped["album_name"]
     dates = last_scraped["release_date"]
 
-    for i in range(max(len(names), len(dates))):
+    for i in range(min(len(names), len(dates))):
         names_and_release_first_scrape.append([names[i], dates[i]])
 
     new_album_ids = []
@@ -103,7 +103,8 @@ def remove_ids(tracks, last_scraped, new_dataset_name):   #removes already scrap
 def generate_dataset(sp, columns, max):
     
     dataframe = pd.DataFrame (columns= columns)
-    album_ids = pd.read_csv('new_id_dataset.csv', header=None)[1]
+    #album_ids debe ser actualizado cada vez que se haya conseguido scrapear álbumes nuevos.
+    album_ids = pd.read_csv('new_id_dataset3.csv', header=None)[1]
     tracks = pd.read_csv('album_tracks1.csv', header=None)[5]
     
 
@@ -114,11 +115,14 @@ def generate_dataset(sp, columns, max):
     last_songs_scraped = 0
     last = time.time()
     interval = 5   #interval in seconds
+    attributeErrorCount = 0
 
     number_of_albums = len(album_ids)
     print("Total albums to scrape: ", number_of_albums)
 
     for album in album_ids:
+        albums_scraped += 1
+
         #album = sp.album(album_ids[0])
         #if songs_scraped - last_songs_scraped > 200:
             #print("waiting on main thread...")
@@ -131,9 +135,20 @@ def generate_dataset(sp, columns, max):
             print("waiting to trick the max requests time window...")
             time.sleep(3)
             last = now
+        
+        #It is lately stopping at 400+ albums scraped. So lets wait for a bit every 400 albums:
+        if not albums_scraped % 400:
+            print(f"{albums_scraped} albums have been scraped. Chilling for 62 secs...")
+            time.sleep(62)
 
         #hace falta scrapear los albumes y que necesitamos todos los ids de sus canciones, es algo que no nos da sp.playlist_tracks()
-        album = sp.album(album)
+        try:
+            album = sp.album(album)
+        except AttributeError:
+            attributeErrorCount += 1
+            print(f"There was one attribute error. Number of errors: {attributeErrorCount}")
+            continue
+
         album_name = album["name"]
         album_artist_number = len(album["artists"])
         album_artist_followers_total = 0
@@ -170,6 +185,7 @@ def generate_dataset(sp, columns, max):
         external_artist_id = []
 
         for track in album["tracks"]["items"]:
+            #Esto tarda demasiado. comentado en caso de ser útil en el futuro
             #we may already have that song.
             #for t in tracks:
                 #if eval(t)["id"] == track["id"]:
@@ -222,19 +238,18 @@ def generate_dataset(sp, columns, max):
 
         dataframe.loc[albums_scraped] = row
 
-        albums_scraped += 1
         songs_scraped += album["total_tracks"]
 
         if not albums_scraped%10: print(f"Scraped {albums_scraped} / {len(album_ids)} albums.")
 
-        if albums_scraped == 2500: dataframe.to_csv('second_scrape_2500.csv', index=False, encoding='utf-8')
-        if albums_scraped == 2000: dataframe.to_csv('second_scrape_2000.csv', index=False, encoding='utf-8')
-        if albums_scraped == 1500: dataframe.to_csv('second_scrape_1500.csv', index=False, encoding='utf-8')
-        if albums_scraped == 1000: dataframe.to_csv('second_scrape_1000.csv', index=False, encoding='utf-8')
-        if albums_scraped == 750: dataframe.to_csv('second_scrape_750.csv', index=False, encoding='utf-8')
-        if albums_scraped == 500: dataframe.to_csv('second_scrape_500.csv', index=False, encoding='utf-8')
-        if albums_scraped == 400: dataframe.to_csv('second_scrape_400.csv', index=False, encoding='utf-8')
-        if albums_scraped == 250: dataframe.to_csv('second_scrape_250.csv', index=False, encoding='utf-8')
+        if albums_scraped == 2500: dataframe.to_csv('fourth_scrape_2500.csv', index=False, encoding='utf-8')
+        if albums_scraped == 2000: dataframe.to_csv('fourth_scrape_2000.csv', index=False, encoding='utf-8')
+        if albums_scraped == 1500: dataframe.to_csv('fourth_scrape_1500.csv', index=False, encoding='utf-8')
+        if albums_scraped == 1000: dataframe.to_csv('fourth_scrape_1000.csv', index=False, encoding='utf-8')
+        if albums_scraped == 750: dataframe.to_csv('fourth_scrape_750.csv', index=False, encoding='utf-8')
+        if albums_scraped == 500: dataframe.to_csv('fourth_scrape_500.csv', index=False, encoding='utf-8')
+        if albums_scraped == 400: dataframe.to_csv('fourth_scrape_400.csv', index=False, encoding='utf-8')
+        if albums_scraped == 250: dataframe.to_csv('fourth_scrape_250.csv', index=False, encoding='utf-8')
 
         if albums_scraped >= max: break
 
