@@ -1,0 +1,501 @@
+album_name,number_of_artists,artist_followers_total,artist_followers_average,artist_popularity,type,release_date,release_precision,restrictions,total_tracks,total_length_min,avg_popularity,max_popularity,number_of_collabs,Max_popularity_collab,Avg_popularity_collab,number_of_markets,US_market,CA_market,BR_market,CN_market,DE_market,ES_market,SA_market,UK_market,RU_market,MX_markets
+BBO,2,29680,14840.0,57.5,album,2022-09-15,day,False,11,22,57.45454545454545,62,5,66,9.6,183,True,True,True,False,True,True,True,False,False,True
+Man On The Moon: The End Of Day,1,6122411,6122411.0,81.0,album,2009-09-15,day,False,15,51,49.06666666666666,73,7,90,6.428571428571429,3,True,True,False,False,False,False,False,False,False,True
+The Hour Of Reprisal,1,102976,102976.0,49.0,album,2008-09-16,day,False,18,51,0.0,0,14,68,4.857142857142857,0,False,False,False,False,False,False,False,False,False,False
+The People's Champ,1,125137,125137.0,47.0,single,2013-02-20,day,False,1,3,11.0,11,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Hits Collection Volume One (Deluxe),1,7728824,7728824.0,82.0,compilation,2010-11-22,day,False,19,62,35.36842105263158,53,7,90,10.714285714285714,166,True,True,True,False,True,True,False,False,False,True
+Nyc Bitche$,1,122963,122963.0,32.0,single,2013-04-04,day,False,1,3,12.0,12,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Goblin,1,9841644,9841644.0,83.0,album,2011-05-09,day,False,18,74,0.0,0,10,82,4.6,0,False,False,False,False,False,False,False,False,False,False
+CupaTea,1,3044,3044.0,23.0,album,2010-11-11,day,False,21,67,11.476190476190478,37,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Ill Mind of Hopsin 5 - Single,1,2358022,2358022.0,61.0,single,2012-07-17,day,False,1,4,58.0,58,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Ill Mind of Hopsin 4,1,2358022,2358022.0,61.0,single,2011-07-18,day,False,1,4,44.0,44,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Notes From The Underground,1,2179314,2179314.0,68.0,album,2012-01-01,day,False,11,33,48.81818181818181,63,0,0,0.0,180,True,True,True,False,True,True,True,False,False,True
+American Tragedy (Deluxe Edition),1,2179314,2179314.0,68.0,album,2011,year,False,18,57,47.833333333333336,65,0,0,0.0,179,True,True,True,False,True,True,True,False,False,True
+Wolf,1,9841644,9841644.0,83.0,album,2013-04-01,day,False,18,61,55.72222222222222,72,18,82,3.5555555555555554,183,True,True,True,False,True,True,True,False,False,True
+Floats My Boat,1,138312,138312.0,48.0,single,2012-06-25,day,False,1,3,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Doris,1,1881919,1881919.0,67.0,album,2013-08-16,day,False,15,37,49.13333333333333,61,12,83,4.5,183,True,True,True,False,True,True,True,False,False,True
+Endgame,1,2546088,2546088.0,69.0,album,2011-01-01,day,False,12,37,48.91666666666668,67,0,0,0.0,180,True,True,True,False,True,True,True,False,False,True
+The Man With The Iron Fists,1,1639209,1639209.0,0.0,compilation,2012-11-07,day,False,15,52,5.4,16,15,90,5.4,181,False,False,True,False,True,True,True,False,False,True
+Illmatic XX,1,3023692,3023692.0,71.0,album,2014-04-15,day,False,20,75,31.9,58,17,60,0.35294117647058826,183,True,True,True,False,True,True,True,False,False,True
+Continue (Spotify Version),1,75762,75762.0,45.0,album,2013-04-23,day,False,17,52,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Six Degrees,2,1387263,693631.5,63.5,single,2014-06-20,day,False,2,4,0.0,0,1,58,58.0,0,False,False,False,False,False,False,False,False,False,False
+2001,1,8281199,8281199.0,78.0,album,1999-11-16,day,False,23,57,55.91304347826088,83,50,90,0.0,182,True,True,True,False,True,True,True,False,False,False
+The Predator,1,6216369,6216369.0,73.0,album,1992-11-17,day,False,16,50,41.0,81,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Doggystyle,1,8877787,8877787.0,82.0,album,1993,year,False,13,46,0.07692307692307693,1,14,75,0.0,0,False,False,False,False,False,False,False,False,False,False
+1999,1,2787059,2787059.0,73.0,album,2012-06-12,day,False,15,53,0.0,0,7,52,5.285714285714286,0,False,False,False,False,False,False,False,False,False,False
+Enter The Wu-Tang (36 Chambers) [Expanded Edition],1,2521763,2521763.0,66.0,album,1993-11-09,day,False,15,63,55.99999999999999,74,63,70,0.8888888888888888,183,True,True,True,False,True,True,True,False,False,True
+2014 Forest Hills Drive,1,18276353,18276353.0,84.0,album,2014-12-09,day,False,13,58,2.923076923076923,19,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+These Things Happen,1,5106901,5106901.0,74.0,album,2014-06-20,day,False,16,49,47.625,69,10,78,4.3,181,True,True,True,False,True,True,True,False,False,True
+Man On The Moon II: The Legend Of Mr. Rager,1,6122411,6122411.0,81.0,album,2010-11-09,day,False,17,53,54.47058823529413,75,9,90,3.888888888888889,182,True,True,True,False,True,True,True,False,False,True
+679 (feat. Remy Boyz),1,4375528,4375528.0,68.0,single,2015-06-29,day,False,1,3,73.0,73,1,55,55.0,173,True,True,True,False,True,False,True,False,False,True
+Mr. Wonderful,1,729939,729939.0,61.0,album,2015-03-23,day,False,13,43,41.153846153846146,61,7,73,4.0,116,True,True,True,False,True,True,False,False,False,True
+Evermore: The Art Of Duality,1,365390,365390.0,49.0,album,2015-09-25,day,False,15,53,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Scrublife,1,75762,75762.0,45.0,album,2011-03-15,day,False,14,46,22.28571428571429,37,3,43,1.0,183,True,True,True,False,True,True,True,False,False,True
+Ready to Die (The Remaster),1,8202385,8202385.0,76.0,album,1994-09-13,day,False,19,67,56.89473684210525,79,1,70,70.0,181,True,True,True,False,True,True,True,False,False,True
+"I Don't Like Shit, I Don't Go Outside: An Album by Earl Sweatshirt",1,1881919,1881919.0,67.0,album,2015-03-23,day,False,10,24,45.8,51,4,67,16.75,183,True,True,True,False,True,True,True,False,False,True
+Life After Death (Deluxe Version),1,8202385,8202385.0,76.0,album,1997-03-04,day,False,24,96,0.0,0,10,82,1.6,0,False,False,False,False,False,False,False,False,False,False
+Handshakes with Snakes,1,84378,84378.0,48.0,album,2016-06-10,day,False,13,35,15.615384615384617,24,16,64,2.625,183,True,True,True,False,True,True,True,False,False,True
+Enter the Circle,1,128802,128802.0,48.0,album,2010-04-30,day,False,7,15,0.0,0,2,5,2.5,0,False,False,False,False,False,False,False,False,False,False
+Ready to Die (The Remaster; 2015 Remaster),1,8202385,8202385.0,76.0,album,1994-09-13,day,False,18,64,36.611111111111114,68,0,0,0.0,170,True,True,True,False,True,True,False,False,False,True
+iSpy (feat. Lil Yachty),1,1023344,1023344.0,64.0,single,2016-12-02,day,False,1,4,71.0,71,1,77,77.0,183,True,True,True,False,True,True,True,False,False,True
+Doubt It,1,1023344,1023344.0,64.0,single,2016-08-19,day,False,1,3,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Uber Everywhere,1,1011018,1011018.0,60.0,single,2016-02-26,day,False,1,2,58.0,58,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Because The Internet,1,9965064,9965064.0,77.0,album,2013-01-01,day,False,19,47,0.0,0,3,76,20.0,0,False,False,False,False,False,False,False,False,False,False
+Spooky Language EP,1,32141,32141.0,41.0,single,2012-05-08,day,False,7,20,0.0,0,1,45,45.0,0,False,False,False,False,False,False,False,False,False,False
+Old Boy Jon,1,128389,128389.0,43.0,album,2013-02-18,day,False,15,36,0.0,0,7,46,0.7142857142857143,0,False,False,False,False,False,False,False,False,False,False
+Bobby Tarantino,1,5805600,5805600.0,75.0,album,2016-07-01,day,False,11,26,46.545454545454554,61,1,71,71.0,180,True,True,True,False,True,True,True,False,False,True
+Under Pressure,1,5805600,5805600.0,75.0,album,2014-10-21,day,False,12,51,38.583333333333336,42,0,0,0.0,168,True,True,True,False,True,True,False,False,False,True
+The Incredible True Story,1,5805600,5805600.0,75.0,album,2015-11-13,day,False,18,52,46.16666666666668,57,4,53,10.5,182,True,True,True,False,True,True,True,False,False,True
+Starboy,1,52111786,52111786.0,93.0,album,2016-11-25,day,False,18,58,71.61111111111111,89,5,88,15.8,183,True,True,True,False,True,True,True,False,False,True
+I'm Sorry,1,1966460,1966460.0,69.0,single,2016-08-05,day,False,1,5,39.0,39,0,0,0.0,169,True,True,True,False,True,True,True,False,False,True
+Neon Icon,1,173526,173526.0,47.0,album,2014-06-24,day,False,15,41,24.33333333333333,38,6,82,9.666666666666666,1,True,False,False,False,False,False,False,False,False,False
+Beautiful Loser,1,1023344,1023344.0,64.0,album,2013-08-05,day,False,16,55,0.0,0,3,15,4.666666666666667,0,False,False,False,False,False,False,False,False,False,False
+Manifest,1,4584044,4584044.0,75.0,single,2016-04-05,day,False,1,2,54.0,54,0,0,0.0,169,True,True,True,False,True,True,True,False,False,True
+The OF Tape Vol. 2,1,982959,982959.0,53.0,album,2012-03-16,day,False,18,57,40.888888888888886,63,32,83,1.03125,183,True,True,True,False,True,True,True,False,False,True
+Stoney (Deluxe),1,38671957,38671957.0,87.0,album,2016-12-09,day,False,18,58,65.33333333333334,81,4,89,18.75,183,True,True,True,False,True,True,True,False,False,True
+Candy Paint,1,38671957,38671957.0,87.0,single,2017-10-20,day,False,1,3,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+O.N.I.F.C. (Deluxe),1,10772259,10772259.0,81.0,album,2012-12-04,day,False,20,73,40.5,61,14,93,3.7142857142857144,138,True,True,True,False,False,True,True,False,False,True
+Flower Boy,1,9841644,9841644.0,83.0,album,2017-07-21,day,False,14,40,65.42857142857142,84,11,84,7.636363636363637,171,True,True,True,False,True,True,False,False,False,True
+The Infamous,1,1692648,1692648.0,65.0,album,1995-04-25,day,False,16,58,48.6875,76,9,71,5.111111111111111,183,True,True,True,False,True,True,True,False,False,True
+Psycho (feat. Ty Dolla $ign),1,38671957,38671957.0,87.0,single,2018-02-23,day,False,1,3,0.0,0,1,80,80.0,0,False,False,False,False,False,False,False,False,False,False
+If You're Reading This It's Too Late,1,68545753,68545753.0,96.0,album,2015-02-12,day,False,17,60,61.76470588235295,73,4,87,21.75,183,True,True,True,False,True,True,True,False,False,True
+Continue,1,75762,75762.0,45.0,album,2013-01-15,day,False,18,55,20.999999999999996,40,2,31,10.5,183,True,True,True,False,True,True,True,False,False,True
+Strictly 4 My N.I.G.G.A.Z...,1,13873094,13873094.0,78.0,album,1993-02-16,day,False,16,56,41.375,70,8,73,2.25,169,True,True,True,False,True,True,False,False,False,True
+American Boy,1,70538,70538.0,47.0,album,2016-12-03,day,False,8,21,0.0,0,4,81,12.25,0,False,False,False,False,False,False,False,False,False,False
+Perfect Timing,2,6222043,3111021.5,77.0,album,2017-07-21,day,False,15,48,49.46666666666666,65,7,91,12.0,178,True,True,True,False,True,True,True,False,False,True
+Greatest Hits,1,13873094,13873094.0,78.0,compilation,1998-01-01,day,False,25,101,55.559999999999995,80,17,82,2.5294117647058822,183,True,True,True,False,True,True,True,False,False,True
+The Best of 2Pac,1,13873094,13873094.0,78.0,compilation,2007-12-03,day,False,11,45,42.90909090909091,65,6,82,9.666666666666666,183,True,True,True,False,True,True,True,False,False,True
+Resurrection (Music From And Inspired By The Motion Picture),1,13873094,13873094.0,78.0,album,2003-01-01,day,False,14,48,0.0,0,8,90,10.25,0,False,False,False,False,False,False,False,False,False,False
+Life After Death (2014 Remastered Edition),1,8202385,8202385.0,76.0,album,1997-03-04,day,False,24,96,51.25000000000001,80,11,82,2.0,178,True,True,True,False,True,True,True,False,False,True
+Bobby Tarantino II,1,5805600,5805600.0,75.0,album,2018-03-09,day,False,13,38,52.92307692307692,67,5,82,16.4,178,True,True,True,False,True,True,True,False,False,True
+beerbongs & bentleys,1,38671957,38671957.0,87.0,album,2018-04-27,day,False,18,54,67.83333333333333,84,6,91,12.333333333333334,178,True,True,True,False,True,True,True,False,False,True
+Yeah Right,1,7252243,7252243.0,85.0,single,2018-05-08,day,False,1,2,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+In Tongues (Deluxe),1,7252243,7252243.0,85.0,album,2018-02-14,day,False,16,47,55.6875,78,8,53,6.375,180,True,True,True,False,True,True,True,False,False,True
+Life of a Dark Rose,1,4852369,4852369.0,69.0,album,2017-12-12,day,False,14,35,54.642857142857146,73,2,58,29.0,183,True,True,True,False,True,True,True,False,False,True
+"Come Over When You're Sober, Pt. 1",1,9150596,9150596.0,81.0,album,2017-08-15,day,False,7,19,64.71428571428571,73,1,69,69.0,0,False,False,False,False,False,False,False,False,False,False
+beamer boy,2,9166959,4583479.5,70.5,single,2017-06-08,day,False,1,3,63.0,63,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Mando (feat. Mozzy),1,109985,109985.0,50.0,single,2017-11-17,day,False,1,2,37.0,37,1,65,65.0,183,True,True,True,False,True,True,True,False,False,True
+Her Loss,2,80509812,40254906.0,93.5,album,2022-11-04,day,False,16,51,85.375,91,1,87,87.0,182,True,True,True,False,True,True,True,False,False,True
+Just Wanna Rock,1,13981350,13981350.0,84.0,single,2022-10-17,day,False,1,2,86.0,86,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+It's Only Me,1,12028254,12028254.0,89.0,album,2022-10-14,day,False,23,53,72.78260869565217,82,8,86,8.75,182,True,True,True,False,True,True,True,False,False,True
+No More Leaks,1,1836208,1836208.0,79.0,single,2022-10-14,day,False,4,7,70.75,77,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Only Built For Infinity Links,2,7373095,3686547.5,77.5,album,2022-10-07,day,False,18,50,65.38888888888889,78,7,83,10.857142857142858,182,True,True,True,False,True,True,True,False,False,True
+In My Head,1,26313703,26313703.0,88.0,single,2022-10-28,day,False,1,3,83.0,83,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Break My Heart,1,3842626,3842626.0,77.0,single,2022-11-10,day,False,1,2,52.0,52,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Kutthroat Bill: Vol. 1,1,8646421,8646421.0,81.0,album,2022-10-28,day,False,19,42,59.52631578947368,72,4,46,11.5,182,True,True,True,False,True,True,True,False,False,True
+Stop Breathing,1,8543816,8543816.0,79.0,single,2022-09-30,day,False,1,1,78.0,78,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Ain’t Safe (feat. Don Toliver),2,10414042,5207021.0,79.0,single,2022-10-28,day,False,1,2,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Who is Nardo Wick?? (Deluxe),1,477164,477164.0,73.0,album,2022-10-14,day,False,31,68,39.74193548387097,73,12,91,5.166666666666667,183,True,True,True,False,True,True,True,False,False,True
+Tomorrow 2 (with Cardi B),2,20704988,10352494.0,73.0,single,2022-09-23,day,False,1,3,81.0,81,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Blackout,1,474354,474354.0,67.0,album,2022-10-28,day,False,10,19,50.59999999999999,65,1,32,32.0,183,True,True,True,False,True,True,True,False,False,True
+Do It Again (feat. 2Rare),2,5314727,2657363.5,68.0,single,2022-10-07,day,False,1,3,76.0,76,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Take Shots (feat. Tory Lanez),1,6847446,6847446.0,80.0,single,2022-10-21,day,False,1,4,72.0,72,1,80,80.0,182,True,True,True,False,True,True,True,False,False,True
+Give You What You Want,1,5811284,5811284.0,79.0,single,2022-11-11,day,False,1,2,37.0,37,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+BET,1,4584044,4584044.0,75.0,single,2022-10-14,day,False,1,2,71.0,71,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+My Friends (feat. Lil Durk),3,10130514,3376838.0,77.66666666666667,single,2022-10-05,day,False,1,2,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+I Never Felt Nun,1,312212,312212.0,70.0,album,2022-09-16,day,False,21,45,51.761904761904766,74,5,86,14.0,182,True,True,True,False,True,True,True,False,False,True
+Blow,1,3252622,3252622.0,76.0,single,2022-09-22,day,False,1,3,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Aston Martin Truck,1,8543816,8543816.0,79.0,single,2022-10-21,day,False,1,3,76.0,76,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+I’m So Awesome,1,8646421,8646421.0,81.0,single,2022-09-30,day,False,3,7,58.33333333333333,70,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Nothing Changed,2,7373095,3686547.5,77.5,single,2022-09-30,day,False,1,3,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Gucci Flow,2,4585201,2292600.5,67.0,single,2022-10-14,day,False,1,2,66.0,66,0,0,0.0,168,True,True,True,False,True,True,True,False,False,True
+Ghetto Superstar (feat. G Herbo & Doe Boy),2,8736312,4368156.0,69.5,single,2022-09-08,day,False,1,4,72.0,72,1,72,72.0,182,True,True,True,False,True,True,True,False,False,True
+It's Not Me It's You (Deluxe),1,838880,838880.0,66.0,album,2022-10-07,day,False,16,32,40.1875,70,8,83,7.625,183,True,True,True,False,True,True,True,False,False,True
+Bye Bye,2,60807822,30403911.0,85.0,single,2022-10-14,day,False,1,1,84.0,84,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Survivor’s Remorse: A Side,1,1650594,1650594.0,72.0,album,2022-10-07,day,False,12,28,51.33333333333333,68,7,86,11.857142857142858,182,True,True,True,False,True,True,True,False,False,True
+B.R.O. (Better Ride Out) [feat. Roddy Ricch],2,15391262,7695631.0,79.5,single,2022-10-07,day,False,1,2,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Back End,1,60776,60776.0,58.0,single,2022-10-07,day,False,1,2,67.0,67,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Ballin,1,6847446,6847446.0,80.0,single,2022-11-03,day,False,1,2,70.0,70,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Bag Talk,1,8561756,8561756.0,82.0,single,2022-10-28,day,False,1,2,74.0,74,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+777,1,905875,905875.0,71.0,album,2022-03-25,day,False,13,25,46.92307692307691,69,6,91,13.5,183,True,True,True,False,True,True,True,False,False,True
+Walk/Spin,1,8646421,8646421.0,81.0,single,2022-09-16,day,False,2,4,69.0,75,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+2 Mins of Pain (feat. Alborosie),1,1137137,1137137.0,76.0,single,2022-09-07,day,False,1,2,72.0,72,1,60,60.0,183,True,True,True,False,True,True,True,False,False,True
+CODE (feat. Moneybagg Yo),2,5746554,2873277.0,76.5,single,2022-08-26,day,False,1,3,73.0,73,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Too Much (feat. Moneybagg Yo),2,4321525,2160762.5,72.5,single,2022-09-02,day,False,1,3,68.0,68,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Can't Stop Won't Stop (feat. Kodak Black),1,84348,84348.0,56.0,single,2022-07-22,day,False,1,2,71.0,71,1,81,81.0,183,True,True,True,False,True,True,True,False,False,True
+No Pressure (Pt. 2),1,110874,110874.0,57.0,album,2022-09-23,day,False,10,20,40.5,61,7,71,7.857142857142857,182,True,True,True,False,True,True,True,False,False,True
+Queen Radio: Volume 1,1,26480306,26480306.0,85.0,album,2022-08-26,day,False,28,92,32.42857142857142,81,15,96,4.133333333333334,182,True,True,True,False,True,True,True,False,False,True
+Poland,1,8455678,8455678.0,77.0,single,2022-10-11,day,False,1,1,85.0,85,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+The Melodic Blue (Deluxe),1,1153070,1153070.0,79.0,album,2022-10-28,day,False,26,66,58.1153846153846,73,8,87,10.5,183,True,True,True,False,True,True,True,False,False,True
+90 Proof (with J. Cole),2,18985836,9492918.0,77.5,single,2022-09-30,day,False,1,3,73.0,73,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+BILLIE EILISH.,1,186630,186630.0,70.0,single,2022-05-19,day,False,1,1,87.0,87,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+The Eminem Show,1,61300484,61300484.0,90.0,album,2002-05-26,day,False,20,67,61.04999999999999,88,6,78,7.166666666666667,183,True,True,True,False,True,True,True,False,False,True
+"Body Head Bangerz, Vol. 1",1,1639209,1639209.0,0.0,compilation,2004-10-26,day,False,16,56,33.3125,73,45,63,1.2444444444444445,175,True,True,True,False,True,True,True,False,False,True
+The Definition Of X: Pick Of The Litter,1,3811141,3811141.0,69.0,compilation,2007-06-12,day,False,20,69,26.9,73,6,82,7.5,183,True,True,True,False,True,True,True,False,False,True
+Infest,1,4493271,4493271.0,70.0,album,2001-04-25,day,False,13,46,45.84615384615384,79,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Numb / Encore: MTV Ultimate Mash-Ups Presents Collision Course,2,29741870,14870935.0,82.0,single,2004-11-30,day,False,6,16,37.666666666666664,77,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+CREED: Original Motion Picture Soundtrack,1,1639209,1639209.0,0.0,compilation,2015-11-20,day,False,18,61,27.333333333333336,64,31,86,1.8709677419354838,167,True,True,True,False,False,True,False,False,False,True
+Jungle (Remix),2,2817951,1408975.5,61.5,single,2014-01-01,day,False,1,3,56.0,56,1,82,82.0,180,True,True,True,False,True,True,True,False,False,True
+Victory,1,8619175,8619175.0,78.0,album,2010-03-02,day,False,12,40,24.333333333333332,68,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Black Snow,1,98173,98173.0,44.0,album,2008-06-24,day,False,21,63,19.333333333333332,45,44,48,0.4090909090909091,179,True,True,True,False,True,True,True,False,False,True
+Radioactive,1,43128401,43128401.0,87.0,single,2014-01-01,day,False,1,4,65.0,65,1,87,87.0,180,True,True,True,False,True,True,True,False,False,True
+The Heist,3,4550033,1516677.6666666667,73.0,album,2012-10-09,day,False,15,56,41.66666666666667,81,12,72,3.0,180,True,True,True,False,True,True,True,False,False,True
+ASTROWORLD,1,21300870,21300870.0,87.0,album,2018-08-03,day,False,17,51,71.0,81,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Heartless,1,52111786,52111786.0,93.0,single,2019-11-27,day,False,1,3,2.0,2,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Immortal,1,11964059,11964059.0,91.0,single,2019-10-31,day,False,1,4,73.0,73,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Best In The World Pack,1,68545753,68545753.0,96.0,single,2019-06-15,day,False,2,6,66.0,77,1,76,76.0,178,True,True,True,False,True,True,True,False,False,True
+Culture II,1,12681863,12681863.0,77.0,album,2018-01-26,day,False,24,95,55.37500000000001,77,10,96,7.5,182,True,True,True,False,True,True,True,False,False,True
+FUTURE,1,12400949,12400949.0,86.0,album,2017-06-30,day,False,20,65,50.94999999999999,82,3,96,24.666666666666668,171,True,True,True,False,True,True,False,False,False,True
+TESTING,1,11475745,11475745.0,80.0,album,2018-05-25,day,False,15,46,57.99999999999999,81,9,82,9.11111111111111,183,True,True,True,False,True,True,True,False,False,True
+Pick It Up (feat. A$AP Rocky),2,13878004,6939002.0,69.5,single,2017-10-20,day,False,1,3,64.0,64,0,0,0.0,169,True,True,True,False,True,True,False,False,False,True
+Still Striving,1,3390534,3390534.0,70.0,album,2017-08-18,day,False,14,41,45.0,73,19,82,4.315789473684211,183,True,True,True,False,True,True,True,False,False,True
+Birds In The Trap Sing McKnight,1,21300870,21300870.0,87.0,album,2016-09-16,day,False,14,47,63.5,83,1,82,82.0,171,True,True,True,False,True,True,False,False,False,True
+Blueberry Faygo,1,4827395,4827395.0,70.0,single,2020-02-07,day,False,1,2,72.0,72,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Heaven Or Hell,1,2341718,2341718.0,77.0,album,2020-03-13,day,False,12,30,61.333333333333336,79,5,87,12.8,183,True,True,True,False,True,True,True,False,False,True
+HIGHEST IN THE ROOM,1,21300870,21300870.0,87.0,single,2019-10-04,day,False,1,2,81.0,81,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+THE SCOTTS,3,27605352,9201784.0,75.0,single,2020-04-24,day,False,1,2,76.0,76,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Taste (feat. Offset),1,6681608,6681608.0,78.0,single,2018-05-16,day,False,1,3,72.0,72,1,77,77.0,183,True,True,True,False,True,True,True,False,False,True
+Hollywood's Bleeding,1,38671957,38671957.0,87.0,album,2019-09-06,day,False,17,42,0.0,0,10,89,8.2,0,False,False,False,False,False,False,False,False,False,False
+Hollywood's Bleeding,1,38671957,38671957.0,87.0,album,2019-09-06,day,False,17,42,70.88235294117648,85,10,89,8.2,182,True,True,True,False,True,True,True,False,False,True
+Baby On Baby,1,10223329,10223329.0,81.0,album,2019-03-01,day,False,13,25,49.38461538461539,71,4,77,16.5,181,True,True,True,False,True,True,True,False,False,True
+Look At Me!,1,38813613,38813613.0,86.0,single,2017-02-20,day,False,1,2,81.0,81,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Bandit (with YoungBoy Never Broke Again),2,36186796,18093398.0,85.5,single,2019-10-04,day,False,1,3,74.0,74,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Without Warning,3,17551898,5850632.666666666,82.33333333333333,album,2017-10-30,day,False,10,28,63.400000000000006,81,2,87,40.0,171,True,True,True,False,True,True,False,False,False,True
+Culture,1,12681863,12681863.0,77.0,album,2017-04-07,day,False,13,52,1.8461538461538463,8,5,87,17.4,0,False,False,False,False,False,False,False,False,False,False
+Mr. Davis,1,4524425,4524425.0,76.0,album,2017-10-13,day,False,17,53,43.88235294117647,70,13,93,1.7692307692307692,169,True,True,True,False,True,True,False,False,False,True
+Perfect Ten,1,1006368,1006368.0,72.0,album,2019-06-28,day,False,10,28,55.4,78,19,86,3.4210526315789473,178,True,True,True,False,True,True,True,False,False,True
+Music To Be Murdered By,1,61300484,61300484.0,90.0,album,2020-01-17,day,False,20,53,55.8,82,15,89,3.1333333333333333,178,True,True,True,False,True,True,True,False,False,True
+Straight Outta Compton,1,4521551,4521551.0,64.0,album,1988-08-08,day,False,13,53,52.07692307692307,71,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Dark Lane Demo Tapes,1,68545753,68545753.0,96.0,album,2020-05-01,day,False,14,43,64.57142857142857,82,8,87,5.375,183,True,True,True,False,True,True,True,False,False,True
+Meet The Woo,1,11395292,11395292.0,82.0,album,2019-07-26,day,False,9,24,63.55555555555556,82,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+JACKBOYS,2,21801465,10900732.5,75.5,album,2019-12-27,day,False,7,19,66.57142857142857,76,9,89,9.11111111111111,183,True,True,True,False,True,True,True,False,False,True
+Walk Em Down (feat. Roddy Ricch),2,13827021,6913510.5,77.5,single,2020-03-19,day,False,1,2,69.0,69,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+BLAME IT ON BABY,1,10223329,10223329.0,81.0,album,2020-04-17,day,False,13,27,52.15384615384615,79,9,86,8.777777777777779,183,True,True,True,False,True,True,True,False,False,True
+Please Excuse Me for Being Antisocial,1,8543816,8543816.0,79.0,album,2019-12-06,day,False,16,35,54.9375,80,6,83,13.333333333333334,183,True,True,True,False,True,True,True,False,False,True
+We Love You Tecca,1,5553751,5553751.0,76.0,album,2019-08-30,day,False,18,32,60.055555555555564,79,1,88,88.0,178,True,True,True,False,True,True,True,False,False,True
+Scary Hours,1,68545753,68545753.0,96.0,single,2018-01-20,day,False,2,7,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Hoodie SZN,1,6847446,6847446.0,80.0,album,2018-12-21,day,False,20,51,58.4,73,13,88,5.769230769230769,183,True,True,True,False,True,True,True,False,False,True
+"WHATS POPPIN (feat. DaBaby, Tory Lanez & Lil Wayne) [Remix]",2,7424631,3712315.5,80.5,single,2020-06-24,day,False,1,3,74.0,74,2,84,42.0,183,True,True,True,False,True,True,True,False,False,True
+Rodeo (feat. Nas),2,15039522,7519761.0,76.0,single,2020-01-27,day,False,1,2,62.0,62,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+GUMMO,1,6718617,6718617.0,70.0,single,2017-11-10,day,False,1,2,49.0,49,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+DIE FOR MY BITCH,1,1153070,1153070.0,79.0,album,2019-07-19,day,False,14,28,59.85714285714285,83,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Watch The Throne (Deluxe),2,26342547,13171273.5,86.0,album,2011-08-08,day,False,16,60,59.3125,83,7,86,8.142857142857142,180,True,True,True,False,True,True,True,False,False,True
+My Beautiful Dark Twisted Fantasy,1,18613723,18613723.0,90.0,album,2010-11-22,day,False,13,61,67.46153846153845,78,15,85,4.933333333333334,183,True,True,True,False,True,True,True,False,False,True
+Sanguine Paradise,1,13981350,13981350.0,84.0,single,2019-04-09,day,False,1,4,71.0,71,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Broccoli,1,826071,826071.0,61.0,single,2016-04-06,day,False,1,3,67.0,67,1,77,77.0,1,True,False,False,False,False,False,False,False,False,False
+Arms Around You (feat. Maluma & Swae Lee),3,48294497,16098165.666666666,75.66666666666667,single,2018-10-25,day,False,1,3,69.0,69,1,83,83.0,183,True,True,True,False,True,True,True,False,False,True
+Party Girl,1,161492,161492.0,58.0,single,2020-04-21,day,False,1,2,70.0,70,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Fetty Wap (Deluxe),1,4375528,4375528.0,68.0,album,2015-09-25,day,False,20,67,45.449999999999996,73,10,54,5.4,152,True,True,True,False,False,False,True,False,False,True
+What A Time To Be Alive,2,80946702,40473351.0,91.0,album,2015-09-20,day,False,11,36,59.72727272727272,71,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Art of Hustle (Deluxe),1,4004630,4004630.0,66.0,album,2016-02-19,day,False,15,48,32.2,61,8,86,10.625,183,True,True,True,False,True,True,True,False,False,True
+New English,1,3400359,3400359.0,62.0,album,2016-06-26,day,False,14,29,31.0,69,3,71,6.666666666666667,180,True,True,True,False,True,True,True,False,False,True
+Exit 13,1,1423617,1423617.0,61.0,album,2008-01-01,day,False,19,67,12.789473684210524,43,14,82,3.0,179,True,True,True,False,True,True,True,False,False,True
+Flockaveli,1,2520758,2520758.0,64.0,album,2010-10-01,day,False,17,64,40.64705882352941,76,28,74,0.35714285714285715,183,True,True,True,False,True,True,True,False,False,True
+Drip Too Hard,2,16712707,8356353.5,86.0,single,2018-09-12,day,False,1,2,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Drowning (feat. Kodak Black),1,6847446,6847446.0,80.0,single,2017-03-10,day,False,1,3,67.0,67,1,81,81.0,167,False,False,True,False,True,True,False,False,False,True
+Toosie Slide,1,68545753,68545753.0,96.0,single,2020-04-03,day,False,1,4,73.0,73,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Hot (Remix) [feat. Gunna and Travis Scott],3,33571399,11190466.333333332,84.0,single,2019-11-01,day,False,1,4,63.0,63,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+SR3MM,3,8620567,2873522.3333333335,67.66666666666667,album,2018-05-04,day,False,27,89,41.48148148148149,65,9,93,1.3333333333333333,83,True,True,True,False,True,True,False,False,False,True
+Rolling Papers,1,10772259,10772259.0,81.0,album,2011-03-29,day,False,14,50,52.214285714285715,75,3,62,20.666666666666668,159,True,True,True,False,True,True,True,False,False,True
+Plata O Plomo,2,2132861,1066430.5,62.5,album,2017-02-17,day,False,12,40,24.416666666666668,62,15,80,3.066666666666667,183,True,True,True,False,True,True,True,False,False,True
+Crank That (Soulja Boy) [Travis Barker Remix],1,1620791,1620791.0,69.0,single,2007-01-01,day,False,1,4,53.0,53,1,69,69.0,98,True,True,True,False,True,True,True,False,False,False
+Crunkest Hits,1,684774,684774.0,60.0,album,2011-03-15,day,False,13,61,29.923076923076923,61,13,74,5.230769230769231,183,True,True,True,False,True,True,True,False,False,True
+Tha Carter IV (Deluxe),1,12776886,12776886.0,84.0,album,2011-01-01,day,False,18,63,0.05555555555555555,1,13,96,6.615384615384615,0,False,False,False,False,False,False,False,False,False,False
+The Black Album,1,7728824,7728824.0,82.0,album,2003-11-14,day,False,14,49,50.35714285714286,65,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Sound of Revenge,1,766177,766177.0,57.0,album,2005-01-01,day,False,16,65,30.375,69,10,84,1.4,103,True,True,True,False,True,True,True,False,False,True
+Gangsta's Paradise,1,773480,773480.0,70.0,album,1995-11-07,day,False,14,53,0.5714285714285714,8,4,69,10.5,0,False,False,False,False,False,False,False,False,False,False
+DAMN.,1,21895466,21895466.0,87.0,album,2017-04-14,day,False,14,48,70.57142857142857,83,3,88,25.333333333333332,183,True,True,True,False,True,True,True,False,False,True
+Day69: Graduation Day,1,6718617,6718617.0,70.0,album,2018-04-10,day,False,12,24,50.75000000000001,66,5,82,15.4,181,True,True,True,False,True,True,True,False,False,True
+The London (feat. J. Cole & Travis Scott),3,47163299,15721099.666666668,84.33333333333333,single,2019-05-23,day,False,1,3,68.0,68,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Bawskee,1,2073912,2073912.0,64.0,album,2018-08-24,day,False,18,20,0.05555555555555555,1,2,77,38.5,0,False,False,False,False,False,False,False,False,False,False
+The Fast And The Furious: Tokyo Drift (Original Motion Picture Soundtrack),1,1639209,1639209.0,0.0,compilation,2006-06-20,day,False,12,40,42.25,69,19,79,3.0,183,True,True,True,False,True,True,True,False,False,True
+Kanye West Presents Good Music Cruel Summer,1,1639209,1639209.0,0.0,compilation,2012-01-01,day,False,12,47,0.0,0,43,90,1.4883720930232558,0,False,False,False,False,False,False,False,False,False,False
+We All Shine,1,8140055,8140055.0,72.0,album,2019-01-18,day,False,16,47,46.0625,70,2,90,29.5,183,True,True,True,False,True,True,True,False,False,True
+Keanu Reeves,1,5805600,5805600.0,75.0,single,2019-01-18,day,False,1,3,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+i am > i was,1,11964059,11964059.0,91.0,album,2018-12-21,day,False,15,43,62.39999999999999,81,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+No Limit,1,5106901,5106901.0,74.0,single,2017-09-07,day,False,1,4,0.0,0,2,80,40.0,0,False,False,False,False,False,False,False,False,False,False
+17,1,38813613,38813613.0,86.0,album,2017-08-25,day,False,11,16,71.36363636363636,87,1,81,81.0,183,True,True,True,False,True,True,True,False,False,True
+Party Monster,1,52111786,52111786.0,93.0,single,2016-11-17,day,False,1,4,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Famous Cryp,1,5484715,5484715.0,66.0,album,2018-12-18,day,False,10,17,0.1,1,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Rodeo (Expanded Edition),1,21300870,21300870.0,87.0,album,2015-09-04,day,False,16,65,60.875,78,13,93,5.461538461538462,183,True,True,True,False,True,True,True,False,False,True
+Wow. (Remix),1,38671957,38671957.0,87.0,single,2019-03-15,day,False,1,2,0.0,0,2,79,39.0,0,False,False,False,False,False,False,False,False,False,False
+"Enzo (with Sheck Wes, feat. Offset, 21 Savage & Gucci Mane)",2,9516701,4758350.5,70.0,single,2019-04-24,day,False,1,4,0.0,0,3,91,25.333333333333332,0,False,False,False,False,False,False,False,False,False,False
+Life Is Good (feat. Drake),2,80946702,40473351.0,91.0,single,2020-01-10,day,False,1,3,77.0,77,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The College Dropout,1,18613723,18613723.0,90.0,album,2004-02-10,day,False,21,66,57.23809523809525,79,13,82,3.230769230769231,183,True,True,True,False,True,True,True,False,False,True
+Swim Good,1,10176813,10176813.0,82.0,single,2011-01-01,day,False,1,4,67.0,67,0,0,0.0,118,True,True,True,False,True,True,True,False,False,True
+The Documentary,1,4255262,4255262.0,72.0,album,2005,year,False,18,62,49.33333333333334,82,11,90,6.2727272727272725,182,True,True,True,False,True,True,True,False,False,True
+Certified Lover Boy,1,68545753,68545753.0,96.0,album,2021-09-03,day,False,21,75,71.38095238095238,84,16,91,5.0625,183,True,True,True,False,True,True,True,False,False,True
+Curtain Call: The Hits (Deluxe Edition),1,61300484,61300484.0,90.0,compilation,2005-12-06,day,False,24,98,52.250000000000014,76,7,83,11.714285714285714,183,True,True,True,False,True,True,True,False,False,True
+Mr. Morale & The Big Steppers,1,21895466,21895466.0,87.0,album,2022-05-13,day,False,19,68,70.73684210526315,82,11,81,4.363636363636363,182,True,True,True,False,True,True,True,False,False,True
+Under Pressure (Deluxe),1,5805600,5805600.0,75.0,album,2014-10-21,day,False,15,61,52.26666666666666,63,2,77,38.5,183,True,True,True,False,True,True,True,False,False,True
+It Was Written,1,3023692,3023692.0,71.0,album,1996-07-02,day,False,14,51,49.5,69,9,78,7.777777777777778,183,True,True,True,False,True,True,True,False,False,True
+Dark Sky Paradise,1,10159914,10159914.0,77.0,album,2015-02-24,day,False,12,44,50.75000000000001,74,9,96,8.444444444444445,181,True,True,True,False,False,True,True,False,False,True
+Ambition For Cash,1,1360325,1360325.0,72.0,single,2021-10-01,day,False,1,2,70.0,70,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+No Limit Top Dogg,1,8877787,8877787.0,82.0,album,1999-01-01,day,False,21,66,33.14285714285714,62,19,78,1.631578947368421,183,True,True,True,False,True,True,True,False,False,True
+Mamacita (feat. Rich Homie Quan & Young Thug),1,21300870,21300870.0,87.0,single,2014-08-18,day,False,1,4,64.0,64,2,82,41.0,183,True,True,True,False,True,True,True,False,False,True
+Merry Go Round,1,183275,183275.0,51.0,album,2001-01-01,day,False,15,51,25.066666666666663,58,4,42,3.0,67,True,True,True,False,True,True,False,False,False,True
+Oxymoron (Deluxe),1,4298851,4298851.0,71.0,album,2014-01-01,day,False,15,61,50.199999999999996,76,9,87,5.111111111111111,180,True,True,True,False,True,True,True,False,False,True
+In A Minute,1,12028254,12028254.0,89.0,single,2022-04-07,day,False,1,3,74.0,74,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Nothing Was The Same (Deluxe),1,68545753,68545753.0,96.0,album,2013-01-01,day,False,16,64,57.25,73,7,82,11.0,176,False,True,True,False,True,True,True,False,False,True
+DC4,1,6637379,6637379.0,74.0,album,2016-10-28,day,False,14,49,44.357142857142854,66,14,91,5.285714285714286,169,True,True,True,False,True,True,False,False,False,True
+Issa Album,1,11964059,11964059.0,91.0,album,2017-09-23,day,False,14,48,0.8571428571428572,9,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Nail Tech,1,2655763,2655763.0,81.0,single,2022-02-18,day,False,2,5,55.0,72,0,0,0.0,179,True,True,True,False,True,True,True,False,False,True
+Swimming,1,8158416,8158416.0,82.0,album,2018-08-03,day,False,13,51,68.38461538461539,79,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+West Side,1,4255262,4255262.0,72.0,single,2019-06-21,day,False,1,2,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+DS4EVER,1,4684453,4684453.0,83.0,album,2022-01-13,day,False,20,50,60.45000000000001,77,15,96,5.266666666666667,183,True,True,True,False,True,True,True,False,False,True
+Mr. Morale & The Big Steppers,1,21895466,21895466.0,87.0,album,2022-05-13,day,False,18,63,27.166666666666664,36,11,81,4.363636363636363,0,False,False,False,False,False,False,False,False,False,False
+Diet Coke,1,2592780,2592780.0,71.0,single,2022-02-08,day,False,1,2,57.0,57,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Monster,1,12400949,12400949.0,86.0,album,2014-10-28,day,False,13,40,46.230769230769226,67,1,84,84.0,183,True,True,True,False,True,True,True,False,False,True
+Victory Lap,1,2934852,2934852.0,65.0,album,2018-02-16,day,False,16,59,53.25,66,13,87,4.3076923076923075,183,True,True,True,False,True,True,True,False,False,True
+Drip or Drown 2,1,4684453,4684453.0,83.0,album,2019-02-22,day,False,16,42,52.8125,67,3,89,27.0,183,True,True,True,False,True,True,True,False,False,True
+D.M.B.,1,11475745,11475745.0,80.0,single,2022-05-05,day,False,1,4,66.0,66,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Eazy,2,22868985,11434492.5,81.0,single,2022-01-15,day,False,1,3,64.0,64,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+King's Disease,1,3023692,3023692.0,71.0,album,2020-08-21,day,False,13,31,43.07692307692307,55,13,81,5.384615384615385,183,True,True,True,False,True,True,True,False,False,True
+Hollandaise,1,953438,953438.0,57.0,single,2022-04-22,day,False,1,2,50.0,50,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Blonde,1,10176813,10176813.0,82.0,album,2016-08-20,day,False,17,55,68.41176470588236,84,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+KIDS SEE GHOSTS,3,25632521,8544173.666666666,76.66666666666667,album,2018-06-08,day,False,7,21,62.57142857142857,70,4,80,12.25,183,True,True,True,False,True,True,True,False,False,True
+LONG.LIVE.A$AP (Deluxe Version),1,11475745,11475745.0,80.0,album,2013-01-11,day,False,16,54,0.0,0,18,96,3.0,0,False,False,False,False,False,False,False,False,False,False
+Walkin,1,1973893,1973893.0,71.0,single,2022-01-24,day,False,1,4,58.0,58,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Johnny P's Caddy,2,18552058,9276029.0,73.0,single,2022-01-28,day,False,1,3,62.0,62,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+It's Dark And Hell Is Hot,1,3811141,3811141.0,69.0,album,1998-05-01,day,False,19,57,43.31578947368422,69,7,63,9.0,183,True,True,True,False,True,True,True,False,False,True
+Life of a DON,1,2341718,2341718.0,77.0,album,2021-10-08,day,False,16,44,58.75,67,6,87,14.5,183,True,True,True,False,True,True,True,False,False,True
+ATLiens,1,2074000,2074000.0,73.0,album,1996-08-27,day,False,15,50,46.6,69,1,20,20.0,183,True,True,True,False,True,True,True,False,False,True
+Headshots (4r Da Locals),1,1204347,1204347.0,66.0,single,2021-06-18,day,False,1,3,55.0,55,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Blueprint (Explicit Version),1,7728824,7728824.0,82.0,album,2001-09-11,day,False,15,56,49.86666666666666,62,1,90,90.0,169,True,True,True,False,True,True,False,False,False,True
+From a Birds Eye View,1,1823835,1823835.0,66.0,album,2022-01-14,day,False,14,34,47.78571428571429,65,9,90,5.555555555555555,183,True,True,True,False,True,True,True,False,False,True
+Street Gossip,1,12028254,12028254.0,89.0,album,2018-11-30,day,False,13,35,58.46153846153845,80,9,83,6.666666666666667,181,True,True,True,False,True,True,True,False,False,True
+?,1,38813613,38813613.0,86.0,album,2018-03-16,day,False,18,27,67.66666666666664,84,7,73,6.571428571428571,181,True,True,True,False,True,True,True,False,False,True
+Redemption,1,1313991,1313991.0,70.0,album,2018-06-15,day,False,15,43,48.26666666666667,70,8,87,3.875,178,True,True,True,False,True,True,True,False,False,True
+Kamikaze,1,61300484,61300484.0,90.0,album,2018-08-31,day,False,13,39,60.769230769230774,74,5,69,13.6,182,True,True,True,False,True,True,True,False,False,True
+Malibu,1,2249447,2249447.0,77.0,album,2016-01-15,day,False,16,51,42.875,56,6,72,4.5,53,False,False,False,False,True,True,False,False,False,False
+The Melodic Blue,1,1153070,1153070.0,79.0,album,2021-09-22,day,False,19,53,56.473684210526315,76,5,87,16.0,183,True,True,True,False,True,True,True,False,False,True
+Project E.T.,1,12400949,12400949.0,86.0,compilation,2016-10-13,day,False,16,47,39.9375,65,11,96,2.0,183,True,True,True,False,True,True,True,False,False,True
+"good kid, m.A.A.d city (Deluxe)",1,21895466,21895466.0,87.0,album,2012-10-22,day,False,17,86,57.58823529411766,74,9,96,7.0,180,False,False,True,False,True,True,True,False,False,True
+Me Against The World,1,13873094,13873094.0,78.0,album,1995-03-14,day,False,15,58,52.8,71,3,50,14.666666666666666,169,True,True,True,False,True,True,False,False,False,True
+Regulate… G Funk Era,1,2027341,2027341.0,61.0,album,1994-06-07,day,False,18,55,37.22222222222222,74,16,75,1.375,82,True,True,True,False,True,True,False,False,False,True
+At What Cost,1,813709,813709.0,65.0,album,2017-03-24,day,False,14,41,43.28571428571429,76,13,84,6.461538461538462,183,True,True,True,False,True,True,True,False,False,True
+So Much Fun,1,7586076,7586076.0,82.0,album,2019-08-16,day,False,19,53,51.210526315789465,70,16,91,5.4375,183,True,True,True,False,True,True,True,False,False,True
+Something Else,1,2555233,2555233.0,68.0,album,2013-07-30,day,False,21,55,26.61904761904762,57,24,87,2.9583333333333335,181,True,True,True,False,False,True,True,False,False,True
+Donda,1,18613723,18613723.0,90.0,album,2021-08-29,day,False,27,95,61.22222222222221,78,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Otherside Of America,1,6637379,6637379.0,74.0,single,2020-06-05,day,False,1,3,52.0,52,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+family ties (with Kendrick Lamar),2,23048536,11524268.0,83.0,single,2021-08-27,day,False,1,4,78.0,78,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Meet The Woo 2,1,11395292,11395292.0,82.0,album,2020-02-07,day,False,13,28,63.84615384615385,79,5,80,15.8,178,True,True,True,False,True,True,True,False,False,True
+Keep Their Heads Ringin',1,8281199,8281199.0,78.0,single,1995-03-07,day,False,4,17,39.25,65,2,55,27.5,181,False,False,True,False,True,True,True,False,False,True
+Operation Stackola,1,270460,270460.0,57.0,album,1995-07-04,day,False,16,62,26.875,74,8,57,1.375,182,True,False,True,False,True,True,True,False,False,True
+High Off Life,1,12400949,12400949.0,86.0,album,2020-05-15,day,False,21,60,53.33333333333334,72,11,96,8.090909090909092,183,True,True,True,False,True,True,True,False,False,True
+The Circus,1,555567,555567.0,59.0,album,2020-01-10,day,False,7,17,37.285714285714285,56,1,64,64.0,183,True,True,True,False,True,True,True,False,False,True
+GINGER,1,2027212,2027212.0,67.0,album,2019-08-23,day,False,12,38,51.5,72,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Lethal Injection,1,6216369,6216369.0,73.0,album,1993-12-07,day,False,12,50,0.0,0,2,53,13.5,0,False,False,False,False,False,False,False,False,False,False
+The Diary,1,804718,804718.0,56.0,album,1994,year,False,13,36,33.76923076923077,57,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Donda,1,18613723,18613723.0,90.0,album,2021-08-29,day,False,27,95,1.5925925925925923,20,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+2Pacalypse Now,1,13873094,13873094.0,78.0,album,1991-11-12,day,False,13,49,38.38461538461537,55,0,0,0.0,169,True,True,True,False,True,True,False,False,False,True
+AT.LONG.LAST.A$AP,1,11475745,11475745.0,80.0,album,2015-05-26,day,False,18,57,56.888888888888886,76,20,90,1.45,171,True,True,True,False,True,True,False,False,False,True
+The Blueprint 3,1,7728824,7728824.0,82.0,album,2009-09-08,day,False,15,56,51.400000000000006,82,12,96,4.583333333333333,182,True,True,True,False,True,True,True,False,False,True
+Jesus Piece (Deluxe),1,4255262,4255262.0,72.0,album,2012-01-01,day,False,15,63,38.666666666666664,64,25,90,3.44,165,True,True,True,False,True,True,False,False,False,True
+Yeezus,1,18613723,18613723.0,90.0,album,2013-06-18,day,False,10,34,65.0,86,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Terrorist Threats,1,1208919,1208919.0,57.0,album,2003-12-09,day,False,14,45,37.07142857142857,66,6,73,1.6666666666666667,182,True,True,True,False,True,True,True,False,False,True
+Karma 3,1,615079,615079.0,60.0,album,2020-08-14,day,False,15,44,34.199999999999996,60,11,80,6.2727272727272725,183,True,True,True,False,True,True,True,False,False,True
+SAVAGE MODE II,2,15057966,7528983.0,85.0,album,2020-10-02,day,False,15,39,65.86666666666666,79,3,96,23.0,183,True,True,True,False,True,True,True,False,False,True
+B4.DA.$$,1,2787059,2787059.0,73.0,album,2015-01-20,day,False,17,51,42.82352941176472,62,8,61,6.875,183,True,True,True,False,True,True,True,False,False,True
+Bizarre Ride II The Pharcyde,1,604808,604808.0,57.0,album,1992-11-24,day,False,16,52,38.5625,68,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Chronic,1,8281199,8281199.0,78.0,album,1992-12-15,day,False,16,53,0.5625,5,11,82,2.4545454545454546,0,False,False,False,False,False,False,False,False,False,False
+The Sun's Tirade,1,1204347,1204347.0,66.0,album,2016-09-02,day,False,17,53,48.11764705882353,65,9,87,9.222222222222221,169,True,True,True,False,True,True,True,False,False,True
+The Essential Cypress Hill,1,1691678,1691678.0,66.0,compilation,2014-10-10,day,False,31,103,32.096774193548384,64,6,70,6.666666666666667,183,True,True,True,False,True,True,True,False,False,True
+CHASE,1,257077,257077.0,66.0,album,2019-02-28,day,False,11,20,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+"Passion, Pain & Demon Slayin'",1,6122411,6122411.0,81.0,album,2016-12-16,day,False,19,78,46.578947368421055,62,6,87,13.166666666666666,178,True,True,True,False,True,True,True,False,False,True
+2001,1,8281199,8281199.0,78.0,album,1999-11-16,day,False,22,57,0.31818181818181823,3,50,90,0.06,0,False,False,False,False,False,False,False,False,False,False
+Black Habits,1,417608,417608.0,55.0,album,2020-02-07,day,False,16,55,33.375,57,8,82,7.875,183,True,True,True,False,True,True,True,False,False,True
+1999,1,2787059,2787059.0,73.0,album,2012-06-12,day,False,15,53,54.53333333333334,69,17,52,2.176470588235294,183,True,True,True,False,True,True,True,False,False,True
+"good kid, m.A.A.d city (Deluxe)",1,21895466,21895466.0,87.0,album,2012,year,False,17,85,60.35294117647059,72,9,96,9.11111111111111,2,True,True,False,False,False,False,False,False,False,False
+Noise Kandy 3: The Overdose,1,27177,27177.0,51.0,album,2019-07-23,day,False,13,28,20.384615384615383,38,4,40,10.0,183,True,True,True,False,True,True,True,False,False,True
+Born Sinner,1,18276353,18276353.0,84.0,album,2013-06-14,day,False,21,68,0.9047619047619048,19,9,87,8.444444444444445,0,False,False,False,False,False,False,False,False,False,False
+Family and Loyalty,1,806041,806041.0,61.0,single,2019-09-20,day,False,1,4,38.0,38,1,84,84.0,183,True,True,True,False,True,True,True,False,False,True
+The Return of the King,1,535,535.0,16.0,album,2021-05-28,day,False,10,25,2.3,6,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Royalty,1,737603,737603.0,64.0,album,2018-02-23,day,False,8,22,26.125,39,2,65,28.5,183,True,True,True,False,True,True,True,False,False,True
+ZUU,1,1973893,1973893.0,71.0,album,2019-05-31,day,False,12,25,47.41666666666667,64,6,76,6.666666666666667,181,True,True,True,False,True,True,True,False,False,True
+The Blow Up,1,18276353,18276353.0,84.0,album,2014-11-09,day,False,11,27,32.27272727272727,51,0,0,0.0,111,False,False,False,False,True,True,True,False,False,False
+Hiding Places,2,91872,45936.0,43.5,album,2019-03-29,day,False,12,34,33.0,43,3,35,5.333333333333333,183,True,True,True,False,True,True,True,False,False,True
+Madvillainy,3,2464037,821345.6666666667,68.66666666666667,album,2004-03-24,day,False,22,33,0.0,0,6,53,5.833333333333333,0,False,False,False,False,False,False,False,False,False,False
+THE MOUSE & THE MASK,1,203142,203142.0,51.0,album,2005-10-17,day,False,16,39,0.0,0,7,74,9.571428571428571,0,False,False,False,False,False,False,False,False,False,False
+Hell On Earth,1,1692648,1692648.0,65.0,album,1996-11-19,day,False,14,52,40.92857142857142,65,8,71,5.75,183,True,True,True,False,True,True,True,False,False,True
+Operation: Doomsday (Complete),1,1599579,1599579.0,74.0,album,1999-04-20,day,False,42,116,40.309523809523824,73,17,55,2.6470588235294117,183,True,True,True,False,True,True,True,False,False,True
+93 'til Infinity,1,248917,248917.0,53.0,album,1993-02-13,day,False,14,47,35.71428571428571,69,3,52,17.333333333333332,183,True,True,True,False,True,True,True,False,False,True
+Confessions of a Dangerous Mind,1,5805600,5805600.0,75.0,album,2019-05-10,day,False,16,46,51.25,73,7,90,3.7142857142857144,178,True,True,True,False,True,True,True,False,False,True
+Lifestylez Ov Da Poor & Dangerous,1,727563,727563.0,59.0,album,1995-03-28,day,False,12,42,46.49999999999999,63,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Key to the Kuffs,1,74655,74655.0,43.0,album,2012-08-20,day,False,15,35,0.0,0,4,48,8.25,0,False,False,False,False,False,False,False,False,False,False
+Lewis Street,1,18276353,18276353.0,84.0,single,2020-07-22,day,False,2,8,61.0,62,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Revenge Of The Dreamers III,2,18744204,9372102.0,75.0,album,2019-07-05,day,False,18,53,54.111111111111114,73,59,81,1.0677966101694916,181,True,True,True,False,True,True,True,False,False,True
+The Light Pack,1,2787059,2787059.0,73.0,single,2020-07-17,day,False,3,7,51.0,60,1,71,71.0,183,True,True,True,False,True,True,True,False,False,True
+Self Care,1,8158416,8158416.0,82.0,single,2018-07-13,day,False,1,5,45.0,45,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+"good kid, m.A.A.d city",1,21895466,21895466.0,87.0,album,2012,year,False,14,73,54.71428571428571,76,7,96,9.0,180,False,False,True,False,True,True,True,False,False,True
+Life,1,174269,174269.0,58.0,single,2020-07-06,day,False,1,3,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Escape From New York,3,4039064,1346354.6666666665,58.0,album,2019-05-24,day,False,13,38,42.46153846153845,54,52,56,0.8461538461538461,183,True,True,True,False,True,True,True,False,False,True
+The Plugs I Met,1,275705,275705.0,62.0,album,2019-06-21,day,False,7,20,37.285714285714285,53,7,71,4.571428571428571,183,True,True,True,False,True,True,True,False,False,True
+Single Again,1,10159914,10159914.0,77.0,single,2019-07-26,day,False,1,3,54.0,54,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+Macadelic (Remastered Edition),1,8158416,8158416.0,82.0,album,2012-03-23,day,False,17,58,51.1764705882353,66,9,87,8.11111111111111,183,True,True,True,False,True,True,True,False,False,True
+Confetti,1,2655763,2655763.0,81.0,album,2019-09-20,day,False,12,30,51.16666666666667,68,3,78,26.0,183,True,True,True,False,True,True,True,False,False,True
+Bandana,2,1450582,725291.0,68.0,album,2019-06-28,day,False,15,39,43.0,57,5,77,11.8,183,True,True,True,False,True,True,True,False,False,True
+Alfredo,2,1449667,724833.5,67.5,album,2020-05-29,day,False,10,29,52.9,64,4,83,14.75,183,True,True,True,False,True,True,True,False,False,True
+No Pressure,1,5805600,5805600.0,75.0,album,2020-07-24,day,False,15,52,50.4,67,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Why Worry,1,1204347,1204347.0,66.0,single,2020-04-22,day,False,1,2,45.0,45,0,0,0.0,175,True,True,True,False,True,True,True,False,False,True
+Black On Both Sides,1,1280952,1280952.0,63.0,album,1999-10-12,day,False,17,66,44.94117647058824,70,4,69,15.0,167,True,True,True,False,True,True,False,False,False,True
+MM..FOOD,1,1599579,1599579.0,74.0,album,2004-11-16,day,False,15,41,0.0,0,4,44,10.5,0,False,False,False,False,False,False,False,False,False,False
+Ride Wit It,1,148,148.0,16.0,single,2021-03-18,day,False,1,2,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Because the Internet,1,9965064,9965064.0,77.0,album,2013-12-10,day,False,19,47,43.05263157894736,67,3,76,20.0,0,False,False,False,False,False,False,False,False,False,False
+The Anthology,1,1770555,1770555.0,65.0,compilation,1999-10-26,day,False,19,65,33.10526315789473,67,3,63,20.0,183,True,True,True,False,True,True,True,False,False,True
+The Never Story,1,1042535,1042535.0,77.0,album,2017-03-10,day,False,12,35,50.0,62,3,74,24.666666666666668,178,True,True,True,False,True,True,True,False,False,True
+Camp,1,9965064,9965064.0,77.0,album,2011-11-15,day,False,13,49,44.07692307692307,69,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+I Decided.,1,10159914,10159914.0,77.0,album,2017-02-03,day,False,14,43,49.64285714285714,69,7,90,6.285714285714286,178,True,True,True,False,True,True,True,False,False,True
+Mercy,1,18613723,18613723.0,90.0,single,2012-01-01,day,False,1,5,71.0,71,3,77,25.0,119,True,True,True,False,True,True,False,False,False,True
+Yessir Whatever,2,627129,313564.5,58.5,album,2013-06-18,day,False,12,25,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Liquid Swords,1,450461,450461.0,61.0,album,1995-11-07,day,False,13,49,47.38461538461539,65,14,70,3.142857142857143,183,True,True,True,False,True,True,True,False,False,True
+Section.80,1,21895466,21895466.0,87.0,album,2011-07-02,day,False,15,45,55.33333333333335,71,5,59,11.4,183,True,True,True,False,True,True,True,False,False,True
+Piñata,2,1450582,725291.0,68.0,album,2014-03-18,day,False,17,51,45.352941176470594,55,15,82,5.466666666666667,183,True,True,True,False,True,True,True,False,False,True
+Grown Up,1,719249,719249.0,58.0,single,2012-06-05,day,False,3,6,36.333333333333336,60,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+The Water (S),1,555567,555567.0,59.0,album,2014-08-12,day,False,15,50,35.53333333333333,55,6,73,12.166666666666666,183,True,True,True,False,True,True,True,False,False,True
+ALL-AMERIKKKAN BADA$$,1,2787059,2787059.0,73.0,album,2017-04-07,day,False,12,44,51.25,69,7,84,12.0,183,True,True,True,False,True,True,True,False,False,True
+Summertime '06,1,1659853,1659853.0,67.0,album,2015-06-30,day,False,20,49,38.300000000000004,64,11,76,2.272727272727273,182,True,True,True,False,True,True,True,False,False,True
+Cilvia Demo,1,1204347,1204347.0,66.0,album,2014-01-28,day,False,14,43,45.642857142857146,62,6,83,11.833333333333334,183,True,True,True,False,True,True,True,False,False,True
+untitled unmastered.,1,21895466,21895466.0,87.0,album,2016-03-04,day,False,8,30,55.375,63,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Waves,1,2787059,2787059.0,73.0,single,2012-11-13,day,False,2,6,36.0,40,1,57,57.0,183,True,True,True,False,True,True,True,False,False,True
+Get Back,1,104,104.0,1.0,single,2021-03-26,day,False,1,3,0.0,0,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+4 Your Eyez Only,1,18276353,18276353.0,84.0,album,2016-12-09,day,False,10,40,64.7,74,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Control System,1,953438,953438.0,57.0,album,2012-05-11,day,False,17,64,33.1764705882353,51,14,87,3.142857142857143,183,True,True,True,False,True,True,True,False,False,True
+90059,1,1313991,1313991.0,70.0,album,2015-09-11,day,False,11,44,35.09090909090909,52,9,87,4.111111111111111,183,True,True,True,False,True,True,True,False,False,True
+Aquemini,1,2074000,2074000.0,73.0,album,1998-09-29,day,False,16,68,46.6875,65,6,67,10.5,183,True,True,True,False,True,True,True,False,False,True
+Blank Face LP,1,4298851,4298851.0,71.0,album,2016-07-08,day,False,17,63,45.52941176470587,61,13,90,2.6923076923076925,180,True,True,True,False,True,True,True,False,False,True
+Rags,1,737603,737603.0,64.0,single,2017-09-01,day,False,5,21,35.6,57,3,77,19.666666666666668,183,True,True,True,False,True,True,True,False,False,True
+Imperial,1,1973893,1973893.0,71.0,album,2016-10-14,day,False,10,35,47.900000000000006,59,5,76,8.8,180,True,True,True,False,True,True,True,False,False,True
+3001: A Laced Odyssey,1,1143825,1143825.0,56.0,album,2016-03-11,day,False,12,57,45.75,56,2,35,11.5,183,True,True,True,False,True,True,True,False,False,True
+The Life Of Pablo,1,18613723,18613723.0,90.0,album,2016-06-10,day,False,20,59,64.35,82,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Exhibit C,1,279791,279791.0,58.0,single,2009-12-22,day,False,3,15,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Indigoism,1,365390,365390.0,49.0,album,2013-02-01,day,False,17,50,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Genesis,1,296247,296247.0,54.0,album,2016-03-25,day,False,12,36,32.166666666666664,61,11,83,4.636363636363637,183,True,True,True,False,True,True,True,False,False,True
+Hell Can Wait,1,1659853,1659853.0,67.0,album,2014-09-23,day,False,7,21,38.57142857142857,50,1,61,61.0,183,True,True,True,False,True,True,True,False,False,True
+UNLOCKED,2,2111624,1055812.0,67.5,album,2020-02-07,day,False,8,14,48.25,54,0,0,0.0,181,True,True,True,False,True,True,True,False,False,True
+GO:OD AM,1,8158416,8158416.0,82.0,album,2015-09-18,day,False,17,61,55.70588235294118,76,5,76,12.0,183,True,True,True,False,True,True,True,False,False,True
+The Last Rocket,1,1339014,1339014.0,75.0,album,2018-11-02,day,False,12,31,58.0,72,0,0,0.0,181,True,True,True,False,True,True,True,False,False,True
+Stay Flexing,1,1639209,1639209.0,0.0,compilation,2016-12-06,day,False,11,31,0.0,0,11,80,2.727272727272727,0,False,False,False,False,False,False,False,False,False,False
+Mediterranean,3,24890881,8296960.333333333,76.66666666666667,single,2017-12-08,day,False,1,3,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+NOT ALL HEROES WEAR CAPES (Deluxe),2,15057966,7528983.0,85.0,album,2018-11-06,day,False,26,74,50.49999999999999,80,19,96,5.052631578947368,181,True,True,True,False,True,True,True,False,False,True
+Spotify Singles,1,12681863,12681863.0,77.0,single,2017,year,False,2,5,30.5,34,1,32,32.0,183,True,True,True,False,True,True,True,False,False,True
+Guala,2,5415329,2707664.5,65.0,single,2017-03-28,day,False,1,5,0.0,0,1,39,39.0,0,False,False,False,False,False,False,False,False,False,False
+On the Run,1,7586076,7586076.0,82.0,single,2018-09-24,day,False,6,20,49.833333333333336,61,5,83,16.6,183,True,True,True,False,True,True,True,False,False,True
+QUAVO HUNCHO,1,6034081,6034081.0,80.0,album,2018-10-12,day,False,19,56,47.89473684210526,66,12,96,6.75,181,True,True,True,False,True,True,True,False,False,True
+Black Panther The Album Music From And Inspired By,2,30569534,15284767.0,85.0,album,2018-02-09,day,False,14,42,60.785714285714285,82,23,93,4.043478260869565,178,True,True,True,False,True,True,True,False,False,True
+Die A Legend,1,8561756,8561756.0,82.0,album,2019-06-07,day,False,14,35,61.14285714285714,77,3,89,27.666666666666668,183,True,True,True,False,True,True,True,False,False,True
+TA13OO,1,1973893,1973893.0,71.0,album,2018-07-27,day,False,13,36,52.92307692307693,64,6,77,11.0,181,True,True,True,False,True,True,True,False,False,True
+Nasty Freestyle,1,159238,159238.0,47.0,single,2015-05-04,day,False,1,2,61.0,61,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Shotta Flow (Feat. Blueface) [Remix],1,5283205,5283205.0,76.0,single,2019-06-20,day,False,1,2,70.0,70,1,66,66.0,183,True,True,True,False,True,True,True,False,False,True
+Choppa,1,13690,13690.0,31.0,single,2019-06-17,day,False,1,2,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Houdini,1,19249,19249.0,36.0,single,2018-09-23,day,False,1,2,14.0,14,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Uno,1,41411,41411.0,39.0,single,2019-05-10,day,False,1,1,55.0,55,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Solitaire (feat. Migos & Lil Yachty),3,25661966,8553988.666666668,76.66666666666667,single,2018-03-01,day,False,1,2,42.0,42,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Lil Boat 2,1,8455678,8455678.0,77.0,album,2018-03-09,day,False,17,36,47.35294117647059,72,13,89,6.230769230769231,181,True,True,True,False,True,True,True,False,False,True
+Love & Drugz II,2,8166814,4083407.0,64.0,single,2018-07-20,day,False,1,3,41.0,41,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+!,1,8072324,8072324.0,81.0,album,2019-08-09,day,False,14,33,0.0,0,5,89,12.4,0,False,False,False,False,False,False,False,False,False,False
+Harverd Dropout,1,7929411,7929411.0,65.0,album,2019-02-22,day,False,16,33,38.625,50,8,90,9.375,183,True,True,True,False,True,True,True,False,False,True
+Esskeetit,1,7929411,7929411.0,65.0,single,2018-04-13,day,False,1,3,55.0,55,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Shelby,1,4852369,4852369.0,69.0,album,2019-03-01,day,False,14,35,49.5,69,3,83,27.666666666666668,183,True,True,True,False,True,True,True,False,False,True
+Harder Than Ever,1,12028254,12028254.0,89.0,album,2018-05-18,day,False,17,44,55.82352941176471,82,9,96,5.666666666666667,181,True,True,True,False,True,True,True,False,False,True
+Back On My Baby Jesus Sh!t,1,10223329,10223329.0,81.0,album,2017-11-20,day,False,12,18,35.5,53,1,67,67.0,178,True,True,True,False,True,True,True,False,False,True
+Blank Blank,1,10223329,10223329.0,81.0,album,2018-11-02,day,False,10,20,47.0,64,1,57,57.0,183,True,True,True,False,True,True,True,False,False,True
+Baby Talk 5,1,10223329,10223329.0,81.0,album,2018-06-01,day,False,10,22,37.699999999999996,56,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+Quality Control: Control The Streets Volume 1,1,1096079,1096079.0,66.0,album,2017-12-08,day,False,30,89,43.63333333333333,62,53,89,0.8867924528301887,181,True,True,True,False,True,True,True,False,False,True
+Pull The Trigger,1,4584044,4584044.0,75.0,single,2016-08-23,day,False,1,2,55.0,55,0,0,0.0,171,True,True,True,False,True,True,False,False,False,True
+Northsbest (Extended),1,4827395,4827395.0,70.0,album,2018-10-19,day,False,12,25,53.583333333333336,74,1,59,59.0,178,True,True,True,False,True,True,True,False,False,True
+Tribe,1,348341,348341.0,51.0,single,2019-07-26,day,False,1,3,25.0,25,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+BAWSKEE 3.5,1,2073912,2073912.0,64.0,album,2019-07-26,day,False,12,15,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Floor Seats,1,3390534,3390534.0,70.0,single,2019-07-18,day,False,1,2,43.0,43,0,0,0.0,182,True,True,True,False,True,True,True,False,False,True
+Magic,1,4852369,4852369.0,69.0,single,2019-07-24,day,False,1,3,64.0,64,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+DeMar DeRozan,1,2073912,2073912.0,64.0,single,2018-12-14,day,False,1,1,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Northsbest,1,4827395,4827395.0,70.0,album,2018-10-19,day,False,11,23,0.0,0,1,59,59.0,0,False,False,False,False,False,False,False,False,False,False
+Die Young,1,8543816,8543816.0,79.0,single,2018-07-20,day,False,1,2,50.0,50,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Kickback (feat. Lil Mosey),1,14957,14957.0,37.0,single,2018-06-20,day,False,1,2,34.0,34,1,70,70.0,183,True,True,True,False,True,True,True,False,False,True
+Baby,3,23347662,7782554.0,78.66666666666667,single,2019-07-17,day,False,1,2,60.0,60,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+World Rage,1,4852369,4852369.0,69.0,single,2018-06-22,day,False,1,2,51.0,51,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Life on Fire (jazmyns song),1,510897,510897.0,56.0,single,2019-03-15,day,False,1,2,25.0,25,0,0,0.0,173,True,True,True,False,True,True,True,False,False,True
+Octane Sex,1,510897,510897.0,56.0,single,2019-07-12,day,False,1,2,28.0,28,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+On Me,3,17137833,5712611.0,75.0,single,2017-09-29,day,False,1,3,46.0,46,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+Pretty Girls Like Trap Music,1,7466283,7466283.0,75.0,album,2017-06-16,day,False,16,55,46.5,68,12,96,5.083333333333333,178,True,True,True,False,True,True,True,False,False,True
+A$AP Forever (feat. Moby),1,11475745,11475745.0,80.0,single,2018-04-05,day,False,1,3,63.0,63,1,67,67.0,183,True,True,True,False,True,True,True,False,False,True
+Gnar Lif3,1,510897,510897.0,56.0,album,2018-09-28,day,False,11,17,0.0,0,5,69,13.2,0,False,False,False,False,False,False,False,False,False,False
+More Life,1,68545753,68545753.0,96.0,album,2017-03-18,day,False,22,71,64.5909090909091,82,12,90,6.833333333333333,183,True,True,True,False,True,True,True,False,False,True
+Future & Juice WRLD Present... WRLD ON DRUGS,2,38714652,19357326.0,87.0,album,2018-10-19,day,False,16,42,59.0,72,6,85,14.166666666666666,183,True,True,True,False,True,True,True,False,False,True
+Boss Up,1,777831,777831.0,58.0,single,2018-03-09,day,False,1,3,31.0,31,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+7 EP,1,12015830,12015830.0,81.0,single,2019-06-21,day,False,8,14,62.25,77,3,80,26.666666666666668,183,True,True,True,False,True,True,True,False,False,True
+Neighbor (feat. Travis Scott),1,2925806,2925806.0,73.0,single,2018-09-26,day,False,1,2,54.0,54,1,87,87.0,183,True,True,True,False,True,True,True,False,False,True
+Billion Dollar Baby,1,10223329,10223329.0,81.0,album,2017-06-16,day,False,11,28,22.818181818181817,25,2,46,23.0,178,True,True,True,False,True,True,True,False,False,True
+Pop Star,1,4852369,4852369.0,69.0,single,2018-03-05,day,False,1,2,45.0,45,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Holy Ghost,1,3400359,3400359.0,62.0,single,2017-04-03,day,False,1,3,37.0,37,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+i am > i was (Deluxe),1,11964059,11964059.0,91.0,album,2018-12-24,day,False,16,46,48.0,61,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+ALL-AMERIKKKAN BADA$$,1,2787059,2787059.0,73.0,album,2017-04-07,day,False,12,44,0.0,0,7,84,12.0,0,False,False,False,False,False,False,False,False,False,False
+Under Enemy Arms,1,8072324,8072324.0,81.0,single,2019-05-29,day,False,1,2,48.0,48,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+Lady Lady,1,1059520,1059520.0,67.0,album,2018-09-07,day,False,14,44,43.857142857142854,74,5,67,13.4,183,True,True,True,False,True,True,True,False,False,True
+Blue Pill,1,3093907,3093907.0,79.0,single,2017-10-06,day,False,1,3,47.0,47,1,87,87.0,178,True,True,True,False,True,True,True,False,False,True
+Take Care (Deluxe),1,68545753,68545753.0,96.0,album,2011-11-15,day,False,19,74,65.36842105263158,76,10,93,8.4,183,True,True,True,False,True,True,True,False,False,True
+Ransom,1,5553751,5553751.0,76.0,single,2019-06-04,day,False,1,2,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+SremmLife 2 (Deluxe),1,6967978,6967978.0,71.0,album,2016-08-12,day,False,14,49,45.785714285714285,75,5,81,3.0,183,True,True,True,False,True,True,True,False,False,True
+The World Is Yours,1,2909479,2909479.0,66.0,album,2018-03-30,day,False,15,43,44.33333333333334,70,12,87,6.416666666666667,178,True,True,True,False,True,True,True,False,False,True
+Last Memory,1,1339014,1339014.0,75.0,single,2018-10-26,day,False,1,2,51.0,51,0,0,0.0,178,True,True,True,False,True,True,True,False,False,True
+Stillmatic,1,3023692,3023692.0,71.0,album,2001-12-18,day,False,14,49,41.35714285714286,54,5,55,4.4,183,True,True,True,False,True,True,True,False,False,True
+534,1,344396,344396.0,49.0,album,2005-01-01,day,False,14,43,25.5,58,7,88,0.42857142857142855,183,True,True,True,False,True,True,True,False,False,True
+Thank Me Later,1,68545753,68545753.0,96.0,album,2010-01-01,day,False,14,53,55.07142857142858,68,8,85,10.5,3,True,True,False,False,False,False,False,False,False,True
+Eve-Olution,1,1146754,1146754.0,66.0,album,2002-01-01,day,False,16,46,21.9375,60,9,82,3.5555555555555554,179,True,True,True,False,True,True,True,False,False,True
+4:21...The Day After,1,1778079,1778079.0,70.0,album,2006-01-01,day,False,20,52,26.65,58,14,67,0.8571428571428571,183,True,True,True,False,True,True,True,False,False,True
+King Gampo,1,126226,126226.0,53.0,album,2011-08-16,day,False,16,54,28.3125,41,2,46,8.0,174,True,True,True,False,True,True,True,False,False,True
+Graduation,1,18613723,18613723.0,90.0,album,2007-09-11,day,False,14,48,71.07142857142858,84,8,84,5.125,183,True,True,True,False,True,True,True,False,False,True
+Intuition,1,1027522,1027522.0,67.0,album,2008-12-11,day,False,15,55,30.333333333333336,64,7,90,2.0,179,True,True,True,False,True,True,True,False,False,True
+Can't Believe It Remix (feat. Justin Timberlake),1,4051712,4051712.0,75.0,single,2008-12-05,day,False,1,5,36.0,36,1,78,78.0,182,True,True,True,False,True,True,True,False,False,True
+The Undisputed Truth,1,205222,205222.0,46.0,album,2007-04-10,day,False,15,55,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Cats & Dogs,1,87115,87115.0,43.0,album,2011-09-27,day,False,17,52,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+2014 Forest Hills Drive,1,18276353,18276353.0,84.0,album,2014-12-09,day,False,13,58,67.38461538461539,87,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Mura Masa,1,625616,625616.0,63.0,album,2017-07-14,day,False,13,39,43.30769230769231,73,11,80,4.2727272727272725,183,True,True,True,False,True,True,True,False,False,True
+Ventura,1,2249447,2249447.0,77.0,album,2019-04-12,day,False,11,34,52.36363636363636,63,7,75,10.714285714285714,183,True,True,True,False,True,True,True,False,False,True
+Cosmic Wind,1,203589,203589.0,47.0,album,2019-03-29,day,False,15,48,15.533333333333335,27,3,67,20.333333333333332,0,False,False,False,False,False,False,False,False,False,False
+The Divine Feminine,1,8158416,8158416.0,82.0,album,2016-09-16,day,False,10,49,64.7,76,7,87,12.428571428571429,183,True,True,True,False,True,True,True,False,False,True
+The Stimulus Package,1,893,893.0,0.0,album,2010-02-15,day,False,15,47,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Under Pressure,1,5805600,5805600.0,75.0,album,2014-10-21,day,False,12,51,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Collected,1,54212,54212.0,45.0,album,2007-07-17,day,False,11,34,17.27272727272727,41,1,59,59.0,30,True,True,False,False,True,True,False,False,False,False
+The Marshall Mathers LP,1,61300484,61300484.0,90.0,album,2000-05-23,day,False,18,64,57.1111111111111,87,11,82,5.818181818181818,183,True,True,True,False,True,True,True,False,False,True
+Hell: The Sequel (Deluxe),1,1514786,1514786.0,60.0,album,2011-01-01,day,False,11,40,53.090909090909086,70,3,86,15.0,182,True,True,True,False,True,True,True,False,False,True
+Together/Apart,1,127163,127163.0,45.0,album,2011-06-21,day,False,16,50,0.0,0,2,46,0.0,0,False,False,False,False,False,False,False,False,False,False
+A Brand You Can Trust,1,147463,147463.0,42.0,album,2009-07-14,day,False,15,51,0.0,0,8,82,5.25,0,False,False,False,False,False,False,False,False,False,False
+Get Rich Or Die Tryin',1,9616884,9616884.0,82.0,album,2003-02-06,day,False,20,67,57.6,82,7,90,11.714285714285714,178,False,False,True,False,True,True,True,False,False,True
+Tha Carter III,1,12776886,12776886.0,84.0,album,2008-01-01,day,False,23,95,38.1304347826087,67,12,82,5.416666666666667,158,False,False,True,False,True,True,False,False,False,True
+Get Rich Or Die Tryin',1,9616884,9616884.0,82.0,album,2003-02-06,day,False,19,62,50.789473684210535,75,6,90,15.0,12,True,True,False,False,False,False,False,False,False,True
+The Eminem Show,1,61300484,61300484.0,90.0,album,2002-05-26,day,False,20,67,0.0,0,6,78,7.166666666666667,0,False,False,False,False,False,False,False,False,False,False
+Stankonia,1,2074000,2074000.0,73.0,album,2000-10-31,day,False,24,63,35.166666666666664,81,16,64,3.375,183,True,True,True,False,True,True,True,False,False,True
+The Don Killuminati: The 7 Day Theory,1,2154200,2154200.0,57.0,album,1996-11-05,day,False,12,53,52.333333333333336,69,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Late Registration,1,18613723,18613723.0,90.0,album,2005-01-01,day,False,22,62,38.72727272727272,65,17,82,1.9411764705882353,2,False,False,False,False,False,False,False,False,False,False
+Lupe Fiasco's Food & Liquor,1,1798021,1798021.0,65.0,album,2006-06-27,day,False,16,64,37.8125,61,8,82,6.25,150,True,True,True,False,True,True,True,False,False,True
+Come Home With Me,1,625676,625676.0,58.0,album,2003-01-01,day,False,7,29,15.857142857142858,57,10,82,6.2,1,True,False,False,False,False,False,False,False,False,False
+The Red Light District,1,2469255,2469255.0,74.0,album,2004-01-01,day,False,16,57,37.375,59,11,75,3.1818181818181817,183,True,True,True,False,True,True,True,False,False,True
+Intl Singles Box Set (International Version),1,61300484,61300484.0,90.0,single,2003-01-01,day,False,35,135,0.0,0,13,82,6.0,0,False,False,False,False,False,False,False,False,False,False
+Tha Carter IV (Explicit Version),1,12776886,12776886.0,84.0,album,2011-01-01,day,False,15,54,40.33333333333333,62,12,96,5.75,179,False,True,True,False,True,True,True,False,False,False
+LONG.LIVE.A$AP (Deluxe Version),1,11475745,11475745.0,80.0,album,2013,year,False,17,58,57.64705882352942,75,21,96,2.0952380952380953,183,True,True,True,False,True,True,True,False,False,True
+Born Sinner (Deluxe Version),1,18276353,18276353.0,84.0,album,2013-06-18,day,False,21,68,56.76190476190476,81,9,87,8.444444444444445,183,True,True,True,False,True,True,True,False,False,True
+Attention Deficit,1,3838468,3838468.0,69.0,album,2009-01-01,day,False,14,47,28.571428571428573,48,11,84,7.636363636363637,123,True,True,True,False,True,True,False,False,False,True
+I GOT ISSUES,1,2960627,2960627.0,74.0,album,2022-09-30,day,False,14,42,54.92857142857144,69,11,87,6.454545454545454,182,True,True,True,False,True,True,True,False,False,True
+Graduation,1,18613723,18613723.0,90.0,album,2007-09-11,day,False,13,45,0.0,0,5,84,12.2,0,False,False,False,False,False,False,False,False,False,False
+The College Dropout,1,18613723,18613723.0,90.0,album,2004-02-13,day,False,21,66,0.0,0,13,82,3.230769230769231,0,False,False,False,False,False,False,False,False,False,False
+Lasers,1,1798021,1798021.0,65.0,album,2011-03-04,day,False,12,42,40.75,70,9,76,8.444444444444445,156,True,True,True,False,True,True,True,False,False,False
+Resurrection (Music From And Inspired By The Motion Picture),1,13873094,13873094.0,78.0,album,2003-01-01,day,False,14,48,0.0,0,8,90,10.25,0,False,False,False,False,False,False,False,False,False,False
+Late Registration,1,18613723,18613723.0,90.0,album,2005-01-01,day,False,21,59,0.0,0,13,82,4.461538461538462,0,False,False,False,False,False,False,False,False,False,False
+Devils Night,1,2552276,2552276.0,64.0,album,2001-01-01,day,False,19,65,42.0,68,1,44,44.0,183,True,True,True,False,True,True,True,False,False,True
+Pain Is Love,1,1514528,1514528.0,67.0,album,2001-01-01,day,False,16,57,31.1875,73,15,78,5.2,89,True,True,True,False,True,True,True,False,False,True
+My Krazy Life,1,2960627,2960627.0,74.0,album,2014-03-18,day,False,14,41,44.285714285714285,68,13,96,6.153846153846154,183,True,True,True,False,True,True,True,False,False,True
+Word Of Mouf,1,2469255,2469255.0,74.0,album,2001-01-01,day,False,18,70,38.72222222222222,62,20,75,1.15,166,True,True,True,False,True,True,False,False,False,True
+Speakerboxxx/The Love Below,1,2074000,2074000.0,73.0,album,2003,year,False,40,113,38.2,80,18,82,3.9444444444444446,183,True,True,True,False,True,True,True,False,False,True
+The Black Album,1,7728824,7728824.0,82.0,album,2003-11-14,day,False,14,49,36.78571428571429,53,0,0,0.0,163,False,False,True,False,True,True,False,False,False,False
+Encore (Deluxe Version),1,61300484,61300484.0,90.0,album,2004-11-12,day,False,23,79,55.08695652173913,88,6,82,10.666666666666666,183,True,True,True,False,True,True,True,False,False,True
+Encore,1,61300484,61300484.0,90.0,album,2004-11-12,day,False,20,69,38.14999999999999,63,6,82,10.666666666666666,183,True,True,True,False,True,True,True,False,False,True
+True Story,1,179340,179340.0,50.0,album,2004-01-01,day,False,12,39,23.333333333333332,65,27,66,2.4444444444444446,69,True,True,True,False,False,True,False,False,False,True
+Duets: The Final Chapter,1,8202385,8202385.0,76.0,album,2005-12-13,day,False,22,62,39.409090909090914,69,39,90,1.8717948717948718,176,True,True,True,False,True,True,True,False,False,True
+Welcome Back,1,690407,690407.0,63.0,album,2005-04-20,day,False,12,44,30.583333333333332,54,3,71,5.666666666666667,183,True,True,True,False,True,True,True,False,False,True
+Curtis,1,9616884,9616884.0,82.0,album,2007-01-01,day,False,17,47,43.470588235294116,67,9,90,5.888888888888889,163,False,False,True,False,True,True,False,False,False,True
+Mann's World,1,20776,20776.0,46.0,album,2011-01-01,day,False,10,27,13.6,51,7,82,11.142857142857142,2,False,False,False,False,False,False,False,False,False,False
+Relapse: Refill,1,61300484,61300484.0,90.0,album,2009-05-15,day,False,29,105,50.3103448275862,73,7,96,11.142857142857142,183,True,True,True,False,True,True,True,False,False,True
+Asleep In The Bread Aisle,1,248366,248366.0,48.0,album,2009-01-01,day,False,12,42,27.25,60,6,69,7.166666666666667,136,True,True,True,False,True,True,True,False,False,True
+Before I Self-Destruct,1,9616884,9616884.0,82.0,album,2009-01-01,day,False,18,55,37.44444444444444,60,3,90,21.666666666666668,183,True,True,True,False,True,True,True,False,False,True
+Detroit Deli (A Taste Of Detroit),1,277458,277458.0,53.0,album,2004-01-01,day,False,13,39,27.153846153846157,60,12,90,4.833333333333333,182,True,True,True,False,True,True,True,False,False,True
+Big Boi & Dre Present...OutKast,1,2074000,2074000.0,73.0,compilation,2001-10-04,day,False,16,64,28.0625,52,2,61,22.5,183,True,True,True,False,True,True,True,False,False,True
+Love Is Only a Feeling,1,2787059,2787059.0,73.0,single,2017-07-06,day,False,1,2,79.0,79,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Some Rap Songs,1,1881919,1881919.0,67.0,album,2018-11-30,day,False,15,16,48.93333333333332,65,4,47,5.75,183,True,True,True,False,True,True,True,False,False,True
+Launch Party,1,3424,3424.0,33.0,single,2020-12-13,day,False,5,12,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Amen,1,2087246,2087246.0,70.0,album,2018-02-02,day,False,14,34,45.42857142857143,60,4,85,13.25,180,True,True,True,False,True,True,True,False,False,True
+Album of the Year (Freestyle),1,18276353,18276353.0,84.0,single,2018-08-07,day,False,1,2,59.0,59,0,0,0.0,181,True,True,True,False,True,True,True,False,False,True
+Stay Trippy (Deluxe),1,2925806,2925806.0,73.0,album,2013-12-06,day,False,19,64,34.473684210526315,55,18,93,5.166666666666667,182,True,True,True,False,True,True,True,False,False,True
+Grown Up,1,719249,719249.0,58.0,single,2012-06-05,day,False,3,6,0.0,0,0,0,0.0,0,False,False,False,False,False,False,False,False,False,False
+Keep Your Distance,1,113597,113597.0,43.0,single,2020-10-15,day,False,1,1,57.0,57,0,0,0.0,183,True,True,True,False,True,True,True,False,False,True
+Oxymoron (Deluxe),1,4298851,4298851.0,71.0,album,2014-01-01,day,False,15,61,0.0,0,9,87,5.111111111111111,0,False,False,False,False,False,False,False,False,False,False

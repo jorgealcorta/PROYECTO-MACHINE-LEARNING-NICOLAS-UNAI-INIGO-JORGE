@@ -104,7 +104,7 @@ def generate_dataset(sp, columns, max):
     
     dataframe = pd.DataFrame (columns= columns)
     #album_ids debe ser actualizado cada vez que se haya conseguido scrapear álbumes nuevos.
-    album_ids = pd.read_csv('new_id_dataset3.csv', header=None)[1]
+    album_ids = pd.read_csv('new_id_dataset3_nico.csv', header=None)[1]
     tracks = pd.read_csv('album_tracks1.csv', header=None)[5]
     
 
@@ -214,7 +214,7 @@ def generate_dataset(sp, columns, max):
         for artist_id in external_artist_id:
             
             artist = sp.artist(artist_id)
-            album_colab_avg_pop = artist["popularity"] / len(external_artist_id)
+            album_colab_avg_pop += artist["popularity"] / len(external_artist_id)
 
             if artist["popularity"] > album_colab_max_pop : album_colab_max_pop = artist["popularity"]
             

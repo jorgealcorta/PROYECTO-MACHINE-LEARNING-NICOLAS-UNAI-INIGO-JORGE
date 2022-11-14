@@ -20,9 +20,9 @@ columns_variables = ["album_name", "number_of_artists", "artist_followers_total"
 "restrictions","total_tracks","total_length_min","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
 "US_market", "CA_market", "BR_market", "CN_market", "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
 columns_date = []
-columns_categorical = ["type", ]
+columns_categorical = ["type"]
 
-authentication = {"cid": "a81a443313b743118c9d25e93533a5c2", "secret": "3b77b9e8c7bb4b64a1cf47bbecd87451"}
+authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
 
 
 
