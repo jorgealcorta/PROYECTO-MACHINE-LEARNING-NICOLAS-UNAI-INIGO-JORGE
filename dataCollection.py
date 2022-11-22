@@ -100,19 +100,17 @@ def remove_ids(tracks, last_scraped, new_dataset_name):   #removes already scrap
 
 
 
-def generate_dataset(sp, columns, max):
+def generate_dataset(sp, columns, max, fileName):
     
     dataframe = pd.DataFrame (columns= columns)
     #album_ids debe ser actualizado cada vez que se haya conseguido scrapear álbumes nuevos.
-    album_ids = pd.read_csv('new_id_dataset3_nico.csv', header=None)[1]
-    tracks = pd.read_csv('album_tracks1.csv', header=None)[5]
+    album_ids = pd.read_csv(fileName, header=None)[1]
     
 
     # TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
 
     albums_scraped = 0
     songs_scraped = 0
-    last_songs_scraped = 0
     last = time.time()
     interval = 5   #interval in seconds
     attributeErrorCount = 0
@@ -250,6 +248,101 @@ def generate_dataset(sp, columns, max):
         if albums_scraped == 500: dataframe.to_csv('fourth_scrape_500.csv', index=False, encoding='utf-8')
         if albums_scraped == 400: dataframe.to_csv('fourth_scrape_400.csv', index=False, encoding='utf-8')
         if albums_scraped == 250: dataframe.to_csv('fourth_scrape_250.csv', index=False, encoding='utf-8')
+
+        if albums_scraped >= max: break
+
+def get_average_popularities(sp, columns, max, fileName):
+    
+    dataframe = pd.DataFrame (columns= columns)
+    #album_ids debe ser actualizado cada vez que se haya conseguido scrapear álbumes nuevos.
+    album_ids = pd.read_csv(fileName, header=None)[1]
+    
+
+    # TOAS LAS VARIABLES CON '_', SI SON DE ALBUM QUE EMPIECE POR ALBUM Y NADA DE CAMELCASE
+
+    albums_scraped = 0
+    songs_scraped = 0
+    last = time.time()
+    interval = 5   #interval in seconds
+    attributeErrorCount = 0
+
+    number_of_albums = len(album_ids)
+    print("Total albums to scrape: ", number_of_albums)
+
+    for id in album_ids:
+        albums_scraped += 1
+
+        now = time.time()
+        if now - last >= interval:
+            print("waiting to trick the max requests time window...")
+            time.sleep(3)
+            last = now
+        
+        #It is lately stopping at 400+ albums scraped. So lets wait for a bit every 400 albums:
+        if not albums_scraped % 400:
+            print(f"{albums_scraped} albums have been scraped. Chilling for 62 secs...")
+            time.sleep(62)
+
+        #hace falta scrapear cada álbum ya que necesitamos los ids de todas las canciones que contiene, es algo que no nos da sp.playlist_tracks()
+        try:
+            album = sp.album(id)
+        except AttributeError:
+            attributeErrorCount += 1
+            print(f"There was one attribute error. Number of errors: {attributeErrorCount}")
+            continue
+
+        album_name = album["name"]
+        album_artist_number = len(album["artists"])
+        album_artist_popularity = 0
+        #lista con los ids de los artistas
+        album_artist_ids = []
+
+
+        for artist_partial in album["artists"] :
+            artist_id = artist_partial["id"]
+            artist = sp.artist(artist_id)
+            album_artist_popularity += artist["popularity"]/ album_artist_number
+            album_artist_ids.append(artist_id)
+            
+        album_number_songs = album["total_tracks"]
+        album_avg_popularity = 0
+        external_artist_id = []
+
+        for track in album["tracks"]["items"]:
+            song = sp.track(track["id"])
+
+            song_popularity = song["popularity"]
+            album_avg_popularity += (song_popularity/album_number_songs)
+
+
+            #add external artisst of the song 
+            for artist in song["artists"]:
+                if(artist["id"] not in album_artist_ids):  external_artist_id.append(artist["id"])
+
+        album_colab_avg_pop = 0
+        album_colab_number = len(external_artist_id)
+        
+        for artist_id in external_artist_id:
+            
+            artist = sp.artist(artist_id)
+            album_colab_avg_pop += artist["popularity"] / album_colab_number
+
+        row = [album_name, album_avg_popularity, album_colab_avg_pop]
+
+        dataframe.loc[albums_scraped] = row
+
+        songs_scraped += album["total_tracks"]
+
+        if not albums_scraped%10: print(f"Scraped {albums_scraped} / {len(album_ids)} albums.")
+
+        if albums_scraped == 2500: dataframe.to_csv('popularity_first_scrape_2500.csv', index=False, encoding='utf-8')
+        if albums_scraped == 2000: dataframe.to_csv('popularity_first_scrape_2000.csv', index=False, encoding='utf-8')
+        if albums_scraped == 1500: dataframe.to_csv('popularity_first_scrape_1500.csv', index=False, encoding='utf-8')
+        if albums_scraped == 1000: dataframe.to_csv('popularity_first_scrape_1000.csv', index=False, encoding='utf-8')
+        if albums_scraped == 750: dataframe.to_csv('popularity_first_scrape_750.csv', index=False, encoding='utf-8')
+        if albums_scraped == 500: dataframe.to_csv('popularity_first_scrape_500.csv', index=False, encoding='utf-8')
+        if albums_scraped == 400: dataframe.to_csv('popularity_first_scrape_400.csv', index=False, encoding='utf-8')
+        if albums_scraped == 250: dataframe.to_csv('popularity_first_scrape_250.csv', index=False, encoding='utf-8')
 
         if albums_scraped >= max: break
 

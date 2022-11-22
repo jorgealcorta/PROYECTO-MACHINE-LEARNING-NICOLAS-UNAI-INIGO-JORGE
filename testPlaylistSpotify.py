@@ -9,16 +9,20 @@ from dataCollection import *
 #from joinPlaylists import *
 
 #maximum number of albums to scrap
-MAX = 2008
+MAX = 3000
 
 columns = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","avg_popularity", "max_popularity","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
 "US_market", "CA_market", "BR_market", "CN_market", "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
 
 columns_to_follow = ["avg_popularity", "max_popularity"]
+
 columns_variables = ["album_name", "number_of_artists", "artist_followers_total","artist_followers_average","artist_popularity","type","release_date","release_precision",
 "restrictions","total_tracks","total_length_min","number_of_collabs", "Max_popularity_collab", "Avg_popularity_collab","number_of_markets", 
 "US_market", "CA_market", "BR_market", "CN_market", "DE_market", "ES_market", "SA_market" ,"UK_market", "RU_market", "MX_markets"]
+
+columns_for_popularity_scraping = ["album_name", "avg_popularity", "Avg_popularity_collab"]
+
 columns_date = []
 columns_categorical = ["type"]
 
@@ -57,7 +61,8 @@ def getAlbumsAndTracks(playlists):
 def create_dataset(playlists):
     #getAlbumsAndTracks(playlists, sp)
 
-    dataset = generate_dataset(sp, columns, MAX)
+    dataset = generate_dataset(sp, columns, MAX, "")    # Sustituir "" por el nombre del fichero que contiene los ids de los álbumes a scrapear.
+                                                        # Cada fila del fichero debe tener la estructura: |índice, id|
 
     print(np.shape(dataset))
     dataset.to_csv('finalDataset.csv', index=False, encoding='utf-8')
@@ -69,7 +74,10 @@ def create_dataset(playlists):
 
 #Scrapea de spotify. cada 5 segundos de programa dedica 2 a ejecutar requests y 3 a esperar para engañar a 
 # la ventana de escucha de spotify y que no detecte límite de tarifa.
-create_dataset(playlists_URI)
+
+avg_popularities_dataset = get_average_popularities(sp, columns_for_popularity_scraping, MAX, "album_ids1.csv")
+print(np.shape(avg_popularities_dataset))
+avg_popularities_dataset.to_csv('popularities.csv', index=False, encoding='utf-8')
 
 #!!!!!Cuidado
 #Puede borrar datos necesarios si no ponemos los parámetros adecuados.
