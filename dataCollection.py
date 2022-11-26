@@ -353,17 +353,22 @@ def get_average_popularities(sp, columns, max, fileName):
 
 def completeDataset():
     dataset = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
-    print(dataset.shape)
     
     no_id = dataset.loc[dataset['id'].isnull()]
     with_id = dataset.loc[- dataset['id'].isnull()]
     
-    print(no_id.shape)
-    print(with_id.shape)
+    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    
+    client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
+    sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    
+    
+    qwery2 = "https://api.spotify.com/v1/search?q=track:"' + Libre + '"%20artist:"' + Trinkiboy + '"&type=track&limit=1"
+    qwery = "https://api.spotify.com/v1/search?q=track:\"\' + Desamparados + \'\"\%20artist:\"\' + Hoke + \'\"&type=track"
+    result = sp.search(qwery2)
+    print(result["tracks"]["items"][0]["id"])
+    
 
-    no_popularity = with_id.loc[with_id['popularity'].isnull()]
-    with_popularity = with_id.loc[- with_id['popularity'].isnull()]
     
      
-    print(no_popularity.shape)
-    print(with_popularity.shape)
+    
