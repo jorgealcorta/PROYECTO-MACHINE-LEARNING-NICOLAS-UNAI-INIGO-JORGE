@@ -1,4 +1,4 @@
-Id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;acousticness;instrumentalness;liveness;valence;tempo
+id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;acousticness;instrumentalness;liveness;valence;tempo
 ;Mask Off;Future;204600;833;434;2;-8.795;1;431;0.0102;0.0219;165;286;150.062
 ;Redbone;Childish Gambino;326933;743;359;1;-10.401;1;0.0794;199;0.00611;137;588;160.083
 ;Xanny Family;Future;185707;838;412;2;-7.148;1;289;0.0344;0.000234;159;173;75.044
@@ -37,7 +37,7 @@ Id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;aco
 ;Check;Young Thug;230693;667;581;0;-5.164;0;323;0.0428;0.0;183;372;110.953
 ;Poppin' My Collar;Three 6 Mafia;175613;722;823;7;-3.916;1;81;297;0.0;489;855;148.23
 ;Jumpman;Drake;205879;853;547;1;-7.535;1;194;0.0565;0.0;341;677;142.065
-;7/11;Beyoncé;213507;747;705;9;-5.137;0;126;0.0128;0.0;126;571;136.024
+;07-nov;Beyoncé;213507;747;705;9;-5.137;0;126;0.0128;0.0;126;571;136.024
 ;Somebody's Watching Me;Rockwell;237187;777;591;1;-7.431;0;0.0327;135;5.5e-05;126;848;124.111
 ;Bang That;Disclosure;324541;731;852;11;-6.08;1;0.0476;0.00041;625;358;622;125.008
 ;I Don't Sell Molly No More;ILoveMakonnen;186122;0.76;402;8;-8.751;1;164;0.00356;0.0;333;69;147.028
@@ -286,7 +286,7 @@ Id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;aco
 ;Archangel;Burial;238427;624;852;1;-10.184;1;153;428;656;114;517;135.223
 ;Lone Wolf and Cub (feat. Herbie Hancock, Flying Lotus, Miguel Atwood-Ferguson & Mono/poly);Thundercat;328966;386;509;2;-12.745;0;34;699;872;131;254;129.982
 ;Skyscraper;Elephant;207186;234;747;11;-3.332;0;0.0577;0.22;0.000176;157;365;81.805
-;I Want You - Single Version;Marvin Gaye;216520;525;797;1;-11.168;0;0.0656;516;5E-06;152;769;100.518
+;I Want You - Single Version;Marvin Gaye;216520;525;797;1;-11.168;0;0.0656;516;5,00E-06;152;769;100.518
 ;The New International Sound, Pt. 2 (feat. M.I.A.);GENER8ION;208613;521;888;8;-5.197;1;0.0357;0.00564;0.0226;0.0633;264;81.971
 ;Suede (feat. Anderson Paak & Knxwledge);NxWorries;181459;719;697;2;-5.647;1;0.31;504;0.0;295;668;117.123
 ;Bam Bam;Sister Nancy;196507;722;605;5;-6.07;1;153;825;0.0178;248;0.69;165.998
@@ -990,7 +990,7 @@ Id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;aco
 ;Ode To Viceroy;Mac Demarco;233818;514;632;2;-6.305;1;0.0501;208;0.0132;115;0.31;94.569
 ;Five Seconds;Twin Shadow;260013;468;0.88;1;-5.086;1;57;0.0019;0.00704;409;645;176.972
 ;No Sleep Till Brooklyn;Beastie Boys;246893;756;415;8;-14.429;1;0.0555;135;0.0;144;662;96.99
-;F**kin' Problems;A$AP Rocky;233787;869;687;1;-6.816;1;263;0.0208;1E-06;114;668;96.006
+;F**kin' Problems;A$AP Rocky;233787;869;687;1;-6.816;1;263;0.0208;1,00E-06;114;668;96.006
 ;Swerve... the reeping of all that is worthwhile (Noir not withstanding);Shabazz Palaces;310187;709;412;8;-11.602;1;488;144;0.000101;0.0814;505;174.062
 ;Never Saw The Point;Cults;182160;521;851;2;-3.235;1;0.0336;0.0559;0.0;267;825;130.032
 ;212;Azealia Banks;203373;858;789;11;-7.462;0;291;0.0852;0.0;229;658;125.993
@@ -1012,7 +1012,7 @@ Id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;aco
 ;3 Wheel-ups (feat. Wiley & Giggs);Kano;278227;545;904;6;-5.201;1;0.34;0.00298;0.00117;0.0679;681;139.871
 ;T On the Wing;President T;181714;739;665;1;-6.075;0;441;397;0.0;0.0901;357;139.87
 ;Bad Boys (feat. Ghetts and J Hus);Stormzy;246685;603;0.64;1;-5.215;1;291;134;0.0;434;311;125.462
-;Thiago Silva;Dave;201964;667;673;0;-7.574;1;323;0.0641;4E-06;0.0975;661;144.256
+;Thiago Silva;Dave;201964;667;673;0;-7.574;1;323;0.0641;4,00E-06;0.0975;661;144.256
 ;And Dat (Ft. Stormzy);Bonkaz;195419;561;588;8;-7.628;1;413;375;0.0;84;683;83.204
 ;6 In The Morning;Wiley;181114;812;937;1;-1.894;1;295;258;0.0;239;851;139.997
 ;Skepta Interlude;Drake;143214;745;822;7;-6.354;1;252;0.0103;4.2e-06;155;374;86.733
@@ -1026,7 +1026,7 @@ Id;song;artist;duration_ms;danceability;energy;key;loudness;mode;speechiness;aco
 ;Craving You;Thomas Rhett;227373;612;841;9;-3.795;0;0.0353;0.000907;0.0;0.37;502;104.986
 ;More Girls Like You;Kip Moore;154320;553;743;2;-5.483;1;0.0368;0.01;0.0;0.0812;574;149.962
 ;Heart Break;Lady Antebellum;188293;548;877;7;-5.481;1;0.0367;0.0538;8.22e-06;314;694;84.009
-;Cut Your Groove;Charlie Worsham;251067;528;842;11;-6.217;1;0.0411;151;3E-05;117;797;83.948
+;Cut Your Groove;Charlie Worsham;251067;528;842;11;-6.217;1;0.0411;151;3,00E-05;117;797;83.948
 ;Black;Dierks Bentley;211160;663;656;1;-6.548;1;0.0413;0.27;0.000279;117;555;120.037
 ;The Weekend;Brantley Gilbert;187760;0.53;809;6;-4.745;0;0.0388;0.0549;0.0;0.0741;703;82.022
 ;Reasons;Jillian Jacqueline;190227;525;657;1;-5.28;0;54;0.0966;0.0;119;313;176.127
