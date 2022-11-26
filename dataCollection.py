@@ -361,13 +361,17 @@ def completeDataset():
     
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    cancion = "despacito"
+    artista = "bieber"
     
-    
-    qwery2 = "https://api.spotify.com/v1/search?q=track:"' + Libre + '"%20artist:"' + Trinkiboy + '"&type=track&limit=1"
-    qwery = "https://api.spotify.com/v1/search?q=track:\"\' + Desamparados + \'\"\%20artist:\"\' + Hoke + \'\"&type=track"
-    result = sp.search(qwery2)
+    qwery2 = f"https://api.spotify.com/v1/search?q=track:"' + {cancion} + '"%20artist:"' + {artista} + '"&type=track&limit=1"
+    qwery = f"https://api.spotify.com/v1/search?q=track:\"\' + { cancion } + \'\"\%20artist:\"\' + { artista } + \'\"&type=track"
+    qwery3 = "https://api.spotify.com/v1/search?q=track: + {cancion} + %20artist: + {artista} + &type=track"
+    result = sp.search(qwery)
     print(result["tracks"]["items"][0]["id"])
-    
+
+
+completeDataset()
 
     
      
