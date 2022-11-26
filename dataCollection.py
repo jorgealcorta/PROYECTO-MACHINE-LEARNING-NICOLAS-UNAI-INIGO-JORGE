@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 import time
 from spotipy.oauth2 import SpotifyClientCredentials
+import pandas as pd
+
 
 #attempt to override the retry_after method:
 
@@ -347,3 +349,21 @@ def get_average_popularities(sp, columns, max, fileName):
         if albums_scraped >= max: break
 
     return dataframe
+
+
+def completeDataset():
+    dataset = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
+    print(dataset.shape)
+    
+    no_id = dataset.loc[dataset['id'].isnull()]
+    with_id = dataset.loc[- dataset['id'].isnull()]
+    
+    print(no_id.shape)
+    print(with_id.shape)
+
+    no_popularity = with_id.loc[with_id['popularity'].isnull()]
+    with_popularity = with_id.loc[- with_id['popularity'].isnull()]
+    
+     
+    print(no_popularity.shape)
+    print(with_popularity.shape)
