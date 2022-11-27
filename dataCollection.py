@@ -422,29 +422,26 @@ def fillPopularity():
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
     
-    df = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
+    df = pd.read_csv("datasets_kaggle/dataset_unido_test.csv", sep = ";")
+    df = df[-(df["id"].isnull())]
     
     for index, row in df.iterrows():
-
-        id = row['id']
-        #si el id es nulo, se elimina la fila
-        if pd.isnull(id):
-            raise TypeError("Only integers are allowed")
         
-        if pd.isnull(row["popularity"]):
+        if pd.isnull(row["popularity"]) or row["popularity"] ==  0 :
             track = sp.track(row["id"])
-            df.at[index, 'id'] = id
+            df.at[index, 'popularity'] = track["popularity"]
 
-                    
 
-        if index % 1000 == 0:
-                df.to_csv("datasets_kaggle/dataset_unido.csv", sep = ";", index = False)
+        if index % 3000 == 0 and index != 0:
+                df.to_csv("datasets_kaggle/dataset_unido_test.csv", sep = ";", index = False)
+
                 print("Guardado en la iteración " + str(index))
                 
    
             
             
-    df.to_csv("datasets_kaggle/dataset_unido.csv", sep = ";", index = False)
+    df.to_csv("datasets_kaggle/dataset_unido_test.csv", sep = ";", index = False)
+    print("Guardado Final")
     
     
 
@@ -456,9 +453,7 @@ def moreAttributes():
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
     if "num_artists" not in df.columns:
-        df["num_artists"] = np.null
-        df["num_artists"] = np.null
-        df["num_artists"] = np.null
+        df["artist_followers"] = np.null
         df["num_artists"] = np.null
     
     df = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
@@ -468,11 +463,6 @@ def moreAttributes():
         id = row['id']
         track = sp.track(row["id"])
         
-    
-        
-        
-        
-       
                     
 
         if index % 1000 == 0:
