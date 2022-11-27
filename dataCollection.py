@@ -455,6 +455,7 @@ def moreAttributes():
     if "num_artists" not in df.columns:
         df["artist_followers"] = np.null
         df["num_artists"] = np.null
+        df["num_markets"] = np.null
     
     df = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
     
