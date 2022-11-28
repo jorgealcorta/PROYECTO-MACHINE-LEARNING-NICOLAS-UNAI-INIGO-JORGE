@@ -452,24 +452,29 @@ def moreAttributes_test():
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
-    if "num_artists" not in df.columns:
-        df["artist_followers"] = np.null
-        df["num_artists"] = np.null
-        df["num_markets"] = np.null
+
     
-    df = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
+    df = pd.read_csv("datasets_kaggle/dataset_unido_base.csv", sep = ";")
+    
+    if "num_artists" not in df.columns:
+        df["artist_followers"] = np.nan
+        df["num_artists"] = np.nan
+        df["num_markets"] = np.nan
     
     for index, row in df.iterrows():
 
         #track = sp.track(row["id"])
         track = sp.track("0VhfZo2uwcWnQGExuOxNKq")
         
-        print ("Number of artists: ", len(track["artists"]))
+        print ("Number of artists: ", len(track["available_markets"]))
         
         for artist in track["artists"]:
-            print ("Artist followers: ", artist["followers"])
+            artistR = sp.artist(artist["id"])
+            print("followers: ", artistR["followers"])
             
-            print("number of markets: ", len(artist["available_markets"]))
+            #print("number of markets: ", len(artist["available_markets"]))
+        
+        break
             
                     
                         
@@ -478,16 +483,19 @@ def moreAttributes_test():
     
 def moreAttributes():
     
+    print("start scraping")
+    
     authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
-    if "num_artists" not in df.columns:
-        df["artist_followers"] = np.null
-        df["number_of_artists"] = np.null
-        df["number_of_markets"] = np.null
+    df = pd.read_csv("datasets_kaggle/dataset_unido_base.csv", sep = ";")
     
-    df = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
+    
+    if "num_artists" not in df.columns:
+        df["artist_followers"] = np.nan
+        df["number_of_artists"] = np.nan
+        df["number_of_markets"] = np.nan
     
     for index, row in df.iterrows():
 
@@ -499,14 +507,15 @@ def moreAttributes():
         
         artist_followers = 0
         for artist in track["artists"]:
-            artist_followers += artist["followers"]/len(track["artists"]) 
+            artistR = sp.artist(artist["id"])
+            artist_followers += artistR["followers"]["total"]/len(track["artists"]) 
             
-        df.at[index, 'artist_followers'] = len(track["artists"])  
+        df.at[index, 'artist_followers'] = artist_followers
         
         df.at[index, "number of_markets"] = len(track["available_markets"])
             
  
-        if index % 10000 == 0 and index !=0:
+        if index % 1000 == 0 and index !=0:
             df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
             print("Guardado en la iteración " + str(index))
             

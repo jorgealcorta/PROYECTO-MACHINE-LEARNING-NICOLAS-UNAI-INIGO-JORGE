@@ -6,4 +6,4 @@ from dataCollection import *
 
 
 
-fillPopularity()
+moreAttributes()
