@@ -417,7 +417,7 @@ def fillingId_dataset():
 
 def fillPopularity():
     
-    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    authentication = {"cid": "d1eba31fe2384b13a3ed8d5a2f9731bf", "secret": "b7295ec832ac4818b6673fa587aeb053"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
@@ -446,7 +446,7 @@ def fillPopularity():
     
 
     
-def moreAttributes():
+def moreAttributes_test():
     
     authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
@@ -461,15 +461,54 @@ def moreAttributes():
     
     for index, row in df.iterrows():
 
-        id = row['id']
+        #track = sp.track(row["id"])
+        track = sp.track("0VhfZo2uwcWnQGExuOxNKq")
+        
+        print ("Number of artists: ", len(track["artists"]))
+        
+        for artist in track["artists"]:
+            print ("Artist followers: ", artist["followers"])
+            
+            print("number of markets: ", len(artist["available_markets"]))
+            
+                    
+                        
+    
+    
+    
+def moreAttributes():
+    
+    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
+    sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    
+    if "num_artists" not in df.columns:
+        df["artist_followers"] = np.null
+        df["number_of_artists"] = np.null
+        df["number_of_markets"] = np.null
+    
+    df = pd.read_csv("datasets_kaggle/dataset_unido.csv", sep = ";")
+    
+    for index, row in df.iterrows():
+
         track = sp.track(row["id"])
         
-                    
-
-        if index % 1000 == 0:
-            df.to_csv("datasets_kaggle/dataset_unido.csv", sep = ";", index = False)
+           
+                
+        df.at[index, 'number_of_artists'] = len(track["artists"])  
+        
+        artist_followers = 0
+        for artist in track["artists"]:
+            artist_followers += artist["followers"]/len(track["artists"]) 
+            
+        df.at[index, 'artist_followers'] = len(track["artists"])  
+        
+        df.at[index, "number of_markets"] = len(track["available_markets"])
+            
+ 
+        if index % 10000 == 0 and index !=0:
+            df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
             print("Guardado en la iteración " + str(index))
             
             
-    df.to_csv("datasets_kaggle/dataset_unido.csv", sep = ";", index = False)    
-    
+    df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)    
