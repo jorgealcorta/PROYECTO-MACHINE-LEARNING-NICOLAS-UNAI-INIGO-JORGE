@@ -485,7 +485,7 @@ def moreAttributes():
     
     print("start scraping")
     
-    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    authentication = {"cid": "·····", "secret": ":::::"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
