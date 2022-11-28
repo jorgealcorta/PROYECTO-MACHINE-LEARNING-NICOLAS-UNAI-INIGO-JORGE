@@ -485,11 +485,11 @@ def moreAttributes():
     
     print("start scraping")
     
-    authentication = {"cid": "359f1923f1c0402784fb0213c1d33a46", "secret": "e32979702a7d471090ea1a9aa2d47ea8"}
+    authentication = {"cid": "#########", "secret": "#############"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
-    df = pd.read_csv("datasets_kaggle/dataset_unido_base.csv", sep = ";")
+    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
     
     
     if "num_artists" not in df.columns:
@@ -498,26 +498,28 @@ def moreAttributes():
         df["number_of_markets"] = np.nan
     
     for index, row in df.iterrows():
+        
+        if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
 
-        track = sp.track(row["id"])
-        
-           
+            track = sp.track(row["id"])
+            
+            
+                    
+            df.at[index, 'number_of_artists'] = len(track["artists"])  
+            
+            artist_followers = 0
+            for artist in track["artists"]:
+                artistR = sp.artist(artist["id"])
+                artist_followers += artistR["followers"]["total"]/len(track["artists"]) 
                 
-        df.at[index, 'number_of_artists'] = len(track["artists"])  
-        
-        artist_followers = 0
-        for artist in track["artists"]:
-            artistR = sp.artist(artist["id"])
-            artist_followers += artistR["followers"]["total"]/len(track["artists"]) 
+            df.at[index, 'artist_followers'] = artist_followers
             
-        df.at[index, 'artist_followers'] = artist_followers
-        
-        df.at[index, "number of_markets"] = len(track["available_markets"])
-            
- 
+            df.at[index, "number of_markets"] = len(track["available_markets"])
+                
+    
         if index % 1000 == 0 and index !=0:
-            df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
-            print("Guardado en la iteración " + str(index))
-            
+                df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
+                print("Guardado en la iteración " + str(index))
+                
             
     df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)    
