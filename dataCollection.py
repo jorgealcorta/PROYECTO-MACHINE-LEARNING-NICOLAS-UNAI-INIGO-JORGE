@@ -485,7 +485,7 @@ def moreAttributes():
     
     print("start scraping")
     
-    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    authentication = {"cid": "d1eba31fe2384b13a3ed8d5a2f9731bf", "secret": "b7295ec832ac4818b6673fa587aeb053"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
@@ -529,3 +529,122 @@ def moreAttributes():
                 
             
     df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)    
+
+
+
+
+
+# def artistas():
+    
+#     print("start scraping")
+    
+#     authentication = {"cid": "d1eba31fe2384b13a3ed8d5a2f9731bf", "secret": "b7295ec832ac4818b6673fa587aeb053"}
+#     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
+#     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    
+#     df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
+
+    
+#     df_artists = pd.read_csv("datasets_kaggle/artists.csv", sep = ";")
+
+#     ids = []
+    
+    
+#     if "number_of_artists" not in df.columns:
+#         print("Resetting columns")
+#         df["artist_followers"] = np.nan
+#         df["number_of_artists"] = np.nan
+#         df["number_of_markets"] = np.nan
+        
+    
+#     for index, row in df.iterrows():
+        
+#         if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
+#             #guardar el id y su posicion en el dataframe
+#             ids.append(row["id"])
+
+#             if len(ids) == 50:
+#                 #hacer la llamada a spotify con los 50 ids pero en un solo string
+#                 ids_string = ""
+#                 for id in ids:
+#                     ids_string += id[0] + ","
+#                 #quitar la ultima coma
+#                 ids_string = ids_string[:-1]
+#                 tracks = sp.tracks(ids_string)
+
+#                 for track in tracks["tracks"]:
+                    
+#                     for artist in track["artists"]:
+#                         #si el id del artista no se enctra en el dataframe, añadirlo y su popularidad
+#                         if artist["id"] not in df_artists["artist_id"].values:
+#                             df_artists = df_artists.append({"artist_id": artist["id"], "artist_popularity": artist["popularity"]}, ignore_index = True)
+
+#             ids = []
+
+        
+#         if index % 500 == 0 and index !=0:
+#                 df.to_csv("datasets_kaggle/artists.csv", sep = ";", index = False)
+#                 print("Guardado en la iteración " + str(index))
+                
+            
+#     df.to_csv("datasets_kaggle/artists.csv", sep = ";", index = False)    
+
+
+
+
+def canciones():
+    
+    print("start scraping")
+    
+    authentication = {"cid": "", "secret": ""}
+    client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
+    sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    
+    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
+
+    #df_canciones = pd.DataFrame(columns = ["id", "number_of_artists", "artist_followers", "number_of_markets"])
+    df_canciones = pd.read_csv("datasets_kaggle/canciones.csv", sep = ";")
+
+    ids = []
+    
+    
+    if "number_of_artists" not in df.columns:
+        print("Resetting columns")
+        df["artist_followers"] = np.nan
+        df["number_of_artists"] = np.nan
+        df["number_of_markets"] = np.nan
+        
+    
+    for index, row in df.iterrows():
+        
+        if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
+            #guardar el id y su posicion en el dataframe
+            ids.append(row["id"])
+
+            if len(ids) == 50:
+                #hacer la llamada a spotify con los 50 ids pero en un solo string
+                ids_string = ""
+                for id in ids:
+                    ids_string += id[0] + ","
+                #quitar la ultima coma
+                ids_string = ids_string[:-1]
+                tracks = sp.tracks(ids_string)
+
+                for track in tracks["tracks"]:
+                    #si el id de la cancion no se enctra en el dataframe, añadirlo junto con sus datos
+                    if track["id"] not in df_canciones["id"].values:
+                        artist_followers = 0
+                        for artist in track["artists"]:
+                            #si el id del artista no se enctra en el dataframe, añadirlo y sus datos
+                            artist_followers += artist["followers"]["total"]/len(track["artists"])
+                        df_canciones = df_canciones.append({"id": track["id"], "number_of_artists": len(track["artists"]), "artist_followers": artist_followers, "number_of_markets": len(track["available_markets"])}, ignore_index = True)
+                                
+            ids = []
+
+        
+        if index % 500 == 0 and index !=0:
+                df_canciones.to_csv("datasets_kaggle/canciones.csv", sep = ";", index = False)
+                print("Guardado en la iteración " + str(index))
+                
+            
+    df_canciones.to_csv("datasets_kaggle/canciones.csv", sep = ";", index = False)    
