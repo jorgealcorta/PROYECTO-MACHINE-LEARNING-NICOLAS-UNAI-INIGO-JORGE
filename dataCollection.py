@@ -485,19 +485,22 @@ def moreAttributes():
     
     print("start scraping")
     
-    authentication = {"cid": "######", "secret": "######"}
+    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
     df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
     
     
-    if "num_artists" not in df.columns:
+    if "number_of_artists" not in df.columns:
+        print("Resetting columns")
         df["artist_followers"] = np.nan
         df["number_of_artists"] = np.nan
         df["number_of_markets"] = np.nan
     
     for index, row in df.iterrows():
+        
+        
         
         if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
 
@@ -514,10 +517,13 @@ def moreAttributes():
                 
             df.at[index, 'artist_followers'] = artist_followers
             
-            df.at[index, "number of_markets"] = len(track["available_markets"])
+            df.at[index, "number_of_markets"] = len(track["available_markets"])
+            print("Scraped index", index)
+            
+            
                 
-    
-        if index % 1000 == 0 and index !=0:
+        
+        if index % 500 == 0 and index !=0:
                 df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
                 print("Guardado en la iteración " + str(index))
                 
