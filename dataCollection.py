@@ -650,7 +650,7 @@ def canciones():
             time.sleep(120)
             print("Continuing")
         
-        if index % 500 == 0 and index !=0:
+        if index % 400 == 0 and index !=0:
                 df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
                 print("Guardado en la iteración " + str(index))
                 
