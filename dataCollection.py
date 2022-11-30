@@ -648,3 +648,19 @@ def canciones():
                 
             
     df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)    
+
+
+def completarCanciones():
+    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
+
+    df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
+
+    for index, row in df.iterrows():
+        if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
+            if row["id"] in df_canciones["id"].values:
+                df.loc[index, "artist_followers"] = df_canciones[df_canciones["id"] == row["id"]]["artist_followers"].values[0]
+                df.loc[index, "number_of_artists"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_artists"].values[0]
+                df.loc[index, "number_of_markets"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_markets"].values[0]
+            
+    df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
+    

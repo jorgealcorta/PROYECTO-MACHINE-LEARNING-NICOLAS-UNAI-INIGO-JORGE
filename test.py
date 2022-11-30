@@ -10,6 +10,12 @@ from dataCollection import *
 #guardar en csv
 #df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
 
-#canciones()
 
-moreAttributes()
+
+#moreAttributes()
+try:
+    canciones()
+except:
+    pass
+
+completarCanciones()
