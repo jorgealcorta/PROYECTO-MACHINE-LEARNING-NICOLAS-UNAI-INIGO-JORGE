@@ -606,7 +606,7 @@ def canciones():
     df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
 
     ids = []
-    ids_string = ""
+    contador = 0
     
     if "number_of_artists" not in df.columns:
         print("Resetting columns")
@@ -640,7 +640,12 @@ def canciones():
                                 
                 ids = []
                 #df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
+            
+            contador += 1
 
+        if contador % 4000 == 0 and contador !=-1:
+            #espera 2 minutos para no sobrepasar el limite de llamadas a spotify
+            time.sleep(120)
         
         if index % 500 == 0 and index !=0:
                 df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
@@ -663,4 +668,3 @@ def completarCanciones():
                 df.loc[index, "number_of_markets"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_markets"].values[0]
             
     df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
-    
