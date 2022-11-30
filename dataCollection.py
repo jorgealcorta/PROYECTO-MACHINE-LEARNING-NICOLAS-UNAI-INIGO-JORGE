@@ -6,6 +6,7 @@ import numpy as np
 import time
 from spotipy.oauth2 import SpotifyClientCredentials
 import pandas as pd
+import warnings
 
 
 #attempt to override the retry_after method:
@@ -595,8 +596,8 @@ def moreAttributes():
 def canciones():
     
     print("start scraping")
-    
-    authentication = {"cid": "###########", "secret": "###########"}
+    warnings.filterwarnings("ignore")
+    authentication = {"cid": "b589320bba584c588e4bd1cae505b4fb", "secret": "8c0f3d1b77fa4404b49c06df29d1c64f"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
@@ -643,9 +644,11 @@ def canciones():
             
             contador += 1
 
-        if contador % 4000 == 0 and contador !=-1:
+        if contador % 4000 == 0 and contador !=0:
             #espera 2 minutos para no sobrepasar el limite de llamadas a spotify
+            print("Waiting 2 minutes")
             time.sleep(120)
+            print("Continuing")
         
         if index % 500 == 0 and index !=0:
                 df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
