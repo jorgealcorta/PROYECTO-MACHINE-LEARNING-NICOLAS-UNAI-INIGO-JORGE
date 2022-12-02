@@ -597,14 +597,14 @@ def canciones():
     
     print("start scraping")
     warnings.filterwarnings("ignore")
-    authentication = {"cid": "c14160e59cf54c6eaf6cb8d4d0bf7bf0", "secret": "753cf316adcf4b0ca88b55f6f363f7e3"}
+    authentication = {"cid": "8acb4c7a2a4a498b8e957c81942ad91d", "secret": "a9f7f92142c245f68e8006f5399ef9f0"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
-    
-    df = pd.read_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
+    #PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/
+    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
     #df_canciones = pd.DataFrame(columns = ["id", "number_of_artists", "artist_followers", "number_of_markets"])
-    df_canciones = pd.read_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/canciones.csv")
+    df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
 
     ids = []
     contador = 0
