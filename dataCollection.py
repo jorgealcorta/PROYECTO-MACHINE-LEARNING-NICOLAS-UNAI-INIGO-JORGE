@@ -597,14 +597,14 @@ def canciones():
     
     print("start scraping")
     warnings.filterwarnings("ignore")
-    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    authentication = {"cid": "c14160e59cf54c6eaf6cb8d4d0bf7bf0", "secret": "753cf316adcf4b0ca88b55f6f363f7e3"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
-    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
+    df = pd.read_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
     #df_canciones = pd.DataFrame(columns = ["id", "number_of_artists", "artist_followers", "number_of_markets"])
-    df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
+    df_canciones = pd.read_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/canciones.csv")
 
     ids = []
     contador = 0
@@ -651,17 +651,17 @@ def canciones():
             print("Continuing")
         
         if index % 400 == 0 and index !=0:
-                df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
+                df_canciones.to_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/canciones.csv", index = False)
                 print("Guardado en la iteración " + str(index))
                 
             
-    df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)    
+    df_canciones.to_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/canciones.csv", index = False)    
 
 
 def completarCanciones():
-    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
+    df = pd.read_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
-    df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
+    df_canciones = pd.read_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/canciones.csv")
 
     for index, row in df.iterrows():
         if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
@@ -670,4 +670,4 @@ def completarCanciones():
                 df.loc[index, "number_of_artists"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_artists"].values[0]
                 df.loc[index, "number_of_markets"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_markets"].values[0]
             
-    df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
+    df.to_csv("PROYECTO-MACHINE-LEARNING-NICOLAS-UNAI-INIGO-JORGE/datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
