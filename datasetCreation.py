@@ -1,12 +1,15 @@
 import pandas as pd
 import numpy as np
-
+import spotipy
+import time
+from spotipy.oauth2 import SpotifyClientCredentials
+import warnings
 
 def canciones():
     
     print("start scraping")
     warnings.filterwarnings("ignore")
-    authentication = {"cid": "848eee75de054d86905af1859a58ebac", "secret": "eaf94b897f6e4948bdab8b4faff38f3c"}
+    authentication = {"cid": "29f7d6091e26484fb9abc14a3679a1fc", "secret": "236ef75e709d4bccab363db0d8d11b29"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
@@ -72,6 +75,8 @@ def completarCanciones():
     df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
     df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
+    
+    print("Guardando datos...")
 
     for index, row in df.iterrows():
         if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
@@ -81,6 +86,7 @@ def completarCanciones():
                 df.loc[index, "number_of_markets"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_markets"].values[0]
             
     df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
+    print("Terminado.")
 
 def moreAttributes():
     
