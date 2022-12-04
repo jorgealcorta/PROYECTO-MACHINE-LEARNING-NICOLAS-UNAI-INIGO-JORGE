@@ -1,12 +1,14 @@
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.feature_selection import SelectKBest, SelectPercentile, mutual_info_classif
 
-def preprocess (df):
+def preprocess (df, target_column, k_num = 10):
     df = correct_key(df)
     df = correct_mode(df)
     df = df.dropna()
     df = df.drop_duplicates()
+    filter_mutual_info(df, target_column, k_num )
     return df
 
 
@@ -79,19 +81,20 @@ def split_XY(feature_df:pd.DataFrame, target_column:str):
     
     return X, Y
        
-def filter_mutual_info(df, target_column, k_num):
+def filter_mutual_info(df, target_column, k_num, string_colunms ={"id", "song", "artist"}, ):
  
    
    y = df[target_column]
+   y_2 = df[string_colunms]
+   df = df.drop(columns=string_colunms)
    X = df.drop(columns=target_column)
-
+   
     
    selector = SelectKBest(mutual_info_classif, k=k_num)
    X_reduced = selector.fit_transform(X, y)
-   print(X_reduced.shape)
+   
+   return X.join(y).join(y_2)
 
-   return None         
-                
 def std_scaler(feature_df:pd.DataFrame, target_column:str= "popularity"):
    scaler = StandardScaler()
    scaler.fit(feature_df.drop(columns = target_column).values)

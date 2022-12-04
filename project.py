@@ -14,7 +14,7 @@ string_columns = {"id", "song", "artist"}
 
 df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
-df = preprocess(df)
+df = preprocess(df, target_column)
 
 df = object_column_to_categorical(df, "key")
 
@@ -31,17 +31,17 @@ print ("Y_train: ", Y_train.shape)
 print ("X_test: ", X_test.shape)
 print ("Y_test: ", Y_test.shape)
 
-
-
 model = model_1(X_train.shape[1])
 
 model.fit(scaler.transform(X_train), Y_train,
           batch_size=128,
-          epochs=2,
+          epochs=10,
           verbose=1,
           validation_data=(scaler.transform(X_test), Y_test)
 )
 
 Y_validate = model.predict(scaler.transform(X_test[0:10]))
+
 print(Y_validate)
+print(Y_test[0:10])
 
