@@ -9,7 +9,7 @@ def canciones():
     
     print("start scraping")
     warnings.filterwarnings("ignore")
-    authentication = {"cid": "951735436e3048db8ab76ae2c35a1761", "secret": "143944e7851549179b2eccc6e1ee96e8"}
+    authentication = {"cid": "b589320bba584c588e4bd1cae505b4fb", "secret": "8c0f3d1b77fa4404b49c06df29d1c64f"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
