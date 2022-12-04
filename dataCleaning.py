@@ -90,3 +90,14 @@ def object_column_to_categorical(feature_df: pd.DataFrame, column:str, set_of_va
 def preprocess (df):
 
    return void
+
+def all_fileds_filled(df):
+    df2 = df.copy()
+    df2 = df2.dropna()
+    return df2
+
+def remove_duplicates(df):
+    df2 = df.copy()
+    df2 = df2.drop_duplicates()
+    return df2
+

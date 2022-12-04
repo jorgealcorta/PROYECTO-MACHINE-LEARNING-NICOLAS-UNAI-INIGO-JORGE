@@ -113,3 +113,10 @@ df2 = dc.correct_mode(df2)
 print(df2['key'].value_counts())
 print(df2['mode'].value_counts())
 
+df3 = dc.all_fileds_filled(df2)
+print(df3.duplicated().sum())
+df3 = dc.remove_duplicates(df3)
+print(df3.duplicated().sum())
+print(df3.shape)
+
+print(df3["id"].duplicated().sum())
