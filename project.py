@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 from dataCleaning import *
 from regression_models import *
+from sklearn.metrics import r2_score, mean_squared_error
+from itertools import compress
 
 
 column_names = {"id", "song", "artist", "duration_ms", "danceability", "energy", "key", "loudness", "mode", "loudness", "mode", "speechiness", "acousticness", 
@@ -40,8 +42,59 @@ model.fit(scaler.transform(X_train), Y_train,
           validation_data=(scaler.transform(X_test), Y_test)
 )
 
-Y_validate = model.predict(scaler.transform(X_test[0:10]))
+print("--------------------------------------------------------------------------------------------------")
 
-print(Y_validate)
-print(Y_test[0:10])
+# we test our model with the unused rest of the dataset stored in X_test
 
+#~~~~~~~~~~~~~~~~~~~~  DATASET METRICS
+Y_validate1 = model.predict(scaler.transform(X_test))
+
+coef_determination = r2_score(Y_test, Y_validate1.flatten())
+mse = mean_squared_error(Y_test, Y_validate1.flatten())
+
+print(f"--> Dataset's coefficient of determination: {coef_determination}")
+print(f"--> Dataset's mean squared error: {mse}")
+print("--------------------------------------------------------------------------------------------------")
+
+
+
+#~~~~~~~~~~~~~~~~~~~~  METRICS FOR HIGH POPULARY
+
+popularity_min = 70
+
+# take the ones that have >= {popularity_min} popularity:
+
+high_pop_tuples = ((Y_test >= popularity_min).values).flatten()
+
+X_test_high = pd.DataFrame(X_test)[high_pop_tuples]
+Y_test_high = pd.DataFrame(Y_test)[high_pop_tuples]
+
+Y_validate2 = model.predict(scaler.transform(X_test_high))
+
+coef_determination = r2_score(Y_test_high, Y_validate2.flatten())
+mse = mean_squared_error(Y_test_high, Y_validate2.flatten())
+
+print(f"--> Coefficient of determination for tracks with >= {popularity_min} popularity: {coef_determination}")
+print(f"--> Mean squared error for tracks with >= {popularity_min} popularity: {mse}")
+print("--------------------------------------------------------------------------------------------------")
+
+
+
+#~~~~~~~~~~~~~~~~~~~~  METRICS FOR LOW POPULARITY
+
+popularity_max = 30
+
+# take the ones that have <= {popularity_max} popularity:
+
+low_pop_tuples = ((Y_test <= popularity_max).values).flatten()
+
+X_test_low = pd.DataFrame(X_test)[low_pop_tuples]
+Y_test_low = pd.DataFrame(Y_test)[low_pop_tuples]
+
+Y_validate3 = model.predict(scaler.transform(X_test_low))
+
+coef_determination = r2_score(Y_test_low, Y_validate3.flatten())
+mse = mean_squared_error(Y_test_low, Y_validate3.flatten())
+
+print(f"--> Coefficient of determination for tracks with <= {popularity_max} popularity: {coef_determination}")
+print(f"--> Mean squared error for tracks with <= {popularity_max} popularity: {mse}")
