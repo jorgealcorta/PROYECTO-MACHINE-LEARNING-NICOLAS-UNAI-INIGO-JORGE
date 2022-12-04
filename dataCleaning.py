@@ -2,6 +2,14 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
+def preprocess (df):
+    df = correct_key(df)
+    df = correct_mode(df)
+    df = df.dropna()
+    df = df.drop_duplicates()
+    return df
+
+
 def clean_data(df):
     df2 = df.copy()
     longitd = len(df2)
@@ -48,6 +56,32 @@ print(df["album_name"][39] == df["album_name"][323])
 '''
 
 
+# -------------------------------------------------------------------------------------------------
+
+def split_train_test_df(feature_df:pd.DataFrame, target_column:str, train_sample:float=0.8, to_categorical:bool=True):
+    assert train_sample <= 1.0, "train_sample must be less than 1.0"
+
+    original_df = feature_df.copy(deep=True)
+    train_df = original_df.sample(frac=train_sample, replace=False)
+    test_df = original_df.loc[list(filter(lambda index: index not in train_df.index, original_df.index))]
+
+    # Split data into X and Y
+    train_data = split_XY(train_df, target_column, to_categorical)
+    test_data = split_XY(test_df, target_column, to_categorical)
+    
+    return train_data, test_data
+
+
+def split_XY(feature_df:pd.DataFrame, target_column:str, to_categorical:bool=True):
+    original_df = feature_df.copy(deep=True)
+    X =  df = df.drop(target_column, index = 1).values
+    Y = original_df[target_column]
+
+    if to_categorical:
+        num_classes = len(set(original_df[target_column].tolist()))
+        Y = keras.utils.to_categorical(Y, num_classes)
+    
+    return X, Y
        
 def filter_mutual_info(df, target_column, k_num):
  
@@ -75,7 +109,7 @@ def object_column_to_categorical(feature_df: pd.DataFrame, column:str, set_of_va
         set_of_values = set(df[column].values)
 
     value_columns = [column + "_is_" + str(value) for value in set_of_values]
-    df = drop_columns_if_exist(df, value_columns)
+    df = drop
 
     loc_column = df.columns.get_loc(column)
 
@@ -84,14 +118,11 @@ def object_column_to_categorical(feature_df: pd.DataFrame, column:str, set_of_va
         categorical_values = (df[column] == value) * 1.0
         df.insert(loc=loc_column, column=column + "_is_" + str(value), value=categorical_values)
     
-    df = drop_columns_if_exist(df, [column])
+    df = df.drop(column, index = 1)
     return df
 
-def preprocess (df):
-    df = correct_key(df)
-    df = correct_mode(df)
-    df = df.dropna()
-    df = df.drop_duplicates()
-    return df
+# -------------------------------------------------------------------------------------------------
+
+
 
 

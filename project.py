@@ -1,6 +1,6 @@
 
 import pandas as pd
-import numppy as np
+import numpy as np
 from dataCleaning import *
 from regression_models import *
 
@@ -19,6 +19,15 @@ df = preprocess(df)
 scaler = std_scaler(df, target_column = target_column)
 
 (X_train, Y_train), (X_test, Y_test) = split_train_test_df(df, target_column)
+
+print("X_train: ", X_train.shape)
+print("Y_train: ", Y_train.shape)
+
+print("X_test: ", X_test.shape)
+print("Y_test: ", Y_test.shape)
+
+
+
 
 model = model_1(X_train.shape[1])
 

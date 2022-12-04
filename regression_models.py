@@ -2,7 +2,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.activations import tanh, sigmoid, relu, softmax
 from tensorflow.keras.metrics import categorical_crossentropy
-from src.classificators.binary_metrics import *
+
 
 
        
