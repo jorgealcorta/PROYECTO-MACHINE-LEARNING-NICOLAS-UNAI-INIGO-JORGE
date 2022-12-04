@@ -33,12 +33,15 @@ print ("Y_test: ", Y_test.shape)
 
 
 
-# model = model_1(X_train.shape[1])
+model = model_1(X_train.shape[1])
 
-# model.fit(X_train, Y_train,
-#           batch_size=128,
-#           epochs=2,
-#           verbose=1,
-#           validation_data=(X_test, Y_test)
-# )
+model.fit(scaler.transform(X_train), Y_train,
+          batch_size=128,
+          epochs=2,
+          verbose=1,
+          validation_data=(scaler.transform(X_test), Y_test)
+)
+
+Y_validate = model.predict(scaler.transform(X_test[0:10]))
+print(Y_validate)
 

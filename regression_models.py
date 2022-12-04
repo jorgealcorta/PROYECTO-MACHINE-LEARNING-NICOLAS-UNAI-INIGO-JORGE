@@ -3,6 +3,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.activations import tanh, sigmoid, relu, softmax
 from tensorflow.keras.metrics import categorical_crossentropy
 
+from tensorflow import keras
 
 
        
@@ -42,13 +43,12 @@ def model_2(input_dimension):
 
 
 def model_1(input_dimension):
-  model = keras.Sequential([
-    layers.Dense(64, activation='relu', input_shape=[input_dimension]),
-    layers.Dense(64, activation='relu'),
-    layers.Dense(1)
-  ])
-
-  optimizer = tf.keras.optimizers.RMSprop(0.001)
+  model = keras.Sequential()
+  model.add(Dense(units=64, activation='relu', input_dim=input_dimension))
+  model.add(Dense(units=64, activation='relu'))
+  model.add(Dense(1))
+   
+  optimizer = keras.optimizers.RMSprop(0.001)
 
   model.compile(loss='mse', optimizer=optimizer, metrics=['mae', 'mse'])
   
