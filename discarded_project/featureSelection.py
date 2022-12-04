@@ -16,7 +16,7 @@ def pre_process ( dataframe, categorical_columns):
    
    return None 
 
-def filter_by_mutual(df, target_column, k_num):
+def filter_mutual_info(df, target_column, k_num):
  
    
    y = df[target_column]
