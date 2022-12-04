@@ -3,6 +3,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import dataCleaning as dc
 
 
 df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep=";")
@@ -104,4 +105,11 @@ print(df.duplicated().sum())
 40930
 '''
 print(df['key'].value_counts())
+
+
+print("---------------------------------------------------")
+df2 = dc.correct_key(df)
+df2 = dc.correct_mode(df2)
+print(df2['key'].value_counts())
+print(df2['mode'].value_counts())
 
