@@ -42,6 +42,19 @@ model.fit(scaler.transform(X_train), Y_train,
           validation_data=(scaler.transform(X_test), Y_test)
 )
 
+
+# model_evaluate(model, X_test, Y_test)
+
+# #~~~~~~~~~~~~~~~~~~~~  METRICS FOR HIGH POPULARY
+
+# model_evaluate(model, X_test, Y_test, pop_min=70)
+
+# #~~~~~~~~~~~~~~~~~~~~  METRICS FOR LOW POPULARITY
+
+# model_evaluate(model, X_test, Y_test, pop_max=70)
+
+
+
 print("--------------------------------------------------------------------------------------------------")
 
 # we test our model with the unused rest of the dataset stored in X_test
