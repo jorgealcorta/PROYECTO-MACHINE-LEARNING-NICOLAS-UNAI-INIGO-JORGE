@@ -11,9 +11,6 @@ from datasetCreation import *
 #df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
 
 
-try:
-    canciones()
-except:
-     pass
+
 
 completarCanciones()

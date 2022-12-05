@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 from dataCleaning import *
+from dataAnalysis import *
 from regression_models import *
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from itertools import compress
@@ -43,7 +44,7 @@ model.fit(scaler.transform(X_train), Y_train,
 )
 
 
-# model_evaluate(model, X_test, Y_test)
+model_evaluate(model, X_test, Y_test)
 
 # #~~~~~~~~~~~~~~~~~~~~  METRICS FOR HIGH POPULARY
 
@@ -55,65 +56,63 @@ model.fit(scaler.transform(X_train), Y_train,
 
 
 
-print("--------------------------------------------------------------------------------------------------")
+# print("--------------------------------------------------------------------------------------------------")
 
-# we test our model with the unused rest of the dataset stored in X_test
+# # we test our model with the unused rest of the dataset stored in X_test
 
-#~~~~~~~~~~~~~~~~~~~~  DATASET METRICS
-Y_validate1 = model.predict(scaler.transform(X_test))
+# #~~~~~~~~~~~~~~~~~~~~  DATASET METRICS
+# Y_validate1 = model.predict(scaler.transform(X_test))
 
-coef_determination = r2_score(Y_test, Y_validate1.flatten())
-mse = mean_squared_error(Y_test, Y_validate1.flatten())
-mae = mean_absolute_error(Y_test, Y_validate1.flatten())
+# coef_determination = r2_score(Y_test, Y_validate1.flatten())
+# mse = mean_squared_error(Y_test, Y_validate1.flatten())
+# mae = mean_absolute_error(Y_test, Y_validate1.flatten())
 
-print(f"--> Dataset's coefficient of determination: {coef_determination}")
-print(f"--> Dataset's mean squared error: {mse}")
-print(f"--> Dataset's mean absolute error: {mae}")
-print("--------------------------------------------------------------------------------------------------")
-
-
-
-#~~~~~~~~~~~~~~~~~~~~  METRICS FOR HIGH POPULARY
-
-popularity_min = 70
-
-# take the ones that have >= {popularity_min} popularity:
-
-high_pop_tuples = ((Y_test >= popularity_min).values).flatten()
-
-X_test_high = pd.DataFrame(X_test)[high_pop_tuples]
-Y_test_high = pd.DataFrame(Y_test)[high_pop_tuples]
-
-Y_validate2 = model.predict(scaler.transform(X_test_high))
-
-coef_determination = r2_score(Y_test_high, Y_validate2.flatten())
-mse = mean_squared_error(Y_test_high, Y_validate2.flatten())
-mae = mean_absolute_error(Y_test_high, Y_validate2.flatten())
-
-print(f"--> Coefficient of determination for tracks with >= {popularity_min} popularity: {coef_determination}")
-print(f"--> Mean squared error for tracks with >= {popularity_min} popularity: {mse}")
-print(f"--> Mean absolute error for tracks with >= {popularity_min} popularity: {mae}")
-print("--------------------------------------------------------------------------------------------------")
+# print(f"--> Dataset's coefficient of determination: {coef_determination}")
+# print(f"--> Dataset's mean squared error: {mse}")
+# print(f"--> Dataset's mean absolute error: {mae}")
+# print("--------------------------------------------------------------------------------------------------")
 
 
 
-#~~~~~~~~~~~~~~~~~~~~  METRICS FOR LOW POPULARITY
+# #~~~~~~~~~~~~~~~~~~~~  METRICS FOR HIGH POPULARY
 
-popularity_max = 30
+# popularity_min = 70
 
-# take the ones that have <= {popularity_max} popularity:
+# # take the ones that have >= {popularity_min} popularity:
 
-low_pop_tuples = ((Y_test <= popularity_max).values).flatten()
+# X_test_high = pd.DataFrame(X_test)[high_pop_tuples]
+# Y_test_high = pd.DataFrame(Y_test)[high_pop_tuples]
 
-X_test_low = pd.DataFrame(X_test)[low_pop_tuples]
-Y_test_low = pd.DataFrame(Y_test)[low_pop_tuples]
+# Y_validate2 = model.predict(scaler.transform(X_test_high))
 
-Y_validate3 = model.predict(scaler.transform(X_test_low))
+# coef_determination = r2_score(Y_test_high, Y_validate2.flatten())
+# mse = mean_squared_error(Y_test_high, Y_validate2.flatten())
+# mae = mean_absolute_error(Y_test_high, Y_validate2.flatten())
 
-coef_determination = r2_score(Y_test_low, Y_validate3.flatten())
-mse = mean_squared_error(Y_test_low, Y_validate3.flatten())
-mae = mean_absolute_error(Y_test_low, Y_validate3.flatten())
+# print(f"--> Coefficient of determination for tracks with >= {popularity_min} popularity: {coef_determination}")
+# print(f"--> Mean squared error for tracks with >= {popularity_min} popularity: {mse}")
+# print(f"--> Mean absolute error for tracks with >= {popularity_min} popularity: {mae}")
+# print("--------------------------------------------------------------------------------------------------")
 
-print(f"--> Coefficient of determination for tracks with <= {popularity_max} popularity: {coef_determination}")
-print(f"--> Mean squared error for tracks with <= {popularity_max} popularity: {mse}")
-print(f"--> Mean absolute error for tracks with <= {popularity_max} popularity: {mae}")
+
+
+# #~~~~~~~~~~~~~~~~~~~~  METRICS FOR LOW POPULARITY
+
+# popularity_max = 30
+
+# # take the ones that have <= {popularity_max} popularity:
+
+# low_pop_tuples = ((Y_test <= popularity_max).values).flatten()
+
+# X_test_low = pd.DataFrame(X_test)[low_pop_tuples]
+# Y_test_low = pd.DataFrame(Y_test)[low_pop_tuples]
+
+# Y_validate3 = model.predict(scaler.transform(X_test_low))
+
+# coef_determination = r2_score(Y_test_low, Y_validate3.flatten())
+# mse = mean_squared_error(Y_test_low, Y_validate3.flatten())
+# mae = mean_absolute_error(Y_test_low, Y_validate3.flatten())
+
+# print(f"--> Coefficient of determination for tracks with <= {popularity_max} popularity: {coef_determination}")
+# print(f"--> Mean squared error for tracks with <= {popularity_max} popularity: {mse}")
+# print(f"--> Mean absolute error for tracks with <= {popularity_max} popularity: {mae}")

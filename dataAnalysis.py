@@ -10,26 +10,30 @@ from itertools import compress
 
 
 
-def model_evaluate (model, X_test, Y_test, pop_max = 100, pop_min = 0):
+def model_evaluate(model, X_test, Y_test, pop_max = 100, pop_min = 0):
         
-        values = (Y_test>pop_min).values
         
-        print(values)
+        high_pop_tuples = ((Y_test >= pop_min).values).flatten()
+        low_pop_tuples = ((Y_test <= pop_max).values).flatten()
+        tuples = high_pop_tuples and low_pop_tuples
+        print(tuples)
         
-        X_test = pd.DataFrame(X_test).rows(values)
+        X_test_high = pd.DataFrame(X_test)[high_pop_tuples]
+        Y_test_high = pd.DataFrame(Y_test)[high_pop_tuples]
         
-        Y_test = Y_test[Y_test<=pop_max]
+        print(X_test.shape)
+        print(Y_test.shape)
 
-        Y_evaluate= model.predict(scaler.transform(X_test_high))                
+        # Y_evaluate= model.predict(scaler.transform(X_test_high))                
         
-        coef_determination = r2_score(Y_test, Y_evaluate.flatten())
-        mse = mean_squared_error(Y_test, Y_evaluate.flatten())
-        mae = mean_absolute_error(Y_test, Y_evaluate.flatten())
+        # coef_determination = r2_score(Y_test, Y_evaluate.flatten())
+        # mse = mean_squared_error(Y_test, Y_evaluate.flatten())
+        # mae = mean_absolute_error(Y_test, Y_evaluate.flatten())
 
-        print(f"--> Dataset's coefficient of determination: {coef_determination}")
-        print(f"--> Dataset's mean squared error: {mse}")
-        print(f"--> Dataset's mean absolute error: {mae}")
-        print("--------------------------------------------------------------------------------------------------")
+        # print(f"--> Dataset's coefficient of determination: {coef_determination}")
+        # print(f"--> Dataset's mean squared error: {mse}")
+        # print(f"--> Dataset's mean absolute error: {mae}")
+        # print("--------------------------------------------------------------------------------------------------")
 
 
 
