@@ -45,6 +45,7 @@ print ("Y_test: ", Y_test.shape)
 #--------------- XGBOOST
 
 model = XGBRegressor()
+#(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, colsample_bytree=0.8)
 model.fit(scaler.transform(X_train), Y_train)
 
 model_evaluate(model, scaler, X_test, Y_test)
