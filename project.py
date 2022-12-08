@@ -52,6 +52,106 @@ model_evaluate(model, scaler, X_test, Y_test)
 model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
 model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
 
+#XGBOOST PARAMETER TUNING
+
+'''
+print("\n################ MODEL EVALUATION - eta ################")
+#eta: it makes the model more robust by shrinking the weights on each step
+print("\neta=0.2")
+model = XGBRegressor(eta = 0.2)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\neta=0.1")
+model = XGBRegressor(eta = 0.1)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\neta=0.5")
+model.fit(scaler.transform(X_train), Y_train)
+model = XGBRegressor(eta = 0.05)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\nIt makes sense that the coefficient of determination is a bit worse for smaller values of eta, as it is not fitting as well for the sample data")
+
+'''
+'''
+
+print("\n################ MODEL EVALUATION - gamma ################")
+#gamma: specifies the minimum loss reduction required to make a split
+print("\ngamma=0")
+model = XGBRegressor(gamma = 0)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\ngamma=100")
+model = XGBRegressor(gamma = 100)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\ngamma=500000")
+model.fit(scaler.transform(X_train), Y_train)
+model = XGBRegressor(gamma = 500000)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\nIt makes sense that the algorithm becomes more conservative with an increase on gamma. At the default value, 0, it is fine. As soon as it goes up, the model gets a lot less accurate.")
+
+'''
+
+
+print("\n################ MODEL EVALUATION - max_depth ################")
+#max_depth: t is used to control over-fitting as higher depth will allow model to learn relations very specific to a particular sample.
+
+for i in range(15, 20): #BEST MAX_DEPTH=15
+    print(f"\nMODEL EVALUATION MAX_DEPTH={i}")
+    model = XGBRegressor(max_depth = i)
+    model.fit(scaler.transform(X_train), Y_train)
+    model_evaluate(model, scaler, X_test, Y_test)
+    model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+    model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+'''
+
+print("\n################ MODEL EVALUATION - min_child_weight ################")
+#min_child_weight: 
+print("\nmin_child_weight=0")
+model = XGBRegressor(min_child_weight = 0)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\nmin_child_weight=200")
+model = XGBRegressor(min_child_weight = 200)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+print("\nmin_child_weight=500")
+model.fit(scaler.transform(X_train), Y_train)
+model = XGBRegressor(min_child_weight = 500)
+model.fit(scaler.transform(X_train), Y_train)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+print("\Min child weight does not seem to make a huge difference. We have to increase it a lot for it to make a difference.")
+'''
+
 
 # ----------------------- neural network model -----------
 # model = model_1(X_train.shape[1])
