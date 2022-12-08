@@ -25,7 +25,7 @@ string_columns = {"id", "song", "artist"}
 
 df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
-df = preprocess(df, target_column)
+df = preprocess(df, target_column , k_num=)
 
 df = object_column_to_categorical(df, "key")
 
