@@ -10,6 +10,8 @@ from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import RepeatedKFold
 from xgboost import XGBRegressor
 
+from sklearn import svm
+
 # load the dataset
 
 import warnings
@@ -116,13 +118,13 @@ print("\nIt makes sense that the algorithm becomes more conservative with an inc
 print("\n################ MODEL EVALUATION - max_depth ################")
 #max_depth: t is used to control over-fitting as higher depth will allow model to learn relations very specific to a particular sample.
 
-for i in range(15, 20): #BEST MAX_DEPTH=15
-    print(f"\nMODEL EVALUATION MAX_DEPTH={i}")
-    model = XGBRegressor(max_depth = i)
-    model.fit(scaler.transform(X_train), Y_train)
-    model_evaluate(model, scaler, X_test, Y_test)
-    model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
-    model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+# for i in range(15, 20): #BEST MAX_DEPTH=15
+#     print(f"\nMODEL EVALUATION MAX_DEPTH={i}")
+#     model = XGBRegressor(max_depth = i)
+#     model.fit(scaler.transform(X_train), Y_train)
+#     model_evaluate(model, scaler, X_test, Y_test)
+#     model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+#     model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
 
 '''
 
@@ -151,6 +153,19 @@ model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
 model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
 print("\Min child weight does not seem to make a huge difference. We have to increase it a lot for it to make a difference.")
 '''
+
+# ----------------------- SVM model -----------
+
+print("#############SVM#############")
+model = svm.SVC(kernel="rbf", gamma=10)
+model.fit(X_train, Y_train)
+
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
+
+
+
 
 
 # ----------------------- neural network model -----------
