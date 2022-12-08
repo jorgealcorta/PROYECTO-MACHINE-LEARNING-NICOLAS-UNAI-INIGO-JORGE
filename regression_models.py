@@ -4,6 +4,9 @@ from tensorflow.keras.activations import tanh, sigmoid, relu, softmax
 from tensorflow.keras.metrics import categorical_crossentropy
 
 from tensorflow import keras
+from keras import backend as K
+import tensorflow as tf
+
 
 
        
