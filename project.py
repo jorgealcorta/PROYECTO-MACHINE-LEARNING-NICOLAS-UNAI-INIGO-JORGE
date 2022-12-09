@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from dataCleaning import *
 from dataAnalysis import *
+from parameterTuning import *
 from regression_models import *
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
@@ -55,6 +56,7 @@ model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
 model_evaluate(model, scaler, X_test, Y_test, pop_max=30)
 
 #XGBOOST PARAMETER TUNING
+tuneXGBoost(scaler, X_test, Y_test, X_train, Y_train)
 
 '''
 print("\n################ MODEL EVALUATION - eta ################")
