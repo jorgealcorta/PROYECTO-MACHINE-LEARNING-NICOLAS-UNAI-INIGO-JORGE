@@ -4,6 +4,7 @@ import numpy as np
 from dataCleaning import *
 from dataAnalysis import *
 from parameterTuning import *
+from parameterTuning import *
 from regression_models import *
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
@@ -46,7 +47,7 @@ train_df , (X_test, Y_test) = split_train_test_df(df, target_column,train_sample
 
 
 
-train_df = undersample(train_df , global_undersample= 0.3, local_undersample= 0.8)
+train_df = undersample(train_df , global_undersample= 1, local_undersample= 0.8)
 
 X_train, Y_train = split_XY(train_df, target_column)
 
@@ -56,6 +57,9 @@ print ("X_test: ", X_test.shape)
 print ("Y_test: ", Y_test.shape)
 
 #--------------- XGBOOST
+
+#XGBOOST PARAMETER TUNING
+tuneXGBoost(scaler, X_test, Y_test, X_train, Y_train)
 
 # model = XGBRegressor()
 # #(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, colsample_bytree=0.8)
