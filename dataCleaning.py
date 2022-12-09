@@ -68,10 +68,10 @@ def split_train_test_df(feature_df:pd.DataFrame, target_column:str, train_sample
     test_df = original_df.loc[list(filter(lambda index: index not in train_df.index, original_df.index))]
 
     # Split data into X and Y
-    train_data = split_XY(train_df, target_column)
+    #train_data = split_XY(train_df, target_column)
     test_data = split_XY(test_df, target_column)
     
-    return train_data, test_data
+    return train_df, test_data
 
 
 def split_XY(feature_df:pd.DataFrame, target_column:str):
@@ -121,6 +121,33 @@ def object_column_to_categorical(feature_df: pd.DataFrame, column:str, set_of_va
     df = df.drop(columns = column)
     
     return df
+
+
+
+def undersample(df, global_undersample = 1, local_undersample = 0.2):
+    
+    assert local_undersample <= 1.0 and global_undersample <=1.0 , "undersample fractions must be lesser than 1.0"
+    print("Train dataframe before undersampling", df.shape)
+
+    
+    average_dataframe =df[ np.logical_and(df['popularity']>30 , df['popularity']<70)]
+    edges_dataframe = df[np.logical_or(df['popularity']<=30 , df['popularity']>=70)]
+
+
+    average_dataframe = average_dataframe.sample(frac = local_undersample).reset_index(drop=True)
+    
+    
+    all_dataframe = pd.concat([average_dataframe, edges_dataframe], axis = 0)
+    all_dataframe = all_dataframe.sample(frac = global_undersample).reset_index(drop=True)
+    
+    print("Train dataframe before undersampling", df.shape)
+
+    return all_dataframe
+
+
+
+
+
 
 # -------------------------------------------------------------------------------------------------
 
