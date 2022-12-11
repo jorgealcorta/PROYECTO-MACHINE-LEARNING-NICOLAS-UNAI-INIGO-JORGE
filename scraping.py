@@ -6,13 +6,15 @@ from datasetCreation import *
 
 #crear dataset canciones de 0 con los siguientes atributos id;number_of_artists;artist_followers;number_of_markets
 
-#df_canciones = pd.DataFrame(columns = ["id", "number_of_artists", "artist_followers", "number_of_markets"])
-#guardar en csv
-#df_canciones.to_csv("datasets_kaggle/canciones.csv", index = False)
+#df_fechas = pd.DataFrame(columns = ["id", "date", "precision"])
+#df_fechas.to_csv("datasets_kaggle/fechas.csv", index = False)
 
-try:
-    canciones()
-except:
-    pass
+#try:
+#    canciones()
+#except:
+#    pass
 
-completarCanciones()
+#completarCanciones()
+
+#fechas()
+#completarFechas()

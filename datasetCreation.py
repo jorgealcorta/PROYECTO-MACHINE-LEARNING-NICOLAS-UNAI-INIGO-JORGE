@@ -71,28 +71,89 @@ def canciones():
     
 
 
+def fechas():
+    
+    print("start scraping")
+    warnings.filterwarnings("ignore")
+    authentication = {"cid": "8acb4c7a2a4a498b8e957c81942ad91d", "secret": "a9f7f92142c245f68e8006f5399ef9f0"}
+    client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
+    sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    
+    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos2.csv", sep = ";")
+
+    #df_fechas = pd.DataFrame(columns = ["id", "number_of_artists", "artist_followers", "number_of_markets"])
+    df_fechas = pd.read_csv("datasets_kaggle/fechas.csv")
+
+    ids = []
+    contador = 0
+    
+    if "date" not in df.columns:
+        print("Resetting columns")
+        df["date"] = np.nan
+        df["precision"] = np.nan
+        
+    
+    for index, row in df.iterrows():
+        
+        if(np.isnan(row["date"])):
+            #guardar el id
+            ids.append(row["id"])
+
+            if len(ids) == 50:
+                tracks = sp.tracks(ids)
+                for track in tracks["tracks"]:
+                    #si el id de la cancion no se enctra en el dataframe, añadirlo junto con sus datos
+                    if track["id"] not in df_fechas["id"].values:
+                        df_fechas = df_fechas.append({"id": track["id"], "date": track["album"]["release_date"], "precision": track["album"]["release_date_precision"] }, ignore_index = True)
+                                
+                ids = []
+                #df_fechas.to_csv("datasets_kaggle/fechas.csv", index = False)
+            
+            contador += 1
+
+        if index % 500 == 0 and index !=0:
+                df_fechas.to_csv("datasets_kaggle/fechas.csv", index = False)
+                print("Guardado en la iteración " + str(index))
+                
+            
+    df_fechas.to_csv("datasets_kaggle/fechas.csv", index = False)    
+
+
 def completarCanciones():
     df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
     df_canciones = pd.read_csv("datasets_kaggle/canciones.csv")
     
-    print("Guardando datos...")
+    print("Merging datasets...")
 
-    for index, row in df.iterrows():
-        if(np.isnan(row["artist_followers"]) or np.isnan(row["number_of_artists"]) or np.isnan(row["number_of_markets"])):
-            if row["id"] in df_canciones["id"].values:
-                df.loc[index, "artist_followers"] = df_canciones[df_canciones["id"] == row["id"]]["artist_followers"].values[0]
-                df.loc[index, "number_of_artists"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_artists"].values[0]
-                df.loc[index, "number_of_markets"] = df_canciones[df_canciones["id"] == row["id"]]["number_of_markets"].values[0]
-            
+    df = df.merge(df_canciones, on="id")
+
     df.to_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";", index = False)
-    print("Terminado.")
+    print("Done.")
+
+
+
+def completarFechas():
+    df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos2.csv", sep = ";")
+    df_fechas = pd.read_csv("datasets_kaggle/fechas2.csv")
+
+    if "date" not in df.columns:
+        print("Resetting columns")
+        df["date"] = np.nan
+        df["precision"] = np.nan
+    
+    print("Merging datasets...")
+
+    df = df.merge(df_fechas, on="id")
+
+    df.to_csv("datasets_kaggle/dataset_unido_anyadidos2.csv", sep = ";", index = False)
+    print("Done.")
 
 def moreAttributes():
     
     print("start scraping")
     
-    authentication = {"cid": "###########", "secret": "###########"}
+    authentication = {"cid": "56820a2a52db42dfb355bd3859048827", "secret": "c080c32769c445a5af776276949f91e4"}
     client_credentials_manager = SpotifyClientCredentials(client_id= authentication["cid"], client_secret= authentication["secret"])
     sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
     
