@@ -8,6 +8,7 @@ def preprocess (df, target_column, k_num = 10):
     df = correct_mode(df)
     df = df.dropna()
     df = df.drop_duplicates()
+    create_clusters(df)
     filter_mutual_info(df, target_column, k_num )
     return df
 
@@ -48,6 +49,13 @@ def correct_mode(df):
     df2["mode"] = df2["mode"].astype(int)
     return df2
 
+def create_clusters(df):
+    df2 = df.copy()
+    
+    df2["clusters_popularity"] = pd.cut(df2["popularity"],bins =5,labels=["Unpopular", "Disliked", "Average", "Liked", "Popular"])
+    return df2    
+    
+    
 '''         
 df = pd.read_csv("first_scrape_500.csv")
 df = clean_data(df)

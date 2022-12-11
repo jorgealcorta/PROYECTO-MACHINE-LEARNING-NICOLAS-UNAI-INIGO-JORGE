@@ -31,7 +31,7 @@ string_columns = {"id", "song", "artist"}
 
 df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
-df = preprocess(df, target_column)
+df = preprocess(df, target_column, k_num= 9)
 
 df = object_column_to_categorical(df, "key")
 
@@ -47,7 +47,9 @@ train_df , (X_test, Y_test) = split_train_test_df(df, target_column,train_sample
 
 
 
-#train_df = undersample(train_df , global_undersample= 1, local_undersample= 0.8)
+
+train_df = undersample(train_df , global_undersample= 1, local_undersample= 1)
+
 
 X_train, Y_train = split_XY(train_df, target_column)
 
@@ -61,8 +63,7 @@ print ("Y_test: ", Y_test.shape)
 #XGBOOST PARAMETER TUNING
 #tuneXGBoost(scaler, X_test, Y_test, X_train, Y_train)
 
-# model = XGBRegressor()
-# #(n_estimators=1000, max_depth=7, eta=0.1, subsample=0.7, colsample_bytree=0.8)
+# model = XGBRegressor(max_depth=14)
 # model.fit(scaler.transform(X_train), Y_train)
 
 # model_evaluate(model, scaler, X_test, Y_test)
@@ -72,8 +73,8 @@ print ("Y_test: ", Y_test.shape)
 
 # ----------------------- SVM model -----------
 
-
 # model = svm.SVR(kernel="linear", gamma=10)
+
 # print("test PRE FIT")
 
 
@@ -91,18 +92,14 @@ print ("Y_test: ", Y_test.shape)
 
 # ----------------------- neural network model -----------
 model = model_1(X_train.shape[1])
-results = []
 
-for i in range(15):
-        
+model.fit(scaler.transform(X_train), Y_train,
+        batch_size=40,
+        epochs=38,
+        verbose=0,
+        validation_data=(scaler.transform(X_test), Y_test)
+)
 
-    model.fit(scaler.transform(X_train), Y_train,
-            batch_size=40,
-            epochs=30+i*2,
-            verbose=0,
-            validation_data=(scaler.transform(X_test), Y_test)
-    )
-
-    results.append([5+i*3,model_evaluate(model, scaler, X_test, Y_test) + model_evaluate(model, scaler, X_test, Y_test, pop_max=30) + model_evaluate(model, scaler, X_test, Y_test, pop_min=70)])
-
-print(results)
+model_evaluate(model, scaler, X_test, Y_test)
+model_evaluate(model, scaler, X_test, Y_test, pop_min=70)
+model_evaluate(model, scaler, X_test, Y_test, pop_max=30)  
