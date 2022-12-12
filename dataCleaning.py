@@ -52,7 +52,7 @@ def correct_mode(df):
 def create_clusters(df):
     df2 = df.copy()
     
-    df2["clusters_popularity"] = pd.cut(df2["popularity"],bins =5,labels=["Unpopular", "Disliked", "Average", "Liked", "Popular"])
+    df2["clusters_popularity"] = pd.cut(df2["popularity"],bins =5,labels=["Very unpopular", "Unpopular", "Average", "Popular", "Very popular"])
     return df2    
     
     

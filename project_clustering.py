@@ -27,7 +27,8 @@ warnings.simplefilter(action='ignore', category=DataConversionWarning)
 
 column_names = {"id", "song", "artist", "duration_ms", "danceability", "energy", "key", "loudness", "mode", "loudness", "mode", "speechiness", "acousticness", 
                 "instrumentalness", "liveness", "valence", "tempo", "popularity",  "popularity", "artist_followers", "number_of_artists", "number_of_markets"}
-target_column = {"clusters_popularity"}
+target_column = {"clusters_popularity", "popularity"}
+popularity = {"popularity"}
 
 string_columns = {"id", "song", "artist"}
 
@@ -38,7 +39,7 @@ df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 df = preprocess(df, target_column)
 df = df.drop(columns = string_columns)
 df = create_clusters(df)
-df = df.drop(columns = "popularity")
+
 
 
 
@@ -47,21 +48,23 @@ model = DecisionTreeRegressor()
 rfe = RFE(model,n_features_to_select= 9)
 
 # Fit the model to the data
-rfe.fit(df.drop(columns = target_column), df[target_column])
+rfe.fit(df.drop(columns = target_column), df[popularity])
 
 selected_columns = df.drop(columns = target_column).columns[rfe.support_]
-y = df[target_column]
+y = df["clusters_popularity"]
 x = df[selected_columns]
 
 scaler = std_scaler(x)
 
+print(y.head())
+print(x.head())
 
-pca = PCA(n_components=7)
+# pca = PCA(n_components=7)
 
-pca.fit(scaler.transform(x))
+# pca.fit(scaler.transform(x))
 
-print('Variance of each component:', pca.explained_variance_ratio_)
-print('\n Total Variance Explained:', round(sum(list(pca.explained_variance_ratio_))*100, 2))
+# print('Variance of each component:', pca.explained_variance_ratio_)
+# print('\n Total Variance Explained:', round(sum(list(pca.explained_variance_ratio_))*100, 2))
 
 # data = df.to_numpy()
 # pca = PCA()
