@@ -3,13 +3,13 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.feature_selection import SelectKBest, SelectPercentile, mutual_info_classif
 
-def preprocess (df, target_column, k_num = 10):
+def preprocess (df, target_column):
     df = correct_key(df)
     df = correct_mode(df)
     df = df.dropna()
     df = df.drop_duplicates()
     create_clusters(df)
-    filter_mutual_info(df, target_column, k_num )
+    df = object_column_to_categorical(df, "key")
     return df
 
 
@@ -89,7 +89,7 @@ def split_XY(feature_df:pd.DataFrame, target_column:str):
     
     return X, Y
        
-def filter_mutual_info(df, target_column, k_num, string_colunms ={"id", "song", "artist"}, ):
+def filter_mutual_info(df, target_column, k_num):
  
    
    y = df[target_column]
@@ -104,9 +104,12 @@ def filter_mutual_info(df, target_column, k_num, string_colunms ={"id", "song", 
    return X.join(y).join(y_2)
 
 def std_scaler(feature_df:pd.DataFrame, target_column:str= "popularity"):
-   scaler = StandardScaler()
-   scaler.fit(feature_df.drop(columns = target_column).values)
-   return scaler
+    scaler = StandardScaler()
+    if target_column in feature_df.columns:
+        scaler.fit(feature_df.drop(columns = target_column).values)
+    else:
+        scaler.fit(feature_df.values)
+    return scaler
 
 def object_column_to_categorical(feature_df: pd.DataFrame, column:str, set_of_values:list=None):
     df = feature_df.copy(deep=True)

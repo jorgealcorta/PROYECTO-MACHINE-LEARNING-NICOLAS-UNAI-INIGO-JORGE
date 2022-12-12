@@ -31,9 +31,9 @@ string_columns = {"id", "song", "artist"}
 
 df = pd.read_csv("datasets_kaggle/dataset_unido_anyadidos.csv", sep = ";")
 
-df = preprocess(df, target_column, k_num= 9)
+df = preprocess(df, target_column)
 
-df = object_column_to_categorical(df, "key")
+df = filter_mutual_info(df, target_column, k_num= 9)
 
 df = df.drop(columns = string_columns)
 
