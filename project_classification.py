@@ -1,27 +1,25 @@
 import pandas as pd
-import numpy as np
+import numpy as numpy
+from sklearn.svm import SVC
+from sklearn.decomposition import PCA
+from sklearn.feature_selection import RFE
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.exceptions import DataConversionWarning
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import RepeatedKFold
+from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.model_selection import train_test_split
+from xgboost import XGBRegressor
+
 from dataCleaning import *
 from dataAnalysis import *
 from parameterTuning import *
 from parameterTuning import *
 from regression_models import *
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import RepeatedKFold
-from xgboost import XGBRegressor
-
-from sklearn.exceptions import DataConversionWarning
-from sklearn import svm
-from sklearn.decomposition import PCA
-from sklearn.feature_selection import RFE
-from sklearn.tree import DecisionTreeRegressor
-
-# load the dataset
-
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
-warnings.simplefilter(action='ignore', category=DataConversionWarning)
+# import warnings
+# warnings.simplefilter(action='ignore', category=FutureWarning)
+# warnings.simplefilter(action='ignore', category=DataConversionWarning)
 
 
 column_names = {"id", "song", "artist", "duration_ms", "danceability", "energy", "key", "loudness", "mode", "loudness", "mode", "speechiness", "acousticness", 
@@ -45,15 +43,33 @@ df = create_clusters(df)
 # Create the RFE model and select all features
 model = DecisionTreeRegressor()
 rfe = RFE(model,n_features_to_select= 9)
-
-# Fit the model to the data
 rfe.fit(df.drop(columns = target_column), df[popularity])
 
 selected_columns = df.drop(columns = target_column).columns[rfe.support_]
-y = df["clusters_popularity"]
-x = df[selected_columns]
 
-scaler = std_scaler(x)
+df = undersample(df , global_undersample= 0.1, local_undersample= 1)
 
-print(y.head())
-print(x.head())
+train, test = train_test_split(df, test_size=0.2)
+
+y_train = train["clusters_popularity"]
+x_train = train[selected_columns]
+
+y_test = test["clusters_popularity"]
+x_test = test[selected_columns]
+
+
+scaler = std_scaler(x_train)
+svm = SVC()
+print("test pre fit")
+
+svm.fit(scaler.transform(x_train), y_train)
+
+predictions = svm.predict(scaler.transform(x_test))
+
+confusion_matrix = confusion_matrix(y_test, predictions)
+accuracy = accuracy_score(y_test, predictions)
+
+# Print the confusion matrix and accuracy score
+print("Confusion matrix:")
+print(confusion_matrix)
+print("Accuracy:", accuracy)
