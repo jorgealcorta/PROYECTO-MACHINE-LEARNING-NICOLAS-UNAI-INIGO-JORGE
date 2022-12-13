@@ -11,6 +11,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
 
+from sklearn.naive_bayes import GaussianNB
+
 from dataCleaning import *
 from dataAnalysis import *
 from parameterTuning import *
@@ -73,3 +75,30 @@ accuracy = accuracy_score(y_test, predictions)
 print("Confusion matrix:")
 print(confusion_matrix)
 print("Accuracy:", accuracy)
+
+
+#NAIVE BAYES    
+gnb = GaussianNB()
+
+gnbModel = gnb.fit(x_train, y_train)
+y_pred = gnbModel.predict(x_test)
+
+print("X TRAIN")
+print(x_train)
+print("Y TRAIN")
+print(y_train)
+
+print("Number of mislabeled points out of a total %d points : %d" % (x_test.shape[0], (y_test != y_pred).sum()))
+
+print("\nTEST FOR VERY UNPOPULAR")
+y_test_very_unpopular = y_test[y_test=="Very unpopular"]
+x_test_very_unpopular = x_test[y_test=="Very unpopular"]
+y_pred_very_unpopular = gnbModel.predict(x_test_very_unpopular)
+print("Number of mislabeled VERY UNPOPULAR points out of a total %d points : %d" % (x_test_very_unpopular.shape[0], (y_test_very_unpopular != y_pred_very_unpopular).sum()))
+
+print("\nTEST FOR VERY POPULAR")
+y_test_very_popular = y_test[y_test=="Very popular"]
+x_test_very_popular = x_test[y_test=="Very popular"]
+y_pred_very_popular = gnbModel.predict(x_test_very_popular)
+print("Number of mislabeled VERY POPULAR points out of a total %d points : %d" % (x_test_very_popular.shape[0], (y_test_very_popular != y_pred_very_popular).sum()))
+
