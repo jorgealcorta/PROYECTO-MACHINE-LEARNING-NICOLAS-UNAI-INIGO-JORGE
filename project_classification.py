@@ -96,6 +96,28 @@ x_test_very_unpopular = x_test[y_test=="Very unpopular"]
 y_pred_very_unpopular = gnbModel.predict(x_test_very_unpopular)
 print("Number of mislabeled VERY UNPOPULAR points out of a total %d points : %d" % (x_test_very_unpopular.shape[0], (y_test_very_unpopular != y_pred_very_unpopular).sum()))
 
+
+print("\nTEST FOR UNPOPULAR")
+y_test_unpopular = y_test[y_test=="Unpopular"]
+x_test_unpopular = x_test[y_test=="Unpopular"]
+y_pred_unpopular = gnbModel.predict(x_test_unpopular)
+print("Number of mislabeled UNPOPULAR points out of a total %d points : %d" % (x_test_unpopular.shape[0], (y_test_unpopular != y_pred_unpopular).sum()))
+
+
+print("\nTEST FOR AVERAGE")
+y_test_average = y_test[y_test=="Average"]
+x_test_average = x_test[y_test=="Average"]
+y_pred_average = gnbModel.predict(x_test_average)
+print("Number of mislabeled AVERAGE points out of a total %d points : %d" % (x_test_average.shape[0], (y_test_average != y_pred_average).sum()))
+
+
+print("\nTEST FOR POPULAR")
+y_test_popular = y_test[y_test=="Popular"]
+x_test_popular = x_test[y_test=="Popular"]
+y_pred_popular = gnbModel.predict(x_test_popular)
+print("Number of mislabeled POPULAR points out of a total %d points : %d" % (x_test_popular.shape[0], (y_test_popular != y_pred_popular).sum()))
+
+
 print("\nTEST FOR VERY POPULAR")
 y_test_very_popular = y_test[y_test=="Very popular"]
 x_test_very_popular = x_test[y_test=="Very popular"]
