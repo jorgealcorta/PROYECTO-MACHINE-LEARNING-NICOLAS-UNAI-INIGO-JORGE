@@ -49,9 +49,9 @@ rfe.fit(df.drop(columns = target_column), df[popularity])
 
 selected_columns = df.drop(columns = target_column).columns[rfe.support_]
 
-df = undersample(df , global_undersample= 0.1, local_undersample= 1)
+df = undersample(df , global_undersample= 0.7  , local_undersample= 1)
 
-train, test = train_test_split(df, test_size=0.2)
+train, test = train_test_split(df, test_size=0.1)
 
 y_train = train["clusters_popularity"]
 x_train = train[selected_columns]
@@ -70,6 +70,14 @@ predictions = svm.predict(scaler.transform(x_test))
 
 confusion_matrix = confusion_matrix(y_test, predictions)
 accuracy = accuracy_score(y_test, predictions)
+
+print(y_test.head())
+print(y_test.value_counts())
+print(predictions)
+print(pd.DataFrame(predictions).value_counts())
+
+for value, value1 in zip( y_test.value_counts(), range(len(confusion_matrix))):
+    print(confusion_matrix[value1][value1] , "/", value, "=", confusion_matrix[value1][value1]/value)
 
 # Print the confusion matrix and accuracy score
 print("Confusion matrix:")

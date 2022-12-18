@@ -3,12 +3,40 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.feature_selection import SelectKBest, SelectPercentile, mutual_info_classif
 
+print("30%")
+
+def preprocess_date(df, target_column, date_columns):
+    df = correct_key(df)
+    df = correct_mode(df)
+    df = df.dropna()
+    df = df.drop_duplicates()
+    df = object_column_to_categorical(df, "key")
+    df = date_process(df, date_columns)
+    
+    return df
+
+
+def date_process(df, date_columns):
+    df = object_column_to_categorical(df, date_columns[1])
+    
+    df[date_columns[0]] = pd.to_datetime(df[date_columns[0]], errors = 'coerce')
+    
+    df = df.dropna(axis=0, subset=[date_columns[0]])
+    
+    df['year'] = df[date_columns[0]].dt.year
+    df['day_of_year'] = df[date_columns[0]].dt.dayofyear
+    df['day_of_week'] = df[date_columns[0]].dt.dayofweek
+    df = df.drop(columns = date_columns[0])
+
+    return df
+    
+    
 def preprocess (df, target_column):
     df = correct_key(df)
     df = correct_mode(df)
     df = df.dropna()
     df = df.drop_duplicates()
-    create_clusters(df)
+    # create_clusters(df)
     df = object_column_to_categorical(df, "key")
     return df
 
@@ -89,19 +117,60 @@ def split_XY(feature_df:pd.DataFrame, target_column:str):
     
     return X, Y
        
-def filter_mutual_info(df, target_column, k_num):
+def filter_mutual_info(df, target_column, string_columns, k_num):
  
    
-   y = df[target_column]
-   y_2 = df[string_colunms]
-   df = df.drop(columns=string_colunms)
-   X = df.drop(columns=target_column)
-   
+    y = df[target_column]
+    y_2 = df[string_columns]
+    df = df.drop(columns=string_columns)
+    X = df.drop(columns=target_column)  
+ 
     
-   selector = SelectKBest(mutual_info_classif, k=k_num)
-   X_reduced = selector.fit_transform(X, y)
+    selector = SelectKBest(mutual_info_classif, k=k_num)
    
-   return X.join(y).join(y_2)
+
+    selector.fit_transform(X, y)
+   
+    mask = selector.get_support()
+
+
+    columns = []
+    for i, column in enumerate(X.columns):
+        if mask[i]:
+            columns.append(column)
+
+    X_reduced = X[columns]
+    print("Columns selected: ", columns)
+   
+    return X_reduced.join(y).join(y_2)
+
+
+def filter_mutual_info_2(df, target_column, string_columns, k_num):
+ 
+   
+    y = df[target_column]
+    y_2 = df[string_columns]
+    df = df.drop(columns=string_columns)
+    X = df.drop(columns=target_column)  
+ 
+    
+    selector = SelectKBest(mutual_info_classif, k=k_num)
+   
+
+    selector.fit_transform(X, y)
+   
+    mask = selector.get_support()
+
+
+    columns = []
+    for i, column in enumerate(X.columns):
+        if mask[i]:
+            columns.append(column)
+
+    X_reduced = X[columns]
+    print("Columns selected: ", columns)
+   
+    return X_reduced.join(y).join(y_2) , columns
 
 def std_scaler(feature_df:pd.DataFrame, target_column:str= "popularity"):
     scaler = StandardScaler()

@@ -20,7 +20,7 @@ def model_evaluate(model, scaler, X_test, Y_test, pop_max = 100, pop_min = 0):
         X_test_trimmed = pd.DataFrame(X_test)[tuples]
         Y_test_trimmed = pd.DataFrame(Y_test)[tuples]
         
-        print("num of instaces ;", X_test_trimmed.shape[0])
+        #print("num of instaces ;", X_test_trimmed.shape[0])
 
 
         Y_evaluate= model.predict(scaler.transform(X_test_trimmed))                

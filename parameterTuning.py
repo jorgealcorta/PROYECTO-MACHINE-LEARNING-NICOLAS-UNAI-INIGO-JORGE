@@ -9,7 +9,7 @@ def tuneXGBoost(scaler, X_test, Y_test, X_train, Y_train):
 
 
     print("######MAX_DEPTH PARAMETER TUNING######")
-    max_depths = [14]
+    max_depths = [11,12,13,14,15,16]
     for depth in max_depths:
         print(f"####EVALUATION FOR MAX_DEPTH: {depth}####")
         model = XGBRegressor(max_depth = depth)
